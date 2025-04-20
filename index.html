@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phuong (@phuongfullstack) | Elite .NET Full-Stack Architect | Micro-Frontend Demo</title>
+    <title>Phuong (@phuongfullstack) | Elite .NET Full-Stack Architect | Micro-Frontend Communication Demo</title>
 
-    <!-- Google Fonts & Font Awesome (Keep these) -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Your Existing Styles (Keep these) -->
     <style>
         :root {
-            --primary-color: #0078D4; /* Microsoft Blue */
-            --secondary-color: #50e3c2; /* A Teal accent */
+            --primary-color: #0078D4;
+            --secondary-color: #50e3c2;
+            --angular-color: #DD0031;
+            --ember-color: #E04E39; /* Ember Orange */
             --background-light: #f8f9fa;
             --background-dark: #2c3e50;
             --card-background: #ffffff;
@@ -29,7 +30,7 @@
             --border-radius: 8px;
             --transition-speed: 0.3s ease;
         }
-        /* ... (Keep all your existing CSS rules here) ... */
+        /* ... (Keep all your existing CSS rules) ... */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: var(--body-font); line-height: 1.7; background-color: var(--background-light); color: var(--text-dark); }
@@ -66,13 +67,13 @@
         .section-title, .expertise-card, .approach-item { opacity: 1; }
         @media (max-width: 768px) { .section-title { font-size: 2rem; } .expertise-grid, .approach-list { grid-template-columns: 1fr; } .hero { padding: 4em 0 3em 0; } }
 
-        /* Simple styles for Micro-frontend placeholders */
+        /* Micro-frontend placeholder styles */
         .mfe-placeholder {
             border: 2px dashed var(--primary-color);
             padding: 1.5em;
             margin-top: 2em;
             border-radius: var(--border-radius);
-            background-color: #f0f8ff; /* Light AliceBlue background */
+            background-color: #f0f8ff;
         }
         .mfe-placeholder h4 {
              font-family: var(--heading-font);
@@ -81,27 +82,51 @@
              border-bottom: 1px solid var(--secondary-color);
              padding-bottom: 0.3em;
         }
+        /* Specific styles for placeholders */
+        #angular-mfe-root { border-color: var(--angular-color); background-color: #fff0f0; }
+        #angular-mfe-root h4 { color: var(--angular-color); border-bottom-color: var(--angular-color); }
+        #ember-mfe-root { border-color: var(--ember-color); background-color: #fff5f3; } /* New */
+        #ember-mfe-root h4 { color: var(--ember-color); border-bottom-color: var(--ember-color); } /* New */
+
+        /* Counter Display Style */
+        .counter-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--ember-color);
+            text-align: center;
+            margin: 0.5em 0;
+        }
+        /* Button styles for controllers */
+        .mfe-controls button {
+            padding: 8px 15px;
+            margin: 0 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            border: none;
+            transition: background-color 0.2s ease;
+        }
+        .mfe-controls .increment-btn { background-color: #28a745; color: white; }
+        .mfe-controls .decrement-btn { background-color: #dc3545; color: white; }
+        .mfe-controls .increment-btn:hover { background-color: #218838; }
+        .mfe-controls .decrement-btn:hover { background-color: #c82333; }
+
     </style>
 
-    <!-- === Micro-frontend Framework Runtimes (CDN) === -->
-    <!-- React -->
+    <!-- Framework Runtimes (Keep React, Vue, Babel) -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <!-- Babel Standalone (to allow JSX in <script> tags) - ONLY for demos, not production! -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- Vue 3 -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-    <!-- Svelte (Note: Svelte is a compiler, this is just a runtime helper if needed, or we'll use vanilla JS) -->
-    <!-- No standard Svelte runtime CDN like React/Vue. We'll simulate component mounting. -->
-    <!-- === End Micro-frontend Runtimes === -->
+    <!-- Svelte, Angular, Ember are simulated -->
 
 </head>
 <body>
 
     <header class="hero">
-        <div class="hero-content container">
+        <!-- ... hero content ... -->
+         <div class="hero-content container">
             <h1>Phuong <span class="highlight">(@phuongfullstack)</span></h1>
             <p>Elite .NET Full-Stack Architect | Crafting Robust, Scalable & Secure Digital Solutions</p>
             <a href="#contact" class="cta-button">Let's Collaborate</a>
@@ -109,48 +134,23 @@
     </header>
 
     <main>
-        <!-- Your Existing Sections (Expertise, Approach) -->
+        <!-- Existing Sections -->
         <section id="expertise" class="section container">
+            <!-- ... expertise content ... -->
              <h2 class="section-title">My Expertise</h2>
-             <!-- ... expertise-grid content ... -->
              <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Frontend Development</h3>
-                    <p>Building intuitive & engaging UIs with Blazor, React, Angular, Vue, HTML5, CSS3, JS/TS.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon"><i class="fas fa-server"></i></div>
-                    <h3>Backend .NET Mastery</h3>
-                    <p>Architecting scalable ASP.NET Core APIs, clean C# code, optimized EF Core (SQL/NoSQL).</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                    <h3>DevOps & Cloud</h3>
-                    <p>Streamlining CI/CD (Azure DevOps/GitHub Actions), Docker containerization & Azure deployment.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <h3>Performance Tuning</h3>
-                    <p>Optimizing database queries, implementing caching, lazy loading & async patterns.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Application Security</h3>
-                    <p>Implementing robust security practices (AuthN/AuthZ, XSS, CSRF, SQLi prevention).</p>
-                </div>
-                 <div class="expertise-card">
-                    <div class="icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3>Solution Architecture</h3>
-                    <p>Designing end-to-end solutions that meet business goals and technical requirements.</p>
-                </div>
+                <div class="expertise-card"> <div class="icon"><i class="fas fa-laptop-code"></i></div> <h3>Frontend Development</h3> <p>Building intuitive & engaging UIs with Blazor, React, Angular, Vue, HTML5, CSS3, JS/TS.</p> </div>
+                <div class="expertise-card"> <div class="icon"><i class="fas fa-server"></i></div> <h3>Backend .NET Mastery</h3> <p>Architecting scalable ASP.NET Core APIs, clean C# code, optimized EF Core (SQL/NoSQL).</p> </div>
+                <div class="expertise-card"> <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div> <h3>DevOps & Cloud</h3> <p>Streamlining CI/CD (Azure DevOps/GitHub Actions), Docker containerization & Azure deployment.</p> </div>
+                <div class="expertise-card"> <div class="icon"><i class="fas fa-tachometer-alt"></i></div> <h3>Performance Tuning</h3> <p>Optimizing database queries, implementing caching, lazy loading & async patterns.</p> </div>
+                <div class="expertise-card"> <div class="icon"><i class="fas fa-shield-alt"></i></div> <h3>Application Security</h3> <p>Implementing robust security practices (AuthN/AuthZ, XSS, CSRF, SQLi prevention).</p> </div>
+                 <div class="expertise-card"> <div class="icon"><i class="fas fa-project-diagram"></i></div> <h3>Solution Architecture</h3> <p>Designing end-to-end solutions that meet business goals and technical requirements.</p> </div>
             </div>
         </section>
-
         <section id="approach" class="section" style="background-color: #eef;">
-            <div class="container">
+            <!-- ... approach content ... -->
+             <div class="container">
                 <h2 class="section-title">My Collaborative Approach</h2>
-                <!-- ... approach-list content ... -->
                  <ul class="approach-list">
                     <li class="approach-item"> <i class="fas fa-comments icon"></i> <div class="content"><strong>Explain concepts clearly:</strong> <span>Breaking down complex topics into understandable insights.</span></div> </li>
                     <li class="approach-item"> <i class="fas fa-balance-scale-right icon"></i> <div class="content"><strong>Suggest options (pros/cons):</strong> <span>Empowering you with informed choices through clear analysis.</span></div> </li>
@@ -164,138 +164,227 @@
             </div>
         </section>
 
-        <!-- === Micro-frontend Mount Points === -->
+        <!-- === Micro-frontend Mount Points & Counter Display === -->
         <section id="micro-frontends-demo" class="section container">
-            <h2 class="section-title">Micro-Frontend Demo Components</h2>
+            <h2 class="section-title">Micro-Frontend Communication Demo</h2>
             <p style="text-align: center; max-width: 700px; margin: -1em auto 2em auto; color: var(--text-muted);">
-                Below are simple components rendered by different JavaScript frameworks, all running on the same page.
-                This demonstrates a basic micro-frontend concept using CDN includes.
+                The Ember component below displays a shared counter. The other components have buttons to modify it using Custom Events.
             </p>
 
-            <!-- 1. React Mount Point -->
+            <!-- 5. Ember Mount Point & Counter Display (NEW/MODIFIED) -->
+            <div id="ember-mfe-root" class="mfe-placeholder">
+                <h4>Ember Counter Display (Simulated)</h4>
+                <p>This area shows the shared counter value, updated via events.</p>
+                <div class="counter-display">
+                    Counter: <span id="ember-counter-value">0</span> <!-- Display area -->
+                </div>
+                <!-- Note: A real Ember app would use templates (Handlebars) and components -->
+            </div>
+
+            <!-- 1. React Mount Point (with Controls) -->
             <div id="react-mfe-root" class="mfe-placeholder">
                 <h4>React Component Area</h4>
-                <!-- React will render its content here -->
                 <p>Loading React component...</p>
+                {/* Controls will be added by React */}
             </div>
 
-            <!-- 2. Vue Mount Point -->
+            <!-- 2. Vue Mount Point (with Controls) -->
             <div id="vue-mfe-root" class="mfe-placeholder">
                 <h4>Vue Component Area</h4>
-                <!-- Vue will render its content here -->
-                <p>Loading Vue component...</p>
-                <!-- Vue template syntax can be used here if defined inline -->
                  {{ vueMessage }}
+                 {/* Controls will be added by Vue */}
             </div>
 
-            <!-- 3. Svelte Mount Point -->
+            <!-- 3. Svelte Mount Point (with Controls) -->
             <div id="svelte-mfe-root" class="mfe-placeholder">
                 <h4>Svelte Component Area (Simulated)</h4>
-                <!-- Svelte (or vanilla JS simulating it) will render content here -->
                  <p>Loading Svelte component...</p>
+                 {/* Controls will be added by simulation script */}
+            </div>
+
+            <!-- 4. Angular Mount Point (with Controls) -->
+            <div id="angular-mfe-root" class="mfe-placeholder">
+                <h4>Angular Component Area (Simulated)</h4>
+                 <p>Loading Angular component...</p>
+                 {/* Controls will be added by simulation script */}
             </div>
         </section>
-        <!-- === End Micro-frontend Mount Points === -->
-
+        <!-- === End Mount Points === -->
 
         <!-- Optional Contact Section -->
-         <section id="contact" class="section container" style="text-align: center;">
+        <section id="contact" class="section container" style="text-align: center;">
              <!-- ... contact content ... -->
-             <h2 class="section-title">Let's Build Something Exceptional</h2>
+              <h2 class="section-title">Let's Build Something Exceptional</h2>
              <p style="max-width: 600px; margin: 0 auto 2em auto; color: var(--text-muted);"> Whether you need help with a specific challenge, architectural guidance, or end-to-end development, I'm ready to partner with you. </p>
              <a href="mailto:your-email@example.com?subject=Collaboration Inquiry from GitHub Profile" class="cta-button" style="background-color: var(--primary-color); color: var(--text-light);"> <i class="fas fa-envelope"></i> Get In Touch </a>
          </section>
-
     </main>
 
     <footer class="footer">
-         <!-- ... footer content ... -->
-         <p>&copy; 2025 Phuong (@phuongfullstack). All rights reserved.</p>
-         <p>Last Updated: 2025-04-20 10:44:50 UTC</p> <!-- Updated Timestamp -->
+        <!-- ... footer content ... -->
+        <p>&copy; 2025 Phuong (@phuongfullstack). All rights reserved.</p>
+        <p>Last Updated: 2025-04-20 10:51:52 UTC</p> <!-- Updated Timestamp -->
     </footer>
 
-    <!-- === Micro-frontend Mounting Scripts === -->
+    <!-- === SHARED COUNTER LOGIC & EVENT BUS === -->
+    <script>
+        let sharedCounterValue = 0; // The single source of truth
 
-    <!-- 1. React Mounting Script -->
-    <!-- type="text/babel" is crucial for Babel Standalone to transpile JSX -->
+        // Function to dispatch the update event
+        function dispatchCounterUpdate() {
+            console.log(`Dispatching counter-updated event with value: ${sharedCounterValue}`);
+            const event = new CustomEvent('counter-updated', {
+                detail: { value: sharedCounterValue } // Pass the new value in the event detail
+            });
+            document.dispatchEvent(event);
+        }
+
+        // Listen for increment requests
+        document.addEventListener('increment-counter', () => {
+            sharedCounterValue++;
+            console.log('Increment request received. New value:', sharedCounterValue);
+            dispatchCounterUpdate(); // Notify listeners
+        });
+
+        // Listen for decrement requests
+        document.addEventListener('decrement-counter', () => {
+            sharedCounterValue--;
+            console.log('Decrement request received. New value:', sharedCounterValue);
+            dispatchCounterUpdate(); // Notify listeners
+        });
+
+        // Initial dispatch in case components load after this script
+        // dispatchCounterUpdate(); // Optional: Can cause initial render issues if elements aren't ready
+    </script>
+    <!-- === END SHARED COUNTER LOGIC === -->
+
+
+    <!-- === Micro-frontend Mounting Scripts (MODIFIED) === -->
+
+    <!-- 1. React Mounting Script (Added Buttons & Event Dispatch) -->
     <script type="text/babel">
-      function ReactGreeting() {
-        const [count, setCount] = React.useState(0);
+      function ReactCounterControls() {
+        const increment = () => {
+          console.log('React: Dispatching increment-counter');
+          document.dispatchEvent(new CustomEvent('increment-counter'));
+        };
+        const decrement = () => {
+          console.log('React: Dispatching decrement-counter');
+          document.dispatchEvent(new CustomEvent('decrement-counter'));
+        };
+
         return (
-          <div>
-            <p>Hello from React! 👋</p>
-            <p>This component has its own state.</p>
-            <button onClick={() => setCount(count + 1)} style={{ padding: '8px 12px', cursor: 'pointer', backgroundColor: 'var(--secondary-color)', border: 'none', borderRadius: '4px', fontWeight: 'bold' }}>
-              Clicked {count} times
-            </button>
+          <div className="mfe-controls" style={{ marginTop: '1em', textAlign: 'center' }}>
+            <button onClick={decrement} className="decrement-btn">-</button>
+            <button onClick={increment} className="increment-btn">+</button>
           </div>
         );
       }
 
       const reactRootElement = document.getElementById('react-mfe-root');
-      // Use createRoot for React 18+
       const reactRoot = ReactDOM.createRoot(reactRootElement);
       reactRoot.render(
         <React.Fragment>
-           <h4>React Component Area</h4> {/* Re-add title as React replaces content */}
-           <ReactGreeting />
+           <h4>React Component Area</h4>
+           <p>Controls to modify the shared counter:</p>
+           <ReactCounterControls />
         </React.Fragment>
       );
     </script>
 
-    <!-- 2. Vue 3 Mounting Script -->
+    <!-- 2. Vue 3 Mounting Script (Added Buttons & Event Dispatch) -->
     <script>
       const vueApp = Vue.createApp({
         data() {
           return {
-            vueMessage: 'Hello from Vue 3! 🎉',
-            inputValue: ''
+            vueMessage: 'Controls to modify the shared counter:'
           }
         },
-        // Simple template for the Vue component
+        methods: {
+          increment() {
+            console.log('Vue: Dispatching increment-counter');
+            document.dispatchEvent(new CustomEvent('increment-counter'));
+          },
+          decrement() {
+            console.log('Vue: Dispatching decrement-counter');
+            document.dispatchEvent(new CustomEvent('decrement-counter'));
+          }
+        },
         template: `
           <div>
             <p>{{ vueMessage }}</p>
-            <p>It also has reactive data.</p>
-            <input type="text" v-model="inputValue" placeholder="Type here..." style="padding: 8px; margin-right: 5px; border: 1px solid #ccc; border-radius: 4px;">
-            <span>Input: {{ inputValue }}</span>
+            <div class="mfe-controls" style="margin-top: 1em; text-align: center;">
+              <button @click="decrement" class="decrement-btn">-</button>
+              <button @click="increment" class="increment-btn">+</button>
+            </div>
           </div>
         `
       });
-
-      // Mount the Vue app to its designated element
       const vueRootElement = document.getElementById('vue-mfe-root');
-      // Clear placeholder text before mounting
       vueRootElement.innerHTML = '<h4>Vue Component Area</h4>'; // Keep title
       vueApp.mount('#vue-mfe-root');
-
     </script>
 
-    <!-- 3. Svelte Mounting Script (Simulation) -->
+    <!-- 3. Svelte Mounting Script (Simulation - Added Buttons & Event Dispatch) -->
     <script>
-      // Svelte components are *compiled* to JavaScript.
-      // In a real setup, you'd import the compiled JS class and instantiate it.
-      // e.g., import SvelteComponent from './SvelteComponent.js';
-      //       new SvelteComponent({ target: document.getElementById('svelte-mfe-root'), props: { name: 'Svelte' } });
-      // Here, we'll just use vanilla JS to simulate adding content.
-
       const svelteRootElement = document.getElementById('svelte-mfe-root');
-      // Clear placeholder and add simulated content
       svelteRootElement.innerHTML = `
           <h4>Svelte Component Area (Simulated)</h4>
-          <p>Hello from Svelte (simulated)! ✨</p>
-          <p>Normally, this would be rendered by compiled Svelte code.</p>
-          <button id="svelte-button" style="padding: 8px 12px; cursor: pointer; background-color: #ff3e00; color: white; border: none; border-radius: 4px; font-weight: bold;">Simulated Action</button>
+          <p>Controls to modify the shared counter:</p>
+          <div class="mfe-controls" style="margin-top: 1em; text-align: center;">
+              <button id="svelte-decrement-btn" class="decrement-btn">-</button>
+              <button id="svelte-increment-btn" class="increment-btn">+</button>
+          </div>
       `;
-
-      // Add basic interactivity to simulate a Svelte component's script block
-      const svelteButton = document.getElementById('svelte-button');
-      let svelteClicks = 0;
-      svelteButton.addEventListener('click', () => {
-          svelteClicks++;
-          svelteButton.textContent = \`Simulated Action (${svelteClicks})\`;
-          console.log('Simulated Svelte action executed.');
+      document.getElementById('svelte-increment-btn').addEventListener('click', () => {
+          console.log('Svelte (Sim): Dispatching increment-counter');
+          document.dispatchEvent(new CustomEvent('increment-counter'));
       });
+       document.getElementById('svelte-decrement-btn').addEventListener('click', () => {
+          console.log('Svelte (Sim): Dispatching decrement-counter');
+          document.dispatchEvent(new CustomEvent('decrement-counter'));
+      });
+    </script>
+
+    <!-- 4. Angular Mounting Script (Simulation - Added Buttons & Event Dispatch) -->
+    <script>
+      const angularRootElement = document.getElementById('angular-mfe-root');
+      angularRootElement.innerHTML = `
+          <h4>Angular Component Area (Simulated)</h4>
+          <p>Controls to modify the shared counter:</p>
+           <div class="mfe-controls" style="margin-top: 1em; text-align: center;">
+              <button id="angular-decrement-btn" class="decrement-btn">-</button>
+              <button id="angular-increment-btn" class="increment-btn">+</button>
+          </div>
+      `;
+       document.getElementById('angular-increment-btn').addEventListener('click', () => {
+          console.log('Angular (Sim): Dispatching increment-counter');
+          document.dispatchEvent(new CustomEvent('increment-counter'));
+      });
+       document.getElementById('angular-decrement-btn').addEventListener('click', () => {
+          console.log('Angular (Sim): Dispatching decrement-counter');
+          document.dispatchEvent(new CustomEvent('decrement-counter'));
+      });
+    </script>
+
+    <!-- 5. Ember Mounting Script (Simulation - Added Event Listener) -->
+    <script>
+      const emberCounterDisplayElement = document.getElementById('ember-counter-value');
+
+      // Listen for the update event dispatched by the central logic
+      document.addEventListener('counter-updated', (event) => {
+          const newValue = event.detail.value;
+          console.log(`Ember (Sim): Received counter-updated event with value: ${newValue}`);
+          if (emberCounterDisplayElement) {
+              emberCounterDisplayElement.textContent = newValue; // Update the display
+          }
+      });
+
+      // Initialize display (optional, could rely on first event)
+      if (emberCounterDisplayElement) {
+           emberCounterDisplayElement.textContent = sharedCounterValue;
+      }
+       console.log('Ember (Sim): Initialized and listening for counter updates.');
 
     </script>
     <!-- === End Micro-frontend Mounting Scripts === -->
