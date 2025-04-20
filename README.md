@@ -1,6 +1,6 @@
 # Hello, I'm Phuong Tran 👋 <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">
 
-<img src="assets/images/phuong-avatar.jpg" alt="Phuong Tran Avatar" width="150" align="right">
+<img src="[assets/images/phuong-avatar.jpg](https://scontent.fsgn2-11.fna.fbcdn.net/v/t39.30808-6/475869596_2343168442725869_5811913006240498098_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEICRpDM-vzXy4vRTP70KpT_FqVtYbC_sz8WpW1hsL-zB4gOJS0slgv4xtJXY0PySP4_sRlrvcjUjvP4ZyrDmD0&_nc_ohc=79pC39sw33sQ7kNvwHpP9XX&_nc_oc=AdlLRmRR92JfOgV0y7Oxkg0SjDTkZaBdfym4PCVy6oSSkKrVVT_pdPOSA7yDomkEUrsjBtoyZlG2RXPpMEH94Ukk&_nc_zt=23&_nc_ht=scontent.fsgn2-11.fna&_nc_gid=nt4dRO1USScBupeb7hsZRQ&oh=00_AfGhe4y1r89Z8dP7u5v-uGoyDgS7OyMWMkydf1Mp2UBdkg&oe=680ACCBD)" alt="Phuong Tran Avatar" width="150" align="right">
 
 I'm a **Software Engineer** based in Da Nang, Vietnam 🇻🇳, focused on developing reliable, scalable, and maintainable software solutions. With over **<!-- DYNAMIC_YEARS --> years** of experience, I enjoy contributing to challenging projects across the full stack and continuously learning in this dynamic field.
 
@@ -70,7 +70,7 @@ I believe in a thoughtful approach to software development, focusing on:
 *   **Connect on LinkedIn:** [LinkedIn Profile](https://linkedin.com/in/nhatphuongcse) <!-- *** REPLACE *** -->
 *   **Explore My Repositories:** Feel free to browse my work here on GitHub.
 
-I'm always interested in learning from others, discussing technology, and exploring opportunities to contribute to interesting projects. If you'd like to connect, please feel free to reach out via [LinkedIn](https://linkedin.com/in/yourprofile)<!-- *** REPLACE *** --> or my portfolio.
+I'm always interested in learning from others, discussing technology, and exploring opportunities to contribute to interesting projects. If you'd like to connect, please feel free to reach out via [LinkedIn](https://linkedin.com/in/nhatphuongcse)<!-- *** REPLACE *** --> or my portfolio.
 
 ---
 
