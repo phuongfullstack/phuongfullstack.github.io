@@ -3,391 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phuong (@phuongfullstack) | Elite .NET Full-Stack Architect | Micro-Frontend Communication Demo</title>
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--==================== UNICONS ====================-->
+    <!-- Ensure you have a valid link to the Unicons library -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <style>
-        :root {
-            --primary-color: #0078D4;
-            --secondary-color: #50e3c2;
-            --angular-color: #DD0031;
-            --ember-color: #E04E39; /* Ember Orange */
-            --background-light: #f8f9fa;
-            --background-dark: #2c3e50;
-            --card-background: #ffffff;
-            --text-light: #f8f9fa;
-            --text-dark: #343a40;
-            --text-muted: #6c757d;
-            --heading-font: 'Poppins', sans-serif;
-            --body-font: 'Roboto', sans-serif;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
-            --border-radius: 8px;
-            --transition-speed: 0.3s ease;
-        }
-        /* ... (Keep all your existing CSS rules) ... */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--body-font); line-height: 1.7; background-color: var(--background-light); color: var(--text-dark); }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5em; }
-        .hero { background: linear-gradient(135deg, var(--primary-color) 0%, var(--background-dark) 100%); color: var(--text-light); padding: 6em 0 4em 0; text-align: center; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
-        .hero-content { position: relative; }
-        .hero h1 { font-family: var(--heading-font); font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 0.2em; font-weight: 700; }
-        .hero h1 .highlight { color: var(--secondary-color); font-weight: 700; }
-        .hero p { font-size: clamp(1rem, 2.5vw, 1.3rem); margin-bottom: 1.5em; font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .cta-button { display: inline-block; background-color: var(--secondary-color); color: var(--background-dark); padding: 0.8em 1.8em; border-radius: 50px; text-decoration: none; font-weight: 700; transition: var(--transition-speed); box-shadow: var(--box-shadow); }
-        .cta-button:hover { background-color: var(--text-light); transform: translateY(-3px); box-shadow: var(--box-shadow-hover); }
-        .section { padding: 4em 0; }
-        .section-title { text-align: center; font-family: var(--heading-font); font-size: 2.5rem; margin-bottom: 1.5em; color: var(--primary-color); position: relative; }
-        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--secondary-color); margin: 0.3em auto 0; border-radius: 2px; }
-        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2em; }
-        .expertise-card { background-color: var(--card-background); padding: 2em; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; transition: var(--transition-speed); border-top: 5px solid transparent; }
-        .expertise-card:hover { transform: translateY(-8px); box-shadow: var(--box-shadow-hover); border-top-color: var(--primary-color); }
-        .expertise-card .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 0.5em; transition: var(--transition-speed); }
-        .expertise-card:hover .icon { color: var(--secondary-color); transform: scale(1.1); }
-        .expertise-card h3 { font-family: var(--heading-font); font-size: 1.4rem; margin-bottom: 0.5em; color: var(--text-dark); }
-        .expertise-card p { font-size: 0.95rem; color: var(--text-muted); }
-        .approach-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5em; list-style: none; }
-        .approach-item { background: var(--card-background); padding: 1.5em; border-radius: var(--border-radius); box-shadow: var(--box-shadow); display: flex; align-items: flex-start; transition: var(--transition-speed); }
-        .approach-item:hover { transform: scale(1.03); box-shadow: var(--box-shadow-hover); }
-        .approach-item .icon { font-size: 1.8rem; color: var(--primary-color); margin-right: 1em; margin-top: 0.1em; min-width: 30px; text-align: center; }
-        .approach-item .content strong { font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 0.2em; }
-        .approach-item .content span { font-size: 0.95rem; color: var(--text-muted); }
-        .footer { background-color: var(--background-dark); color: var(--text-light); text-align: center; padding: 2em 0; margin-top: 4em; font-size: 0.9rem; }
-        .footer p { margin-bottom: 0.5em; opacity: 0.8; }
-        .footer a { color: var(--secondary-color); margin: 0 0.5em; font-size: 1.5rem; transition: var(--transition-speed); }
-        .footer a:hover { color: var(--text-light); transform: translateY(-2px); }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .section-title, .expertise-card, .approach-item { opacity: 1; }
-        @media (max-width: 768px) { .section-title { font-size: 2rem; } .expertise-grid, .approach-list { grid-template-columns: 1fr; } .hero { padding: 4em 0 3em 0; } }
+    <!--==================== SWIPER CSS ====================-->
+    <!-- Ensure you have a valid link to the Swiper CSS library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
-        /* Micro-frontend placeholder styles */
-        .mfe-placeholder {
-            border: 2px dashed var(--primary-color);
-            padding: 1.5em;
-            margin-top: 2em;
-            border-radius: var(--border-radius);
-            background-color: #f0f8ff;
-        }
-        .mfe-placeholder h4 {
-             font-family: var(--heading-font);
-             color: var(--primary-color);
-             margin-bottom: 0.5em;
-             border-bottom: 1px solid var(--secondary-color);
-             padding-bottom: 0.3em;
-        }
-        /* Specific styles for placeholders */
-        #angular-mfe-root { border-color: var(--angular-color); background-color: #fff0f0; }
-        #angular-mfe-root h4 { color: var(--angular-color); border-bottom-color: var(--angular-color); }
-        #ember-mfe-root { border-color: var(--ember-color); background-color: #fff5f3; } /* New */
-        #ember-mfe-root h4 { color: var(--ember-color); border-bottom-color: var(--ember-color); } /* New */
+    <!--==================== CSS ====================-->
+    <!-- Link to your main CSS file (Impressive Portfolio - Light Theme version) -->
+    <link rel="stylesheet" href="style.css">
 
-        /* Counter Display Style */
-        .counter-display {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--ember-color);
-            text-align: center;
-            margin: 0.5em 0;
-        }
-        /* Button styles for controllers */
-        .mfe-controls button {
-            padding: 8px 15px;
-            margin: 0 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-            border: none;
-            transition: background-color 0.2s ease;
-        }
-        .mfe-controls .increment-btn { background-color: #28a745; color: white; }
-        .mfe-controls .decrement-btn { background-color: #dc3545; color: white; }
-        .mfe-controls .increment-btn:hover { background-color: #218838; }
-        .mfe-controls .decrement-btn:hover { background-color: #c82333; }
-
-    </style>
-
-    <!-- Framework Runtimes (Keep React, Vue, Babel) -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- Svelte, Angular, Ember are simulated -->
-
+    <title>Phuong Tran - Software Engineer | Crafting Digital Solutions</title>
+    <!-- Favicon (Recommended) -->
+    <!-- <link rel="icon" href="/favicon.ico"> -->
 </head>
 <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Phuong Tran</a>
 
-    <header class="hero">
-        <!-- ... hero content ... -->
-         <div class="hero-content container">
-            <h1>Phuong <span class="highlight">(@phuongfullstack)</span></h1>
-            <p>Elite .NET Full-Stack Architect | Crafting Robust, Scalable & Secure Digital Solutions</p>
-            <a href="#contact" class="cta-button">Let's Collaborate</a>
-        </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link"><i class="uil uil-estate nav__icon"></i> Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link"><i class="uil uil-user nav__icon"></i> About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link"><i class="uil uil-brackets-curly nav__icon"></i> Expertise</a></li>
+                    <li class="nav__item"><a href="#portfolio" class="nav__link"><i class="uil uil-scenery nav__icon"></i> Projects</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link"><i class="uil uil-message nav__icon"></i> Contact</a></li>
+                    <!-- Qualification & Services links removed for portfolio focus -->
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Optional Theme change button -->
+                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i> -->
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <!-- Existing Sections -->
-        <section id="expertise" class="section container">
-            <!-- ... expertise content ... -->
-             <h2 class="section-title">My Expertise</h2>
-             <div class="expertise-grid">
-                <div class="expertise-card"> <div class="icon"><i class="fas fa-laptop-code"></i></div> <h3>Frontend Development</h3> <p>Building intuitive & engaging UIs with Blazor, React, Angular, Vue, HTML5, CSS3, JS/TS.</p> </div>
-                <div class="expertise-card"> <div class="icon"><i class="fas fa-server"></i></div> <h3>Backend .NET Mastery</h3> <p>Architecting scalable ASP.NET Core APIs, clean C# code, optimized EF Core (SQL/NoSQL).</p> </div>
-                <div class="expertise-card"> <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div> <h3>DevOps & Cloud</h3> <p>Streamlining CI/CD (Azure DevOps/GitHub Actions), Docker containerization & Azure deployment.</p> </div>
-                <div class="expertise-card"> <div class="icon"><i class="fas fa-tachometer-alt"></i></div> <h3>Performance Tuning</h3> <p>Optimizing database queries, implementing caching, lazy loading & async patterns.</p> </div>
-                <div class="expertise-card"> <div class="icon"><i class="fas fa-shield-alt"></i></div> <h3>Application Security</h3> <p>Implementing robust security practices (AuthN/AuthZ, XSS, CSRF, SQLi prevention).</p> </div>
-                 <div class="expertise-card"> <div class="icon"><i class="fas fa-project-diagram"></i></div> <h3>Solution Architecture</h3> <p>Designing end-to-end solutions that meet business goals and technical requirements.</p> </div>
-            </div>
-        </section>
-        <section id="approach" class="section" style="background-color: #eef;">
-            <!-- ... approach content ... -->
-             <div class="container">
-                <h2 class="section-title">My Collaborative Approach</h2>
-                 <ul class="approach-list">
-                    <li class="approach-item"> <i class="fas fa-comments icon"></i> <div class="content"><strong>Explain concepts clearly:</strong> <span>Breaking down complex topics into understandable insights.</span></div> </li>
-                    <li class="approach-item"> <i class="fas fa-balance-scale-right icon"></i> <div class="content"><strong>Suggest options (pros/cons):</strong> <span>Empowering you with informed choices through clear analysis.</span></div> </li>
-                    <li class="approach-item"> <i class="fas fa-code icon"></i> <div class="content"><strong>Provide quality code:</strong> <span>Delivering complete, readable, and well-commented solutions (front & back).</span></div> </li>
-                    <li class="approach-item"> <i class="fas fa-vials icon"></i> <div class="content"><strong>Suggest testing strategies:</strong> <span>Advising on effective QA with tools like xUnit, NUnit, Moq.</span></div> </li>
-                    <li class="approach-item"> <i class="fas fa-rocket icon"></i> <div class="content"><strong>Advise on performance:</strong> <span>Guiding optimization for speed (query opt., caching, lazy loading).</span></div> </li>
-                    <li class="approach-item"> <i class="fas fa-user-shield icon"></i> <div class="content"><strong>Highlight security:</strong> <span>Proactively addressing vulnerabilities (XSS, CSRF, SQLi).</span></div> </li>
-                     <li class="approach-item"> <i class="fas fa-question-circle icon"></i> <div class="content"><strong>Ask clarifying questions:</strong> <span>Ensuring full requirement alignment before implementation.</span></div> </li>
-                     <li class="approach-item"> <i class="fas fa-handshake icon"></i> <div class="content"><strong>Professional & Friendly Tone:</strong> <span>Maintaining positive, collaborative communication, ready to elaborate.</span></div> </li>
-                </ul>
-            </div>
-        </section>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <!-- *** UPDATE YOUR LINKEDIN URL HERE *** -->
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="https://github.com/phuongdayroi" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class="uil uil-github-alt"></i></a>
+                        <!-- Add other relevant social links -->
+                    </div>
 
-        <!-- === Micro-frontend Mount Points & Counter Display === -->
-        <section id="micro-frontends-demo" class="section container">
-            <h2 class="section-title">Micro-Frontend Communication Demo</h2>
-            <p style="text-align: center; max-width: 700px; margin: -1em auto 2em auto; color: var(--text-muted);">
-                The Ember component below displays a shared counter. The other components have buttons to modify it using Custom Events.
-            </p>
+                    <div class="home__img">
+                        <!-- SVG Blob Shape with Image Mask -->
+                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                <!-- Ensure this path is correct relative to index.html -->
+                                <image class="home__blob-img" x="12" y="18" xlink:href="assets/images/phuong-avatar.jpg"/>
+                            </g>
+                        </svg>
+                    </div>
 
-            <!-- 5. Ember Mount Point & Counter Display (NEW/MODIFIED) -->
-            <div id="ember-mfe-root" class="mfe-placeholder">
-                <h4>Ember Counter Display (Simulated)</h4>
-                <p>This area shows the shared counter value, updated via events.</p>
-                <div class="counter-display">
-                    Counter: <span id="ember-counter-value">0</span> <!-- Display area -->
+                    <div class="home__data">
+                        <h1 class="home__title">Phuong Tran</h1>
+                        <h3 class="home__subtitle">Building Scalable & Secure Software</h3>
+                        <p class="home__description">Passionate Software Engineer with 6+ years creating impactful solutions in demanding fields like finance and healthcare. Specializing in .NET, Cloud, and modern web technologies.</p>
+                        <a href="#contact" class="button button--flex">
+                            Let's Connect <i class="uil uil-message button__icon"></i>
+                        </a>
+                    </div>
                 </div>
-                <!-- Note: A real Ember app would use templates (Handlebars) and components -->
-            </div>
 
-            <!-- 1. React Mount Point (with Controls) -->
-            <div id="react-mfe-root" class="mfe-placeholder">
-                <h4>React Component Area</h4>
-                <p>Loading React component...</p>
-                {/* Controls will be added by React */}
-            </div>
-
-            <!-- 2. Vue Mount Point (with Controls) -->
-            <div id="vue-mfe-root" class="mfe-placeholder">
-                <h4>Vue Component Area</h4>
-                 {{ vueMessage }}
-                 {/* Controls will be added by Vue */}
-            </div>
-
-            <!-- 3. Svelte Mount Point (with Controls) -->
-            <div id="svelte-mfe-root" class="mfe-placeholder">
-                <h4>Svelte Component Area (Simulated)</h4>
-                 <p>Loading Svelte component...</p>
-                 {/* Controls will be added by simulation script */}
-            </div>
-
-            <!-- 4. Angular Mount Point (with Controls) -->
-            <div id="angular-mfe-root" class="mfe-placeholder">
-                <h4>Angular Component Area (Simulated)</h4>
-                 <p>Loading Angular component...</p>
-                 {/* Controls will be added by simulation script */}
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Discover More</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
             </div>
         </section>
-        <!-- === End Mount Points === -->
 
-        <!-- Optional Contact Section -->
-        <section id="contact" class="section container" style="text-align: center;">
-             <!-- ... contact content ... -->
-              <h2 class="section-title">Let's Build Something Exceptional</h2>
-             <p style="max-width: 600px; margin: 0 auto 2em auto; color: var(--text-muted);"> Whether you need help with a specific challenge, architectural guidance, or end-to-end development, I'm ready to partner with you. </p>
-             <a href="mailto:your-email@example.com?subject=Collaboration Inquiry from GitHub Profile" class="cta-button" style="background-color: var(--primary-color); color: var(--text-light);"> <i class="fas fa-envelope"></i> Get In Touch </a>
-         </section>
+        <!--==================== ABOUT (Narrative Focus) ====================-->
+        <section class="about section" id="about">
+            <h2 class="section__title">About Me</h2>
+            <span class="section__subtitle">My Journey & Approach</span>
+
+            <div class="about__container container grid">
+                <!-- Ensure this path is correct relative to index.html -->
+                <img src="assets/images/phuong-avatar.jpg" alt="Phuong Tran - Software Engineer" class="about__img">
+
+                <div class="about__data">
+                    <p class="about__description narrative">
+                        From my beginnings at <span class="highlight">Duy Tan University</span>, I've cultivated a passion for building software that not only functions flawlessly but also delivers tangible value. Over the past <span class="highlight">6+ years</span>, I've had the privilege of contributing to diverse projects at companies like <span class="highlight">FPT Software, Axon Active, and Propel Ventures</span>, tackling challenges in <span class="highlight">finance, healthcare, and gaming</span>.
+                    </p>
+                     <p class="about__description narrative">
+                        My core strength lies in full-stack development, particularly within the <span class="highlight">.NET ecosystem</span> and cloud platforms like <span class="highlight">Azure</span>. I believe in writing <span class="highlight">clean, maintainable code</span> following principles like SOLID and Clean Architecture, and I thrive on optimizing applications for peak <span class="highlight">performance and robust security</span>. Whether it's designing scalable APIs, crafting intuitive user interfaces, or streamlining DevOps processes, I'm driven by the challenge of finding elegant solutions to complex problems.
+                    </p>
+                    <div class="about__info">
+                        <div><span class="about__info-title">06+</span><span class="about__info-name">Years<br>experience</span></div>
+                        <div><span class="about__info-title">10+</span><span class="about__info-name">Diverse<br>projects</span></div>
+                        <div><span class="about__info-title">04+</span><span class="about__info-name">Domains<br>explored</span></div>
+                    </div>
+                    <div class="about__buttons">
+                        <!-- *** UPDATE PATH TO YOUR CV PDF *** -->
+                        <a download="" href="assets/PhuongTran-CV.pdf" class="button button--flex">
+                            View Full CV <i class="uil uil-download-alt button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== EXPERTISE (Replaces Skills) ====================-->
+        <section class="skills section" id="skills"> <!-- Keep ID 'skills' for nav link -->
+            <h2 class="section__title">Areas of Expertise</h2>
+            <span class="section__subtitle">Technologies I Master & Apply</span>
+
+            <div class="expertise__container container grid">
+                <!-- Expertise Area 1: Backend & API Development -->
+                <div class="expertise__area">
+                    <i class="uil uil-server-network expertise__icon"></i>
+                    <h3 class="expertise__title">Backend & API Development</h3>
+                    <p class="expertise__description">Building robust, scalable, and secure server-side logic and APIs using the .NET ecosystem.</p>
+                    <div class="expertise__tags">
+                        <span>C#</span><span>.NET Core</span><span>ASP.NET API</span><span>Entity Framework</span><span>Microservices</span><span>SignalR</span>
+                    </div>
+                </div>
+
+                 <!-- Expertise Area 2: Frontend & UI -->
+                <div class="expertise__area">
+                    <i class="uil uil-brackets-curly expertise__icon"></i>
+                    <h3 class="expertise__title">Frontend & UI/UX</h3>
+                    <p class="expertise__description">Crafting responsive, interactive, and user-friendly interfaces for web and desktop applications.</p>
+                     <div class="expertise__tags">
+                        <span>JavaScript</span><span>TypeScript</span><span>Angular</span><span>Svelte</span><span>HTML5</span><span>CSS3</span><span>WPF</span><span>Material Design</span>
+                    </div>
+                </div>
+
+                 <!-- Expertise Area 3: Cloud & DevOps -->
+                <div class="expertise__area">
+                    <i class="uil uil-cloud-computing expertise__icon"></i>
+                    <h3 class="expertise__title">Cloud & DevOps</h3>
+                    <p class="expertise__description">Leveraging cloud platforms (Azure focus) and automating workflows for efficient deployment and scaling.</p>
+                     <div class="expertise__tags">
+                        <span>Azure</span><span>Docker</span><span>GitHub Actions</span><span>Azure DevOps</span><span>Terraform</span><span>CI/CD</span><span>RabbitMQ</span>
+                    </div>
+                </div>
+
+                <!-- Expertise Area 4: Databases -->
+                <div class="expertise__area">
+                    <i class="uil uil-database expertise__icon"></i>
+                    <h3 class="expertise__title">Database Management</h3>
+                    <p class="expertise__description">Designing schemas and working with various SQL and NoSQL databases for optimal data storage and retrieval.</p>
+                    <div class="expertise__tags">
+                        <span>SQL Server</span><span>MySQL</span><span>MongoDB</span><span>CosmosDB</span><span>EF Core</span><span>Performance Tuning</span>
+                    </div>
+                </div>
+
+                 <!-- Expertise Area 5: Architecture & Quality -->
+                <div class="expertise__area">
+                    <i class="uil uil-layer-group expertise__icon"></i>
+                    <h3 class="expertise__title">Architecture & Quality</h3>
+                    <p class="expertise__description">Applying design patterns and testing methodologies to ensure software quality, maintainability, and robustness.</p>
+                     <div class="expertise__tags">
+                        <span>SOLID</span><span>Clean Architecture</span><span>DDD</span><span>System Design</span><span>NUnit</span><span>XUnit</span><span>Jest</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PORTFOLIO (Project Showcase) ====================-->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title">Project Showcase</h2>
+            <span class="section__subtitle">Where Ideas Meet Execution</span>
+
+            <div class="portfolio__container container swiper">
+                <div class="swiper-wrapper">
+                    <!-- Portfolio 1: Fund Management -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <!-- *** REPLACE WITH ACTUAL PROJECT IMAGE *** -->
+                        <img src="assets/images/placeholder-fund-mgmt.jpg" loading="lazy" alt="Fund Management System" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Fund Management Portal</h3>
+                            <p class="portfolio__description">
+                                <span class="highlight">Challenge:</span> Extend a core fintech system with a dedicated portal for fund managers.<br>
+                                <span class="highlight">Solution:</span> Developed a full-stack solution using .NET API and Angular frontend, integrating seamlessly.<br>
+                                <span class="highlight">Tech:</span> .NET, C#, Angular, EF, SQL Server, Azure, Terraform.
+                            </p>
+                            <a href="#" class="button button--flex button--small portfolio__button disabled-link">
+                                View Details <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio 2: Healthcare AI -->
+                    <div class="portfolio__content grid swiper-slide">
+                        <!-- *** REPLACE WITH ACTUAL PROJECT IMAGE *** -->
+                        <img src="assets/images/placeholder-healthcare.jpg" loading="lazy" alt="AI Healthcare System" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">AI-Powered Patient Care</h3>
+                             <p class="portfolio__description">
+                                <span class="highlight">Challenge:</span> Enhance patient engagement and reduce operational costs for healthcare providers.<br>
+                                <span class="highlight">Solution:</span> Contributed to an AI system using voice recognition for automated patient calls and feedback.<br>
+                                <span class="highlight">Tech:</span> .NET, C#, Angular, Azure Serverless, AI/ML Integration.
+                            </p>
+                             <a href="#" class="button button--flex button--small portfolio__button disabled-link">
+                                View Details <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio 3: Gaming Kiosk PIM -->
+                     <div class="portfolio__content grid swiper-slide">
+                        <!-- *** REPLACE WITH ACTUAL PROJECT IMAGE *** -->
+                        <img src="assets/images/placeholder-pim-gaming.jpg" loading="lazy" alt="Gaming Kiosk Interface" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Gaming Kiosk Interface (PIM)</h3>
+                             <p class="portfolio__description">
+                                <span class="highlight">Challenge:</span> Modernize the interface module for gaming terminals for better performance.<br>
+                                <span class="highlight">Solution:</span> Re-engineered the PIM using .NET Core and WebSockets for real-time interaction.<br>
+                                <span class="highlight">Tech:</span> .NET Core, C#, VanillaJS, WebSocket, Docker, Jest.
+                            </p>
+                             <a href="#" class="button button--flex button--small portfolio__button disabled-link">
+                                View Details <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                     <!-- Portfolio 4: Data Conversion -->
+                     <div class="portfolio__content grid swiper-slide">
+                        <!-- *** REPLACE WITH ACTUAL PROJECT IMAGE *** -->
+                        <img src="assets/images/placeholder-data-conversion.jpg" loading="lazy" alt="Data Conversion Tool" class="portfolio__img">
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Data Migration Tool (MVP)</h3>
+                              <p class="portfolio__description">
+                                <span class="highlight">Challenge:</span> Enable data transfer from legacy systems to new platforms.<br>
+                                <span class="highlight">Solution:</span> Developed the MVP application allowing configurable data migration, using Svelte for the UI.<br>
+                                <span class="highlight">Tech:</span> .NET, C#, Svelte, TypeScript, MongoDB, EF.
+                            </p>
+                             <a href="#" class="button button--flex button--small portfolio__button disabled-link">
+                                View Details <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Add more portfolio items if needed -->
+                </div>
+                <!-- Swiper Navigation -->
+                <div class="swiper-button-next"><i class="uil uil-angle-right-b swiper-portfolio-icon"></i></div>
+                <div class="swiper-button-prev"><i class="uil uil-angle-left-b swiper-portfolio-icon"></i></div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!--==================== PROJECT IN MIND ====================-->
+        <section class="project section">
+             <div class="project__bg">
+                <div class="project__container container grid">
+                    <div class="project__data">
+                        <h2 class="project__title">Ready to build something great?</h2>
+                        <p class="project__description">I'm passionate about collaborating on innovative projects. Let's discuss your ideas and how my expertise can contribute to your success.</p>
+                        <a href="#contact" class="button button--flex button--white">
+                            Start a Conversation
+                            <i class="uil uil-message project__icon button__icon"></i>
+                        </a>
+                    </div>
+                    <!-- *** REPLACE WITH A RELEVANT ILLUSTRATION/IMAGE *** -->
+                    <img src="assets/images/placeholder-project-mind.png" loading="lazy" alt="Collaboration Illustration" class="project__img">
+                </div>
+            </div>
+        </section>
+
+        <!--==================== TESTIMONIAL ====================-->
+        <section class="testimonial section">
+            <h2 class="section__title">Testimonials</h2>
+            <span class="section__subtitle">What colleagues say</span>
+
+             <div class="testimonial__container container swiper">
+                <div class="swiper-wrapper">
+                     <!-- Testimonial 1 (Placeholder) -->
+                    <div class="testimonial__content swiper-slide">
+                        <div class="testimonial__data">
+                            <div class="testimonial__header">
+                                <!-- *** REPLACE WITH ACTUAL TESTIMONIAL IMAGE *** -->
+                                <img src="assets/images/placeholder-testimonial1.jpg" loading="lazy" alt="Testimonial Author 1" class="testimonial__img">
+                                <div>
+                                    <h3 class="testimonial__name">Jane Doe</h3>
+                                    <span class="testimonial__client">Former Manager @ FPT Software</span>
+                                </div>
+                            </div>
+                            <div> <!-- Star Rating -->
+                                <i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial__description">
+                            "Phuong is a highly skilled and dedicated engineer. His technical expertise in .NET and problem-solving abilities were invaluable to our team. He consistently delivered high-quality code and was always willing to help others."
+                        </p>
+                    </div>
+                     <!-- Testimonial 2 (Placeholder) -->
+                     <div class="testimonial__content swiper-slide">
+                        <div class="testimonial__data">
+                            <div class="testimonial__header">
+                                <!-- *** REPLACE WITH ACTUAL TESTIMONIAL IMAGE *** -->
+                                <img src="assets/images/placeholder-testimonial2.jpg" loading="lazy" alt="Testimonial Author 2" class="testimonial__img">
+                                <div>
+                                    <h3 class="testimonial__name">John Smith</h3>
+                                    <span class="testimonial__client">Senior Developer @ Axon Active</span>
+                                </div>
+                            </div>
+                             <div> <!-- Star Rating -->
+                                <i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star-half-alt testimonial__icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial__description">
+                            "Working with Phuong was a great experience. He learns incredibly fast and has a strong grasp of complex system architecture. His contributions to the property tax system were significant."
+                        </p>
+                    </div>
+                     <!-- Testimonial 3 (Placeholder) -->
+                    <div class="testimonial__content swiper-slide">
+                         <div class="testimonial__data">
+                            <div class="testimonial__header">
+                                <!-- *** REPLACE WITH ACTUAL TESTIMONIAL IMAGE *** -->
+                                <img src="assets/images/placeholder-testimonial3.jpg" loading="lazy" alt="Testimonial Author 3" class="testimonial__img">
+                                <div>
+                                    <h3 class="testimonial__name">Alice Brown</h3>
+                                    <span class="testimonial__client">Project Lead @ Propel Ventures</span>
+                                </div>
+                            </div>
+                             <div> <!-- Star Rating -->
+                                <i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i><i class="uil uil-star testimonial__icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial__description">
+                           "Phuong quickly understood the complexities of the PIM project and delivered excellent results. His ability to work independently and integrate with existing systems was impressive."
+                        </p>
+                    </div>
+                    <!-- Add more testimonials if needed -->
+                </div>
+                 <!-- Swiper Pagination -->
+                 <div class="swiper-pagination swiper-pagination-testimonial"></div>
+             </div>
+        </section>
+
+        <!--==================== CONTACT ME ====================-->
+        <section class="contact section" id="contact">
+             <h2 class="section__title">Contact Me</h2>
+            <span class="section__subtitle">Let's Get In Touch</span>
+            <div class="contact__container container grid">
+                <div> <!-- Contact Info Column -->
+                    <div class="contact__information">
+                        <i class="uil uil-phone-alt contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Call Me</h3>
+                            <span class="contact__subtitle">+84 39 250 2010</span>
+                        </div>
+                    </div>
+                     <div class="contact__information">
+                        <i class="uil uil-envelope-alt contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Email</h3>
+                            <span class="contact__subtitle">nhatphuongb1@gmail.com</span>
+                        </div>
+                    </div>
+                     <div class="contact__information">
+                        <i class="uil uil-map-marker-alt contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Location</h3>
+                            <!-- *** UPDATE WITH YOUR SPECIFIC LOCATION IF DESIRED *** -->
+                            <span class="contact__subtitle">Da Nang, Vietnam</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form (Requires backend implementation to function) -->
+                <form action="" class="contact__form grid" id="contact-form">
+                     <div class="contact__inputs grid">
+                         <div class="contact__content">
+                             <label for="contact-name" class="contact__label">Name</label>
+                             <input type="text" name="user_name" required class="contact__input" id="contact-name">
+                         </div>
+                          <div class="contact__content">
+                             <label for="contact-email" class="contact__label">Email</label>
+                             <input type="email" name="user_email" required class="contact__input" id="contact-email">
+                         </div>
+                     </div>
+                     <div class="contact__content">
+                        <label for="contact-project" class="contact__label">Project / Subject</label>
+                        <input type="text" name="user_subject" class="contact__input" id="contact-project">
+                    </div>
+                     <div class="contact__content">
+                        <label for="contact-message" class="contact__label">Message</label>
+                        <textarea name="user_message" required cols="0" rows="7" class="contact__input" id="contact-message"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="button button--flex">
+                            Send Message
+                            <i class="uil uil-message button__icon"></i>
+                        </button>
+                    </div>
+                     <!-- Status message area for form submission feedback -->
+                     <p class="contact__message" id="contact-message-status"></p>
+                </form>
+
+            </div>
+        </section>
     </main>
 
+    <!--==================== FOOTER ====================-->
     <footer class="footer">
-        <!-- ... footer content ... -->
-        <p>&copy; 2025 Phuong (@phuongfullstack). All rights reserved.</p>
-        <p>Last Updated: 2025-04-20 10:51:52 UTC</p> <!-- Updated Timestamp -->
+         <div class="footer__bg">
+             <div class="footer__container container grid">
+                 <div>
+                     <h1 class="footer__title">Phuong Tran</h1>
+                     <span class="footer__subtitle">Software Engineer</span>
+                 </div>
+
+                 <ul class="footer__links">
+                     <li><a href="#skills" class="footer__link">Expertise</a></li>
+                     <li><a href="#portfolio" class="footer__link">Projects</a></li>
+                     <li><a href="#contact" class="footer__link">Contact</a></li>
+                 </ul>
+
+                 <div class="footer__socials">
+                      <!-- *** UPDATE YOUR LINKEDIN URL HERE *** -->
+                     <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="footer__social">
+                         <i class="uil uil-linkedin-alt"></i>
+                     </a>
+                      <a href="https://github.com/phuongdayroi" target="_blank" rel="noopener noreferrer" class="footer__social">
+                         <i class="uil uil-github-alt"></i>
+                     </a>
+                     <!-- Add other relevant social links -->
+                 </div>
+             </div>
+
+             <p class="footer__copy">&#169; <span id="current-year"></span> Phuong Tran. All rights reserved.</p>
+         </div>
     </footer>
 
-    <!-- === SHARED COUNTER LOGIC & EVENT BUS === -->
-    <script>
-        let sharedCounterValue = 0; // The single source of truth
+    <!--==================== SCROLL TOP ====================-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
 
-        // Function to dispatch the update event
-        function dispatchCounterUpdate() {
-            console.log(`Dispatching counter-updated event with value: ${sharedCounterValue}`);
-            const event = new CustomEvent('counter-updated', {
-                detail: { value: sharedCounterValue } // Pass the new value in the event detail
-            });
-            document.dispatchEvent(event);
-        }
+    <!--==================== SWIPER JS ====================-->
+    <!-- Ensure you have a valid link to the Swiper JS library -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-        // Listen for increment requests
-        document.addEventListener('increment-counter', () => {
-            sharedCounterValue++;
-            console.log('Increment request received. New value:', sharedCounterValue);
-            dispatchCounterUpdate(); // Notify listeners
-        });
-
-        // Listen for decrement requests
-        document.addEventListener('decrement-counter', () => {
-            sharedCounterValue--;
-            console.log('Decrement request received. New value:', sharedCounterValue);
-            dispatchCounterUpdate(); // Notify listeners
-        });
-
-        // Initial dispatch in case components load after this script
-        // dispatchCounterUpdate(); // Optional: Can cause initial render issues if elements aren't ready
-    </script>
-    <!-- === END SHARED COUNTER LOGIC === -->
-
-
-    <!-- === Micro-frontend Mounting Scripts (MODIFIED) === -->
-
-    <!-- 1. React Mounting Script (Added Buttons & Event Dispatch) -->
-    <script type="text/babel">
-      function ReactCounterControls() {
-        const increment = () => {
-          console.log('React: Dispatching increment-counter');
-          document.dispatchEvent(new CustomEvent('increment-counter'));
-        };
-        const decrement = () => {
-          console.log('React: Dispatching decrement-counter');
-          document.dispatchEvent(new CustomEvent('decrement-counter'));
-        };
-
-        return (
-          <div className="mfe-controls" style={{ marginTop: '1em', textAlign: 'center' }}>
-            <button onClick={decrement} className="decrement-btn">-</button>
-            <button onClick={increment} className="increment-btn">+</button>
-          </div>
-        );
-      }
-
-      const reactRootElement = document.getElementById('react-mfe-root');
-      const reactRoot = ReactDOM.createRoot(reactRootElement);
-      reactRoot.render(
-        <React.Fragment>
-           <h4>React Component Area</h4>
-           <p>Controls to modify the shared counter:</p>
-           <ReactCounterControls />
-        </React.Fragment>
-      );
-    </script>
-
-    <!-- 2. Vue 3 Mounting Script (Added Buttons & Event Dispatch) -->
-    <script>
-      const vueApp = Vue.createApp({
-        data() {
-          return {
-            vueMessage: 'Controls to modify the shared counter:'
-          }
-        },
-        methods: {
-          increment() {
-            console.log('Vue: Dispatching increment-counter');
-            document.dispatchEvent(new CustomEvent('increment-counter'));
-          },
-          decrement() {
-            console.log('Vue: Dispatching decrement-counter');
-            document.dispatchEvent(new CustomEvent('decrement-counter'));
-          }
-        },
-        template: `
-          <div>
-            <p>{{ vueMessage }}</p>
-            <div class="mfe-controls" style="margin-top: 1em; text-align: center;">
-              <button @click="decrement" class="decrement-btn">-</button>
-              <button @click="increment" class="increment-btn">+</button>
-            </div>
-          </div>
-        `
-      });
-      const vueRootElement = document.getElementById('vue-mfe-root');
-      vueRootElement.innerHTML = '<h4>Vue Component Area</h4>'; // Keep title
-      vueApp.mount('#vue-mfe-root');
-    </script>
-
-    <!-- 3. Svelte Mounting Script (Simulation - Added Buttons & Event Dispatch) -->
-    <script>
-      const svelteRootElement = document.getElementById('svelte-mfe-root');
-      svelteRootElement.innerHTML = `
-          <h4>Svelte Component Area (Simulated)</h4>
-          <p>Controls to modify the shared counter:</p>
-          <div class="mfe-controls" style="margin-top: 1em; text-align: center;">
-              <button id="svelte-decrement-btn" class="decrement-btn">-</button>
-              <button id="svelte-increment-btn" class="increment-btn">+</button>
-          </div>
-      `;
-      document.getElementById('svelte-increment-btn').addEventListener('click', () => {
-          console.log('Svelte (Sim): Dispatching increment-counter');
-          document.dispatchEvent(new CustomEvent('increment-counter'));
-      });
-       document.getElementById('svelte-decrement-btn').addEventListener('click', () => {
-          console.log('Svelte (Sim): Dispatching decrement-counter');
-          document.dispatchEvent(new CustomEvent('decrement-counter'));
-      });
-    </script>
-
-    <!-- 4. Angular Mounting Script (Simulation - Added Buttons & Event Dispatch) -->
-    <script>
-      const angularRootElement = document.getElementById('angular-mfe-root');
-      angularRootElement.innerHTML = `
-          <h4>Angular Component Area (Simulated)</h4>
-          <p>Controls to modify the shared counter:</p>
-           <div class="mfe-controls" style="margin-top: 1em; text-align: center;">
-              <button id="angular-decrement-btn" class="decrement-btn">-</button>
-              <button id="angular-increment-btn" class="increment-btn">+</button>
-          </div>
-      `;
-       document.getElementById('angular-increment-btn').addEventListener('click', () => {
-          console.log('Angular (Sim): Dispatching increment-counter');
-          document.dispatchEvent(new CustomEvent('increment-counter'));
-      });
-       document.getElementById('angular-decrement-btn').addEventListener('click', () => {
-          console.log('Angular (Sim): Dispatching decrement-counter');
-          document.dispatchEvent(new CustomEvent('decrement-counter'));
-      });
-    </script>
-
-    <!-- 5. Ember Mounting Script (Simulation - Added Event Listener) -->
-    <script>
-      const emberCounterDisplayElement = document.getElementById('ember-counter-value');
-
-      // Listen for the update event dispatched by the central logic
-      document.addEventListener('counter-updated', (event) => {
-          const newValue = event.detail.value;
-          console.log(`Ember (Sim): Received counter-updated event with value: ${newValue}`);
-          if (emberCounterDisplayElement) {
-              emberCounterDisplayElement.textContent = newValue; // Update the display
-          }
-      });
-
-      // Initialize display (optional, could rely on first event)
-      if (emberCounterDisplayElement) {
-           emberCounterDisplayElement.textContent = sharedCounterValue;
-      }
-       console.log('Ember (Sim): Initialized and listening for counter updates.');
-
-    </script>
-    <!-- === End Micro-frontend Mounting Scripts === -->
-
+    <!--==================== MAIN JS ====================-->
+    <!-- Link to your main JavaScript file -->
+    <script src="main.js"></script>
 </body>
 </html>
