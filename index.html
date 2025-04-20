@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phuong (@phuongfullstack) | Elite .NET Full-Stack Architect</title>
+    <title>Phuong (@phuongfullstack) | Elite .NET Full-Stack Architect | Micro-Frontend Demo</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Font Awesome (Keep these) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Your Existing Styles (Keep these) -->
     <style>
         :root {
             --primary-color: #0078D4; /* Microsoft Blue */
@@ -30,260 +29,74 @@
             --border-radius: 8px;
             --transition-speed: 0.3s ease;
         }
+        /* ... (Keep all your existing CSS rules here) ... */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--body-font); line-height: 1.7; background-color: var(--background-light); color: var(--text-dark); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5em; }
+        .hero { background: linear-gradient(135deg, var(--primary-color) 0%, var(--background-dark) 100%); color: var(--text-light); padding: 6em 0 4em 0; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
+        .hero-content { position: relative; }
+        .hero h1 { font-family: var(--heading-font); font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 0.2em; font-weight: 700; }
+        .hero h1 .highlight { color: var(--secondary-color); font-weight: 700; }
+        .hero p { font-size: clamp(1rem, 2.5vw, 1.3rem); margin-bottom: 1.5em; font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .cta-button { display: inline-block; background-color: var(--secondary-color); color: var(--background-dark); padding: 0.8em 1.8em; border-radius: 50px; text-decoration: none; font-weight: 700; transition: var(--transition-speed); box-shadow: var(--box-shadow); }
+        .cta-button:hover { background-color: var(--text-light); transform: translateY(-3px); box-shadow: var(--box-shadow-hover); }
+        .section { padding: 4em 0; }
+        .section-title { text-align: center; font-family: var(--heading-font); font-size: 2.5rem; margin-bottom: 1.5em; color: var(--primary-color); position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--secondary-color); margin: 0.3em auto 0; border-radius: 2px; }
+        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2em; }
+        .expertise-card { background-color: var(--card-background); padding: 2em; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; transition: var(--transition-speed); border-top: 5px solid transparent; }
+        .expertise-card:hover { transform: translateY(-8px); box-shadow: var(--box-shadow-hover); border-top-color: var(--primary-color); }
+        .expertise-card .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 0.5em; transition: var(--transition-speed); }
+        .expertise-card:hover .icon { color: var(--secondary-color); transform: scale(1.1); }
+        .expertise-card h3 { font-family: var(--heading-font); font-size: 1.4rem; margin-bottom: 0.5em; color: var(--text-dark); }
+        .expertise-card p { font-size: 0.95rem; color: var(--text-muted); }
+        .approach-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5em; list-style: none; }
+        .approach-item { background: var(--card-background); padding: 1.5em; border-radius: var(--border-radius); box-shadow: var(--box-shadow); display: flex; align-items: flex-start; transition: var(--transition-speed); }
+        .approach-item:hover { transform: scale(1.03); box-shadow: var(--box-shadow-hover); }
+        .approach-item .icon { font-size: 1.8rem; color: var(--primary-color); margin-right: 1em; margin-top: 0.1em; min-width: 30px; text-align: center; }
+        .approach-item .content strong { font-weight: 700; color: var(--text-dark); display: block; margin-bottom: 0.2em; }
+        .approach-item .content span { font-size: 0.95rem; color: var(--text-muted); }
+        .footer { background-color: var(--background-dark); color: var(--text-light); text-align: center; padding: 2em 0; margin-top: 4em; font-size: 0.9rem; }
+        .footer p { margin-bottom: 0.5em; opacity: 0.8; }
+        .footer a { color: var(--secondary-color); margin: 0 0.5em; font-size: 1.5rem; transition: var(--transition-speed); }
+        .footer a:hover { color: var(--text-light); transform: translateY(-2px); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .section-title, .expertise-card, .approach-item { opacity: 1; }
+        @media (max-width: 768px) { .section-title { font-size: 2rem; } .expertise-grid, .approach-list { grid-template-columns: 1fr; } .hero { padding: 4em 0 3em 0; } }
 
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--body-font);
-            line-height: 1.7;
-            background-color: var(--background-light);
-            color: var(--text-dark);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5em;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--background-dark) 100%);
-            color: var(--text-light);
-            padding: 6em 0 4em 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before { /* Subtle background pattern */
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            position: relative; /* Above the pattern */
-        }
-
-        .hero h1 {
-            font-family: var(--heading-font);
-            font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive font size */
-            margin-bottom: 0.2em;
-            font-weight: 700;
-        }
-         .hero h1 .highlight {
-            color: var(--secondary-color);
-            font-weight: 700; /* Keep highlight bold */
-         }
-
-        .hero p {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            margin-bottom: 1.5em;
-            font-weight: 300;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--background-dark);
-            padding: 0.8em 1.8em;
-            border-radius: 50px; /* Pill shape */
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition-speed);
-            box-shadow: var(--box-shadow);
-        }
-
-        .cta-button:hover {
-            background-color: var(--text-light);
-            transform: translateY(-3px);
-            box-shadow: var(--box-shadow-hover);
-        }
-
-        /* Sections General Styling */
-        .section {
-            padding: 4em 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: var(--heading-font);
-            font-size: 2.5rem;
-            margin-bottom: 1.5em;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title::after { /* Underline effect */
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 0.3em auto 0;
-            border-radius: 2px;
-        }
-
-        /* Expertise Section */
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2em;
-        }
-
-        .expertise-card {
-            background-color: var(--card-background);
-            padding: 2em;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            transition: var(--transition-speed);
-            border-top: 5px solid transparent; /* Placeholder for hover effect */
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--box-shadow-hover);
-            border-top-color: var(--primary-color);
-        }
-
-        .expertise-card .icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5em;
-            transition: var(--transition-speed);
-        }
-        .expertise-card:hover .icon {
-            color: var(--secondary-color);
-            transform: scale(1.1);
-        }
-
-        .expertise-card h3 {
-            font-family: var(--heading-font);
-            font-size: 1.4rem;
-            margin-bottom: 0.5em;
-            color: var(--text-dark);
-        }
-
-        .expertise-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        /* Approach Section */
-        .approach-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5em;
-            list-style: none;
-        }
-
-        .approach-item {
-            background: var(--card-background);
+        /* Simple styles for Micro-frontend placeholders */
+        .mfe-placeholder {
+            border: 2px dashed var(--primary-color);
             padding: 1.5em;
+            margin-top: 2em;
             border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            display: flex;
-            align-items: flex-start; /* Align icon nicely */
-            transition: var(--transition-speed);
+            background-color: #f0f8ff; /* Light AliceBlue background */
         }
-         .approach-item:hover {
-             transform: scale(1.03);
-             box-shadow: var(--box-shadow-hover);
-         }
-
-        .approach-item .icon {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-right: 1em;
-            margin-top: 0.1em; /* Fine-tune vertical alignment */
-            min-width: 30px; /* Consistent icon spacing */
-            text-align: center;
+        .mfe-placeholder h4 {
+             font-family: var(--heading-font);
+             color: var(--primary-color);
+             margin-bottom: 0.5em;
+             border-bottom: 1px solid var(--secondary-color);
+             padding-bottom: 0.3em;
         }
-
-        .approach-item .content strong {
-            font-weight: 700;
-            color: var(--text-dark);
-            display: block; /* Ensure strong takes full width */
-            margin-bottom: 0.2em;
-        }
-        .approach-item .content span { /* The descriptive text */
-             font-size: 0.95rem;
-             color: var(--text-muted);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--background-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 2em 0;
-            margin-top: 4em;
-            font-size: 0.9rem;
-        }
-        .footer p {
-            margin-bottom: 0.5em;
-            opacity: 0.8;
-        }
-        .footer a { /* Optional social links */
-            color: var(--secondary-color);
-            margin: 0 0.5em;
-            font-size: 1.5rem;
-            transition: var(--transition-speed);
-        }
-        .footer a:hover {
-            color: var(--text-light);
-            transform: translateY(-2px);
-        }
-
-
-        /* Animations (Subtle Fade-in on Scroll - requires JS, but let's add basic CSS animation) */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Apply animation - Note: This will trigger on load, not scroll without JS */
-        .section-title, .expertise-card, .approach-item {
-             /* animation: fadeInUp 0.6s ease-out forwards; */ /* Commented out - best with JS Intersection Observer */
-             opacity: 1; /* Ensure visible if JS isn't used for scroll */
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            .expertise-grid, .approach-list {
-                grid-template-columns: 1fr; /* Stack on smaller screens */
-            }
-            .hero {
-                padding: 4em 0 3em 0;
-            }
-        }
-
     </style>
+
+    <!-- === Micro-frontend Framework Runtimes (CDN) === -->
+    <!-- React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel Standalone (to allow JSX in <script> tags) - ONLY for demos, not production! -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Svelte (Note: Svelte is a compiler, this is just a runtime helper if needed, or we'll use vanilla JS) -->
+    <!-- No standard Svelte runtime CDN like React/Vue. We'll simulate component mounting. -->
+    <!-- === End Micro-frontend Runtimes === -->
+
 </head>
 <body>
 
@@ -296,9 +109,11 @@
     </header>
 
     <main>
+        <!-- Your Existing Sections (Expertise, Approach) -->
         <section id="expertise" class="section container">
-            <h2 class="section-title">My Expertise</h2>
-            <div class="expertise-grid">
+             <h2 class="section-title">My Expertise</h2>
+             <!-- ... expertise-grid content ... -->
+             <div class="expertise-grid">
                 <div class="expertise-card">
                     <div class="icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>Frontend Development</h3>
@@ -332,70 +147,158 @@
             </div>
         </section>
 
-        <section id="approach" class="section" style="background-color: #eef;"> <!-- Subtle background change -->
+        <section id="approach" class="section" style="background-color: #eef;">
             <div class="container">
                 <h2 class="section-title">My Collaborative Approach</h2>
-                <ul class="approach-list">
-                    <li class="approach-item">
-                        <i class="fas fa-comments icon"></i>
-                        <div class="content"><strong>Explain concepts clearly:</strong> <span>Breaking down complex topics into understandable insights.</span></div>
-                    </li>
-                    <li class="approach-item">
-                        <i class="fas fa-balance-scale-right icon"></i>
-                        <div class="content"><strong>Suggest options (pros/cons):</strong> <span>Empowering you with informed choices through clear analysis.</span></div>
-                    </li>
-                    <li class="approach-item">
-                        <i class="fas fa-code icon"></i>
-                        <div class="content"><strong>Provide quality code:</strong> <span>Delivering complete, readable, and well-commented solutions (front & back).</span></div>
-                    </li>
-                    <li class="approach-item">
-                        <i class="fas fa-vials icon"></i>
-                         <div class="content"><strong>Suggest testing strategies:</strong> <span>Advising on effective QA with tools like xUnit, NUnit, Moq.</span></div>
-                    </li>
-                    <li class="approach-item">
-                        <i class="fas fa-rocket icon"></i>
-                        <div class="content"><strong>Advise on performance:</strong> <span>Guiding optimization for speed (query opt., caching, lazy loading).</span></div>
-                    </li>
-                    <li class="approach-item">
-                        <i class="fas fa-user-shield icon"></i>
-                        <div class="content"><strong>Highlight security:</strong> <span>Proactively addressing vulnerabilities (XSS, CSRF, SQLi).</span></div>
-                    </li>
-                     <li class="approach-item">
-                        <i class="fas fa-question-circle icon"></i>
-                        <div class="content"><strong>Ask clarifying questions:</strong> <span>Ensuring full requirement alignment before implementation.</span></div>
-                    </li>
-                     <li class="approach-item">
-                        <i class="fas fa-handshake icon"></i>
-                        <div class="content"><strong>Professional & Friendly Tone:</strong> <span>Maintaining positive, collaborative communication, ready to elaborate.</span></div>
-                    </li>
+                <!-- ... approach-list content ... -->
+                 <ul class="approach-list">
+                    <li class="approach-item"> <i class="fas fa-comments icon"></i> <div class="content"><strong>Explain concepts clearly:</strong> <span>Breaking down complex topics into understandable insights.</span></div> </li>
+                    <li class="approach-item"> <i class="fas fa-balance-scale-right icon"></i> <div class="content"><strong>Suggest options (pros/cons):</strong> <span>Empowering you with informed choices through clear analysis.</span></div> </li>
+                    <li class="approach-item"> <i class="fas fa-code icon"></i> <div class="content"><strong>Provide quality code:</strong> <span>Delivering complete, readable, and well-commented solutions (front & back).</span></div> </li>
+                    <li class="approach-item"> <i class="fas fa-vials icon"></i> <div class="content"><strong>Suggest testing strategies:</strong> <span>Advising on effective QA with tools like xUnit, NUnit, Moq.</span></div> </li>
+                    <li class="approach-item"> <i class="fas fa-rocket icon"></i> <div class="content"><strong>Advise on performance:</strong> <span>Guiding optimization for speed (query opt., caching, lazy loading).</span></div> </li>
+                    <li class="approach-item"> <i class="fas fa-user-shield icon"></i> <div class="content"><strong>Highlight security:</strong> <span>Proactively addressing vulnerabilities (XSS, CSRF, SQLi).</span></div> </li>
+                     <li class="approach-item"> <i class="fas fa-question-circle icon"></i> <div class="content"><strong>Ask clarifying questions:</strong> <span>Ensuring full requirement alignment before implementation.</span></div> </li>
+                     <li class="approach-item"> <i class="fas fa-handshake icon"></i> <div class="content"><strong>Professional & Friendly Tone:</strong> <span>Maintaining positive, collaborative communication, ready to elaborate.</span></div> </li>
                 </ul>
             </div>
         </section>
 
+        <!-- === Micro-frontend Mount Points === -->
+        <section id="micro-frontends-demo" class="section container">
+            <h2 class="section-title">Micro-Frontend Demo Components</h2>
+            <p style="text-align: center; max-width: 700px; margin: -1em auto 2em auto; color: var(--text-muted);">
+                Below are simple components rendered by different JavaScript frameworks, all running on the same page.
+                This demonstrates a basic micro-frontend concept using CDN includes.
+            </p>
+
+            <!-- 1. React Mount Point -->
+            <div id="react-mfe-root" class="mfe-placeholder">
+                <h4>React Component Area</h4>
+                <!-- React will render its content here -->
+                <p>Loading React component...</p>
+            </div>
+
+            <!-- 2. Vue Mount Point -->
+            <div id="vue-mfe-root" class="mfe-placeholder">
+                <h4>Vue Component Area</h4>
+                <!-- Vue will render its content here -->
+                <p>Loading Vue component...</p>
+                <!-- Vue template syntax can be used here if defined inline -->
+                 {{ vueMessage }}
+            </div>
+
+            <!-- 3. Svelte Mount Point -->
+            <div id="svelte-mfe-root" class="mfe-placeholder">
+                <h4>Svelte Component Area (Simulated)</h4>
+                <!-- Svelte (or vanilla JS simulating it) will render content here -->
+                 <p>Loading Svelte component...</p>
+            </div>
+        </section>
+        <!-- === End Micro-frontend Mount Points === -->
+
+
         <!-- Optional Contact Section -->
          <section id="contact" class="section container" style="text-align: center;">
+             <!-- ... contact content ... -->
              <h2 class="section-title">Let's Build Something Exceptional</h2>
-             <p style="max-width: 600px; margin: 0 auto 2em auto; color: var(--text-muted);">
-                 Whether you need help with a specific challenge, architectural guidance, or end-to-end development, I'm ready to partner with you.
-             </p>
-             <a href="mailto:your-email@example.com?subject=Collaboration Inquiry from GitHub Profile" class="cta-button" style="background-color: var(--primary-color); color: var(--text-light);">
-                 <i class="fas fa-envelope"></i> Get In Touch
-             </a>
-             <!-- Add LinkedIn/Other links below if desired -->
+             <p style="max-width: 600px; margin: 0 auto 2em auto; color: var(--text-muted);"> Whether you need help with a specific challenge, architectural guidance, or end-to-end development, I'm ready to partner with you. </p>
+             <a href="mailto:your-email@example.com?subject=Collaboration Inquiry from GitHub Profile" class="cta-button" style="background-color: var(--primary-color); color: var(--text-light);"> <i class="fas fa-envelope"></i> Get In Touch </a>
          </section>
 
     </main>
 
     <footer class="footer">
-        <!-- Optional Social Links -->
-         <!-- <div style="margin-bottom: 1em;">
-             <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-             <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-             <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-         </div> -->
-        <p>&copy; 2025 Phuong (@phuongfullstack). All rights reserved.</p>
-        <p>Last Updated: 2025-04-20 10:23:34 UTC</p>
+         <!-- ... footer content ... -->
+         <p>&copy; 2025 Phuong (@phuongfullstack). All rights reserved.</p>
+         <p>Last Updated: 2025-04-20 10:44:50 UTC</p> <!-- Updated Timestamp -->
     </footer>
+
+    <!-- === Micro-frontend Mounting Scripts === -->
+
+    <!-- 1. React Mounting Script -->
+    <!-- type="text/babel" is crucial for Babel Standalone to transpile JSX -->
+    <script type="text/babel">
+      function ReactGreeting() {
+        const [count, setCount] = React.useState(0);
+        return (
+          <div>
+            <p>Hello from React! 👋</p>
+            <p>This component has its own state.</p>
+            <button onClick={() => setCount(count + 1)} style={{ padding: '8px 12px', cursor: 'pointer', backgroundColor: 'var(--secondary-color)', border: 'none', borderRadius: '4px', fontWeight: 'bold' }}>
+              Clicked {count} times
+            </button>
+          </div>
+        );
+      }
+
+      const reactRootElement = document.getElementById('react-mfe-root');
+      // Use createRoot for React 18+
+      const reactRoot = ReactDOM.createRoot(reactRootElement);
+      reactRoot.render(
+        <React.Fragment>
+           <h4>React Component Area</h4> {/* Re-add title as React replaces content */}
+           <ReactGreeting />
+        </React.Fragment>
+      );
+    </script>
+
+    <!-- 2. Vue 3 Mounting Script -->
+    <script>
+      const vueApp = Vue.createApp({
+        data() {
+          return {
+            vueMessage: 'Hello from Vue 3! 🎉',
+            inputValue: ''
+          }
+        },
+        // Simple template for the Vue component
+        template: `
+          <div>
+            <p>{{ vueMessage }}</p>
+            <p>It also has reactive data.</p>
+            <input type="text" v-model="inputValue" placeholder="Type here..." style="padding: 8px; margin-right: 5px; border: 1px solid #ccc; border-radius: 4px;">
+            <span>Input: {{ inputValue }}</span>
+          </div>
+        `
+      });
+
+      // Mount the Vue app to its designated element
+      const vueRootElement = document.getElementById('vue-mfe-root');
+      // Clear placeholder text before mounting
+      vueRootElement.innerHTML = '<h4>Vue Component Area</h4>'; // Keep title
+      vueApp.mount('#vue-mfe-root');
+
+    </script>
+
+    <!-- 3. Svelte Mounting Script (Simulation) -->
+    <script>
+      // Svelte components are *compiled* to JavaScript.
+      // In a real setup, you'd import the compiled JS class and instantiate it.
+      // e.g., import SvelteComponent from './SvelteComponent.js';
+      //       new SvelteComponent({ target: document.getElementById('svelte-mfe-root'), props: { name: 'Svelte' } });
+      // Here, we'll just use vanilla JS to simulate adding content.
+
+      const svelteRootElement = document.getElementById('svelte-mfe-root');
+      // Clear placeholder and add simulated content
+      svelteRootElement.innerHTML = `
+          <h4>Svelte Component Area (Simulated)</h4>
+          <p>Hello from Svelte (simulated)! ✨</p>
+          <p>Normally, this would be rendered by compiled Svelte code.</p>
+          <button id="svelte-button" style="padding: 8px 12px; cursor: pointer; background-color: #ff3e00; color: white; border: none; border-radius: 4px; font-weight: bold;">Simulated Action</button>
+      `;
+
+      // Add basic interactivity to simulate a Svelte component's script block
+      const svelteButton = document.getElementById('svelte-button');
+      let svelteClicks = 0;
+      svelteButton.addEventListener('click', () => {
+          svelteClicks++;
+          svelteButton.textContent = \`Simulated Action (${svelteClicks})\`;
+          console.log('Simulated Svelte action executed.');
+      });
+
+    </script>
+    <!-- === End Micro-frontend Mounting Scripts === -->
 
 </body>
 </html>
