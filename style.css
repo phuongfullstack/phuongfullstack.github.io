@@ -302,6 +302,12 @@ body.is-locked { overflow: hidden; }
   .hero__grid { grid-template-columns: 1.05fr .95fr; }
 }
 
+/* A grid item will not shrink below its content's min-content width unless
+   told to. The code card's longest line is ~447px, which was inflating the
+   whole track — and with it the title and lead — past a phone viewport. */
+.hero__content,
+.hero__card { min-width: 0; }
+
 .hero__status {
   display: inline-flex;
   align-items: center;
@@ -400,8 +406,9 @@ body.is-locked { overflow: hidden; }
   margin: 0;
   padding: 1.15rem 1.25rem 1.4rem;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   font-family: var(--font-mono);
-  font-size: clamp(.72rem, .66rem + .32vw, .84rem);
+  font-size: clamp(.75rem, .7rem + .3vw, .84rem);
   line-height: 1.75;
   color: #c6d3ea;
   tab-size: 2;
@@ -412,6 +419,19 @@ body.is-locked { overflow: hidden; }
 .c-s { color: #86efac; }
 .c-n { color: #f0abfc; }
 .c-c { color: #64748b; font-style: italic; }
+
+/* Wrapping unconditionally rather than at a breakpoint: at full width every
+   line already fits, so nothing wraps, and there is no window where the card
+   is narrow but the rule has not kicked in yet (960-1100px was one). */
+.codecard__body {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: visible;
+}
+
+@media (max-width: 640px) {
+  .codecard__body { padding: .95rem .9rem 1.1rem; }
+}
 
 /*=============== STATS ===============*/
 .stats {
@@ -519,7 +539,7 @@ body.is-locked { overflow: hidden; }
   background: var(--accent-soft);
 }
 
-.tags--sm .tag { font-size: .72rem; padding: .2rem .55rem; }
+.tags--sm .tag { font-size: .75rem; padding: .2rem .55rem; }
 
 /*=============== ABOUT ===============*/
 .about__grid {
@@ -586,7 +606,7 @@ body.is-locked { overflow: hidden; }
 .stack__grid {
   display: grid;
   gap: 1.1rem;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
 }
 
 /*=============== TIMELINE ===============*/
@@ -633,7 +653,7 @@ body.is-locked { overflow: hidden; }
 .domains__grid {
   display: grid;
   gap: 1.1rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
 }
 
 .domain { display: flex; flex-direction: column; }
@@ -682,7 +702,7 @@ body.is-locked { overflow: hidden; }
 .contact__grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(252px, 100%), 1fr));
   margin-bottom: 2.5rem;
 }
 
@@ -691,7 +711,7 @@ body.is-locked { overflow: hidden; }
 .contact__k {
   display: block;
   font-family: var(--font-mono);
-  font-size: .72rem;
+  font-size: .75rem;
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--text-faint);
@@ -974,7 +994,7 @@ body.is-locked { overflow: hidden; }
 /*=============== STAT TILES ===============*/
 .tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -1081,7 +1101,7 @@ body.is-locked { overflow: hidden; }
 
 @media (max-width: 560px) {
   .bars__row { grid-template-columns: 112px 1fr 30px; gap: .6rem; }
-  .bars__key { font-size: .72rem; }
+  .bars__key { font-size: .75rem; }
 }
 
 /*=============== ARCHITECTURE TABS ===============*/
@@ -1168,7 +1188,7 @@ body.is-locked { overflow: hidden; }
 .d-node .d-sub {
   fill: var(--text-faint);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
 }
 
@@ -1229,7 +1249,7 @@ body.is-locked { overflow: hidden; }
 .d-label {
   fill: var(--text-faint);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   text-anchor: middle;
 }
 
@@ -1260,7 +1280,7 @@ body.is-locked { overflow: hidden; }
     width: 100%;
     margin: .9rem 0 0;
     font-family: var(--font-mono);
-    font-size: .7rem;
+    font-size: .75rem;
     color: var(--text-faint);
   }
 
