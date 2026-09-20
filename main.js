@@ -215,9 +215,9 @@
   }
 
   /*=============== CHART DRAW-IN ===============*/
-  // The bars and bands start at scaleX(0); .is-drawn releases them. Without
+  // The bars start at scaleX(0); .is-drawn releases them. Without
   // IntersectionObserver they would stay collapsed, so draw them immediately.
-  var charts = document.querySelectorAll('.gantt, .bars');
+  var charts = document.querySelectorAll('.bars');
 
   if ('IntersectionObserver' in window && !reduced) {
     var chartObserver = new IntersectionObserver(function (entries) {

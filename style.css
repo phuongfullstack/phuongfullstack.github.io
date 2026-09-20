@@ -1020,98 +1020,6 @@ body.is-locked { overflow: hidden; }
   color: var(--text-faint);
 }
 
-/*=============== GANTT (domain timeline) ===============*/
-.gantt { position: relative; }
-
-.gantt__axis {
-  position: relative;
-  height: 20px;
-  margin-left: var(--gantt-gutter, 150px);
-  margin-right: 52px;
-  margin-bottom: .5rem;
-}
-
-.gantt__axis span {
-  position: absolute;
-  left: var(--x);
-  transform: translateX(-50%);
-  font-family: var(--font-mono);
-  font-size: .68rem;
-  color: var(--text-faint);
-}
-
-.gantt__rows {
-  display: grid;
-  gap: .45rem;
-  position: relative;
-}
-
-/* Year gridlines — one element per year, sharing the labels' own positions. */
-.gantt__grid {
-  position: absolute;
-  inset: 0 52px 0 var(--gantt-gutter, 150px);
-  pointer-events: none;
-}
-
-.gantt__grid i {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: var(--x);
-  width: 1px;
-  background: var(--grid);
-}
-
-.gantt__row {
-  display: grid;
-  grid-template-columns: var(--gantt-gutter, 150px) 1fr 52px;
-  align-items: center;
-  gap: 0;
-}
-
-.gantt__label {
-  font-size: var(--step--1);
-  color: var(--text-dim);
-  padding-right: .9rem;
-  text-align: right;
-}
-
-.gantt__track {
-  position: relative;
-  height: 22px;
-}
-
-.gantt__bar {
-  position: absolute;
-  top: 3px;
-  bottom: 3px;
-  left: var(--l);
-  width: var(--w);
-  min-width: 22px;
-  border-radius: 4px;
-  background: var(--series);
-  transform-origin: 0 50%;
-  transition: transform .8s cubic-bezier(.2, .8, .3, 1);
-}
-.js .gantt__bar { transform: scaleX(0); }
-
-.js .is-in .gantt__bar,
-.js .gantt.is-drawn .gantt__bar { transform: none; }
-
-.gantt__row:hover .gantt__bar { filter: brightness(1.18); }
-
-.gantt__len {
-  font-family: var(--font-mono);
-  font-size: .68rem;
-  color: var(--text-faint);
-  text-align: right;
-}
-
-@media (max-width: 620px) {
-  .gantt { --gantt-gutter: 104px; }
-  .gantt__label { font-size: .72rem; }
-}
-
 /*=============== BARS (technology depth) ===============*/
 .bars { display: grid; gap: .55rem; }
 
@@ -1338,7 +1246,6 @@ body.is-locked { overflow: hidden; }
 
   .codecard { transform: none; }
 
-  .js .gantt__bar,
   .js .bars__track i { transform: none; transition: none; }
 
   .js .timeline__when::before { opacity: 1; transform: none; transition: none; }
