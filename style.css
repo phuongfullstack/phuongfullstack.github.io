@@ -652,6 +652,19 @@ body.is-locked { overflow: hidden; }
 
 .domain__title { font-size: var(--step-1); margin-bottom: .3rem; }
 
+/* Current engagement: marked so it reads as ongoing, not just first. */
+.domain--current { border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+.domain--current .domain__when::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: .5rem;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, .18);
+}
+
 .domain__when {
   display: block;
   font-family: var(--font-mono);

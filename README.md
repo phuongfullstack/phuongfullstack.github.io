@@ -1,5 +1,5 @@
 <h1 align="center">Phuong Tran</h1>
-<p align="center"><b>Full-stack Software Engineer</b> · .NET &amp; Cloud · Da Nang, Vietnam 🇻🇳</p>
+<p align="center"><b>Senior Full-stack Developer</b> · .NET &amp; Cloud · Da Nang, Vietnam 🇻🇳</p>
 
 <p align="center">
   <a href="https://phuongfullstack.github.io"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-phuongfullstack.github.io-6366f1?style=for-the-badge&logo=githubpages&logoColor=white"></a>
@@ -15,6 +15,7 @@ public sealed record Engineer
     string   Name     = "Phuong Tran";
     string   Based    = "Da Nang, Vietnam";
     int      Years    = 8;
+    string   Role     = "Architect Engineer";
     string[] Core     = [".NET", "C#", "TypeScript"];
     string[] Frontend = ["Angular", "Vue 3", "Svelte"];
     string[] Cloud    = ["Azure", "AWS", "Docker"];
@@ -23,10 +24,15 @@ public sealed record Engineer
 }
 ```
 
-Eight years designing, building and shipping web and desktop systems. Backend depth in the
-**.NET ecosystem**, scalable front ends in **Angular, Vue and Svelte**, and cloud-native delivery
-on **Azure and AWS**. I spend most of my time on APIs, domain logic, data models, integrations
-and the pipelines that put them in production — plus the code review and mentoring around them.
+Eight years building production web and desktop systems — frequently owning them end to end,
+from cloud infrastructure and architecture through backend, frontend and DevOps delivery.
+Deep backend expertise in **.NET** with clean / layered / hexagonal architecture, comfortable
+across **Angular, Vue and React**, and cloud-native on **Azure and AWS** with IaC, CI/CD and
+structured observability.
+
+**Currently** architect engineer on an AI-driven enterprise procurement platform (team of 10):
+Azure infrastructure in Terraform, .NET services, Angular front end, OAuth2/OIDC via Auth0,
+k6 load tests and Playwright E2E across four environments.
 
 ---
 
@@ -36,21 +42,21 @@ Counted from the dated project history in my CV, not rounded up.
 
 | | | | |
 |---|---|---|---|
-| **97** months of .NET in production | **15** projects delivered | **12** people in the largest team | **9** domains |
+| **113** months of .NET in production | **16** projects delivered | **12** people in the largest team | **9** domains |
 
-**Months of project time per technology** &mdash; parallel projects mean these sum past the 83 months of dated project history:
+**Months of project time per technology** &mdash; parallel projects mean these sum past the 98 months of dated project history:
 
 ```
-.NET / C#          ████████████████████████████████████████  97
-TypeScript         ███████████████████████████               65
-Angular            ████████████████████                      49
-Entity Framework   ████████████████                          39
-SQL Server         ███████████████                           36
-Azure              ███████████████                           36
-JavaScript         █████████                                 23
-Java               ███████                                   18
-AWS                ███████                                   18
-Svelte             ███████                                   16
+.NET / C#          ████████████████████████████████████████  113
+TypeScript         ████████████████████████                   68
+Angular            ███████████████████████                    65
+Entity Framework   ███████████████████                        55
+Azure              ██████████████████                         52
+SQL Server         █████████████████                          49
+GitHub Actions     ████████████                               34
+ASP.NET Web API    ██████████                                 29
+Serilog            ██████████                                 29
+Terraform          █████████                                  26
 ```
 
 ---
@@ -129,6 +135,7 @@ Svelte             ███████                                   16
 
 | Years | Setting | Focus |
 | --- | --- | --- |
+| **2025 – present** | Architect engineer | Enterprise procurement platform: Terraform/Azure infrastructure, .NET + Angular, CI/CD, observability |
 | **2024 – 2025** | Product delivery partner | Consumer, PropTech, gaming and fintech products; led a small team |
 | **2022 – 2024** | Enterprise software services | Healthcare, public-sector and data-platform work; code review and mentoring |
 | **2021 – 2022** | Offshore product engineering | Legacy system modelling &amp; visualisation, desktop applications |
@@ -144,6 +151,7 @@ Client and product work under NDA, so this is the shape of it rather than a proj
 
 | Domain | When | Time | Built with |
 | --- | --- | --- | --- |
+| **Enterprise procurement SaaS** | 2025 – present | 16 mo | `.NET` `Angular` `Next.js` `Azure` `Terraform` `Auth0` |
 | Fintech &amp; fund management | 2024 | 10 mo | `.NET` `Angular` `SQL Server` `Terraform` |
 | Healthcare | 2023 – 2024 | 13 mo | `.NET` `Angular` `Azure Serverless` |
 | AI &amp; PropTech | 2025 | 5 mo | `.NET Core` `Vue 3` `Postgres` `Redis` |
