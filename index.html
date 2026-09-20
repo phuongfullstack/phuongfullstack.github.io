@@ -364,6 +364,19 @@
           <ul class="tags"><li class="tag tag--core">Microservices</li><li class="tag">Serverless</li><li class="tag">Containerisation</li><li class="tag">Clean Architecture</li><li class="tag">SOLID</li><li class="tag tag--core">Agile / Scrum</li><li class="tag">Jira</li><li class="tag">Kanban</li><li class="tag">Trello</li><li class="tag">Mentoring</li></ul>
         </article>
 
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></div>
+          <h3>Side projects</h3>
+          <p class="stack__meta">public repos &middot; not client work</p>
+          <p class="stack__blurb">
+            What I reach for on my own time, and where the newer things get learned: Next.js and
+            Tailwind front ends, an Electron desktop build, a .NET 10 API with SignalR hubs behind
+            Docker, and a market-analysis tool on the Gemini API. Deployed to Vercel, Render and
+            Firebase rather than a corporate pipeline.
+          </p>
+          <ul class="tags"><li class="tag">Next.js</li><li class="tag">Tailwind CSS</li><li class="tag">Radix UI</li><li class="tag">Electron</li><li class="tag">Vite</li><li class="tag">Bun</li><li class="tag">.NET 10</li><li class="tag">Supabase</li><li class="tag">Gemini API</li><li class="tag">TanStack Query</li><li class="tag">Playwright</li><li class="tag">Vitest</li><li class="tag">Vercel</li><li class="tag">Render</li><li class="tag">Caddy</li></ul>
+        </article>
+
       </div>
     </div>
   </section>
@@ -372,130 +385,59 @@
   <section class="section section--alt" id="how">
     <div class="container">
       <p class="section__eyebrow">04 &mdash; How I build</p>
-      <h2 class="section__title">The shape of the systems</h2>
+      <h2 class="section__title">Six shapes I've shipped</h2>
       <p class="section__lead">
-        Domains differ; the skeleton rarely does. This is the arrangement most of my work has landed on.
+        Every domain pushed the architecture somewhere different. These are the six arrangements the
+        work actually landed on &mdash; and the one line of reasoning behind each.
       </p>
 
-      <figure class="diagram">
-        <svg class="diagram__svg" viewBox="0 0 1040 480" role="img"
-             aria-label="Clients — a web single-page app, a desktop application and a kiosk device — reach an API gateway over HTTPS and WebSocket. The gateway routes authenticated traffic to .NET API services, which read and write a data layer of SQL Server or Postgres, MongoDB or Cosmos DB, and a Redis cache. The API services publish to a message queue; background workers consume from it and batch-sync to the same data layer. A pipeline of GitHub Actions, Docker images and Terraform deploys the services to Azure or AWS.">
-          <defs>
-            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
-            </marker>
-          </defs>
+      <div class="arch">
+        <div class="arch__tabs" role="tablist" aria-label="Architecture models">
+        <button class="arch__tab is-active" id="tab-gateway" role="tab" aria-selected="true" aria-controls="panel-gateway" data-arch="gateway">Gateway</button>
+        <button class="arch__tab" id="tab-serverless" role="tab" aria-selected="false" aria-controls="panel-serverless" data-arch="serverless">Serverless</button>
+        <button class="arch__tab" id="tab-realtime" role="tab" aria-selected="false" aria-controls="panel-realtime" data-arch="realtime">Realtime</button>
+        <button class="arch__tab" id="tab-widget" role="tab" aria-selected="false" aria-controls="panel-widget" data-arch="widget">AI widget</button>
+        <button class="arch__tab" id="tab-etl" role="tab" aria-selected="false" aria-controls="panel-etl" data-arch="etl">ETL</button>
+        <button class="arch__tab" id="tab-consumer" role="tab" aria-selected="false" aria-controls="panel-consumer" data-arch="consumer">Consumer</button>
+        </div>
 
-          <!-- clients -->
-          <g class="d-node">
-            <rect x="24" y="52" width="168" height="56" rx="11"/>
-            <text x="108" y="75">Web SPA</text>
-            <text x="108" y="93" class="d-sub">Angular · Vue · Svelte</text>
-          </g>
-          <g class="d-node">
-            <rect x="24" y="132" width="168" height="56" rx="11"/>
-            <text x="108" y="155">Desktop app</text>
-            <text x="108" y="173" class="d-sub">WPF · WinForms</text>
-          </g>
-          <g class="d-node">
-            <rect x="24" y="212" width="168" height="56" rx="11"/>
-            <text x="108" y="235">Kiosk / device</text>
-            <text x="108" y="253" class="d-sub">VanillaJS</text>
-          </g>
+        <figure class="arch__panel" id="panel-gateway" role="tabpanel" aria-labelledby="tab-gateway">
+          <h3 class="arch__title">Microservices behind a gateway</h3>
+          <div class="diagram"><svg class="diagram__svg" viewBox="0 0 860 340" role="img" aria-label="An Angular portal calls a Kong API gateway which authenticates and routes to three .NET services — portfolio, transactions and reporting — that read and write SQL Server and a Redis cache. Terraform provisions it on Azure."><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="currentColor"/></marker></defs><g class="d-node"><rect x="20" y="140" width="150" height="54" rx="10"/><text x="95" y="164">Angular SPA</text><text x="95" y="182" class="d-sub">portfolio portal</text></g><g class="d-node d-node--key"><rect x="225" y="140" width="140" height="54" rx="10"/><text x="295" y="164">API gateway</text><text x="295" y="182" class="d-sub">Kong · auth</text></g><g class="d-node d-node--sm"><rect x="420" y="45" width="175" height="48" rx="10"/><text x="507.5" y="74">Portfolio API</text></g><g class="d-node d-node--sm"><rect x="420" y="143" width="175" height="48" rx="10"/><text x="507.5" y="172">Transactions API</text></g><g class="d-node d-node--sm"><rect x="420" y="241" width="175" height="48" rx="10"/><text x="507.5" y="270">Reporting API</text></g><g class="d-node d-node--sm"><rect x="660" y="110" width="170" height="48" rx="10"/><text x="745" y="139">SQL Server</text></g><g class="d-node d-node--sm"><rect x="660" y="196" width="170" height="48" rx="10"/><text x="745" y="225">Redis cache</text></g><path class="d-edge" d="M170 167 L 225 167" marker-end="url(#ah)"/><path class="d-flow" d="M170 167 L 225 167"/><path class="d-edge" d="M365 167 C 395 167, 395 69, 420 69" marker-end="url(#ah)"/><path class="d-flow" d="M365 167 C 395 167, 395 69, 420 69"/><path class="d-edge" d="M365 167 L 420 167" marker-end="url(#ah)"/><path class="d-flow" d="M365 167 L 420 167"/><path class="d-edge" d="M365 167 C 395 167, 395 265, 420 265" marker-end="url(#ah)"/><path class="d-flow" d="M365 167 C 395 167, 395 265, 420 265"/><path class="d-edge" d="M595 69 C 630 69, 630 134, 660 134" marker-end="url(#ah)"/><path class="d-flow" d="M595 69 C 630 69, 630 134, 660 134"/><path class="d-edge" d="M595 167 L 660 167" marker-end="url(#ah)"/><path class="d-edge" d="M595 265 C 630 265, 630 220, 660 220" marker-end="url(#ah)"/><path class="d-flow" d="M595 265 C 630 265, 630 220, 660 220"/><text class="d-label" x="197" y="130">HTTPS</text><text class="d-label" x="392" y="32">routes · auth</text><text class="d-label" x="628" y="96">EF Core</text><text class="d-label" x="628" y="262">cache</text><g class="d-group d-group--pipe"><rect x="20" y="300" width="810" height="26" rx="8"/></g><text class="d-label" x="425" y="317">Terraform · Azure · Azure DevOps</text></svg><p class="diagram__hint" aria-hidden="true">Swipe to pan &rarr;</p></div>
+          <figcaption class="diagram__cap">Fintech &amp; fund management. The gateway is the only door: authentication and routing live there, so each service stays small and the front end has one base URL to know about.</figcaption>
+        </figure>
 
-          <!-- gateway -->
-          <g class="d-node d-node--key">
-            <rect x="272" y="128" width="140" height="64" rx="11"/>
-            <text x="342" y="154">API gateway</text>
-            <text x="342" y="172" class="d-sub">Kong · auth</text>
-          </g>
+        <figure class="arch__panel" id="panel-serverless" role="tabpanel" aria-labelledby="tab-serverless" data-hide>
+          <h3 class="arch__title">Serverless &amp; event-driven</h3>
+          <div class="diagram"><svg class="diagram__svg" viewBox="0 0 870 310" role="img" aria-label="An Angular portal talks to a care-plan API that publishes to Azure Service Bus topics. Azure Functions subscribe per event type and write to Cosmos DB and SQL Server. Voice recognition call events feed the same functions."><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="currentColor"/></marker></defs><g class="d-node"><rect x="20" y="35" width="155" height="50" rx="10"/><text x="97.5" y="57">Angular portal</text><text x="97.5" y="75" class="d-sub">care plans</text></g><g class="d-node"><rect x="230" y="35" width="165" height="50" rx="10"/><text x="312.5" y="65">Care-plan API</text></g><g class="d-node d-node--key"><rect x="230" y="140" width="165" height="50" rx="10"/><text x="312.5" y="162">Service Bus</text><text x="312.5" y="180" class="d-sub">topics</text></g><g class="d-node"><rect x="465" y="140" width="175" height="50" rx="10"/><text x="552.5" y="162">Azure Functions</text><text x="552.5" y="180" class="d-sub">per-event handlers</text></g><g class="d-node"><rect x="20" y="240" width="155" height="50" rx="10"/><text x="97.5" y="262">Voice calls</text><text x="97.5" y="280" class="d-sub">recognition</text></g><g class="d-node d-node--sm"><rect x="700" y="70" width="155" height="48" rx="10"/><text x="777.5" y="99">Cosmos DB</text></g><g class="d-node d-node--sm"><rect x="700" y="160" width="155" height="48" rx="10"/><text x="777.5" y="189">SQL Server</text></g><path class="d-edge" d="M175 60 L 230 60" marker-end="url(#ah)"/><path class="d-flow" d="M175 60 L 230 60"/><path class="d-edge" d="M312 85 L 312 140" marker-end="url(#ah)"/><path class="d-flow" d="M312 85 L 312 140"/><path class="d-edge" d="M395 165 L 465 165" marker-end="url(#ah)"/><path class="d-flow" d="M395 165 L 465 165"/><path class="d-edge" d="M175 265 C 320 265, 350 190, 465 175" marker-end="url(#ah)"/><path class="d-flow" d="M175 265 C 320 265, 350 190, 465 175"/><path class="d-edge" d="M640 165 C 668 165, 668 94, 700 94" marker-end="url(#ah)"/><path class="d-flow" d="M640 165 C 668 165, 668 94, 700 94"/><path class="d-edge" d="M640 165 L 700 184" marker-end="url(#ah)"/><text class="d-label d-label--l" x="326" y="132">publishes</text><text class="d-label" x="430" y="155">triggers</text><text class="d-label" x="300" y="285">call events</text><text class="d-label" x="672" y="52">writes</text></svg><p class="diagram__hint" aria-hidden="true">Swipe to pan &rarr;</p></div>
+          <figcaption class="diagram__cap">Healthcare. No long-running servers: each event type gets its own function, so a spike in inbound calls scales that handler alone and nothing else has to be provisioned for it.</figcaption>
+        </figure>
 
-          <!-- services -->
-          <g class="d-node">
-            <rect x="512" y="44" width="192" height="64" rx="11"/>
-            <text x="608" y="70">.NET API services</text>
-            <text x="608" y="88" class="d-sub">ASP.NET · EF Core</text>
-          </g>
-          <g class="d-node d-node--key">
-            <rect x="512" y="148" width="192" height="56" rx="11"/>
-            <text x="608" y="171">Message queue</text>
-            <text x="608" y="189" class="d-sub">RabbitMQ · Service Bus</text>
-          </g>
-          <g class="d-node">
-            <rect x="512" y="244" width="192" height="64" rx="11"/>
-            <text x="608" y="270">Background workers</text>
-            <text x="608" y="288" class="d-sub">sync · batch jobs</text>
-          </g>
+        <figure class="arch__panel" id="panel-realtime" role="tabpanel" aria-labelledby="tab-realtime" data-hide>
+          <h3 class="arch__title">Realtime device link</h3>
+          <div class="diagram"><svg class="diagram__svg" viewBox="0 0 760 275" role="img" aria-label="A kiosk touchscreen written in VanillaJS holds a two-way WebSocket to a .NET session service, which activates and ends player sessions against the gaming system over TCP and records them in a session store. Deployed as a Docker image through GitHub Actions."><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="currentColor"/></marker></defs><g class="d-node"><rect x="20" y="120" width="175" height="54" rx="10"/><text x="107.5" y="144">Kiosk touchscreen</text><text x="107.5" y="162" class="d-sub">VanillaJS</text></g><g class="d-node d-node--key"><rect x="285" y="120" width="180" height="54" rx="10"/><text x="375" y="144">Session service</text><text x="375" y="162" class="d-sub">.NET Core</text></g><g class="d-node"><rect x="560" y="45" width="175" height="50" rx="10"/><text x="647.5" y="67">Gaming system</text><text x="647.5" y="85" class="d-sub">TCP</text></g><g class="d-node d-node--sm"><rect x="560" y="150" width="175" height="50" rx="10"/><text x="647.5" y="180">Player session store</text></g><path class="d-edge" d="M195 140 L 285 140" marker-end="url(#ah)"/><path class="d-flow" d="M195 140 L 285 140"/><path class="d-edge" d="M285 160 L 195 160" marker-end="url(#ah)"/><path class="d-flow" d="M285 160 L 195 160"/><path class="d-edge" d="M465 135 C 512 135, 512 70, 560 70" marker-end="url(#ah)"/><path class="d-flow" d="M465 135 C 512 135, 512 70, 560 70"/><path class="d-edge" d="M465 155 C 512 155, 512 175, 560 175" marker-end="url(#ah)"/><path class="d-flow" d="M465 155 C 512 155, 512 175, 560 175"/><text class="d-label" x="240" y="110">WebSocket</text><text class="d-label" x="240" y="192">both ways</text><text class="d-label" x="512" y="40">activate / end</text><g class="d-group d-group--pipe"><rect x="20" y="235" width="715" height="26" rx="8"/></g><text class="d-label" x="377" y="252">Docker image · GitHub Actions · on-device deploy</text></svg><p class="diagram__hint" aria-hidden="true">Swipe to pan &rarr;</p></div>
+          <figcaption class="diagram__cap">Gaming kiosks. The screen has no polling loop — the session service pushes state the moment the gaming system changes it, which is what makes a physical terminal feel responsive.</figcaption>
+        </figure>
 
-          <!-- data layer -->
-          <g class="d-group">
-            <rect x="784" y="44" width="224" height="264" rx="14"/>
-            <text x="896" y="72" class="d-group-title">Data layer</text>
-          </g>
-          <g class="d-node d-node--sm">
-            <rect x="802" y="92" width="188" height="48" rx="9"/>
-            <text x="896" y="121">SQL Server · Postgres</text>
-          </g>
-          <g class="d-node d-node--sm">
-            <rect x="802" y="156" width="188" height="48" rx="9"/>
-            <text x="896" y="185">MongoDB · Cosmos DB</text>
-          </g>
-          <g class="d-node d-node--sm">
-            <rect x="802" y="220" width="188" height="48" rx="9"/>
-            <text x="896" y="249">Redis cache</text>
-          </g>
+        <figure class="arch__panel" id="panel-widget" role="tabpanel" aria-labelledby="tab-widget" data-hide>
+          <h3 class="arch__title">Embeddable widget + AI workers</h3>
+          <div class="diagram"><svg class="diagram__svg" viewBox="0 0 875 275" role="img" aria-label="A third-party website embeds a Vue 3 widget that requests an image from a .NET workspace API. The API enqueues the job in Redis; workers consume it, call the AI generation model, and store the result in Postgres."><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="currentColor"/></marker></defs><g class="d-node"><rect x="20" y="40" width="160" height="50" rx="10"/><text x="100" y="62">Client website</text><text x="100" y="80" class="d-sub">third party</text></g><g class="d-node"><rect x="20" y="150" width="160" height="50" rx="10"/><text x="100" y="172">Embed widget</text><text x="100" y="190" class="d-sub">Vue 3</text></g><g class="d-node d-node--key"><rect x="245" y="95" width="170" height="54" rx="10"/><text x="330" y="119">Workspace API</text><text x="330" y="137" class="d-sub">.NET Core</text></g><g class="d-node"><rect x="480" y="95" width="150" height="50" rx="10"/><text x="555" y="117">Job queue</text><text x="555" y="135" class="d-sub">Redis</text></g><g class="d-node"><rect x="700" y="25" width="165" height="50" rx="10"/><text x="782.5" y="47">AI generation</text><text x="782.5" y="65" class="d-sub">image model</text></g><g class="d-node d-node--sm"><rect x="480" y="205" width="150" height="50" rx="10"/><text x="555" y="235">Workers</text></g><g class="d-node d-node--sm"><rect x="700" y="135" width="165" height="50" rx="10"/><text x="782.5" y="165">Postgres</text></g><path class="d-edge" d="M100 90 L 100 150" marker-end="url(#ah)"/><path class="d-edge" d="M180 175 C 212 175, 212 122, 245 122" marker-end="url(#ah)"/><path class="d-flow" d="M180 175 C 212 175, 212 122, 245 122"/><path class="d-edge" d="M415 122 L 480 120" marker-end="url(#ah)"/><path class="d-flow" d="M415 122 L 480 120"/><path class="d-edge" d="M555 145 L 555 205" marker-end="url(#ah)"/><path class="d-flow" d="M555 145 L 555 205"/><path class="d-edge" d="M630 215 C 665 215, 665 50, 700 50" marker-end="url(#ah)"/><path class="d-flow" d="M630 215 C 665 215, 665 50, 700 50"/><path class="d-edge" d="M630 230 C 665 230, 665 172, 700 172" marker-end="url(#ah)"/><path class="d-flow" d="M630 230 C 665 230, 665 172, 700 172"/><text class="d-label d-label--l" x="112" y="128">embeds</text><text class="d-label" x="212" y="88">request</text><text class="d-label" x="448" y="108">enqueue</text><text class="d-label d-label--l" x="569" y="180">consume</text><text class="d-label" x="668" y="20">generate</text><text class="d-label" x="668" y="255">store result</text></svg><p class="diagram__hint" aria-hidden="true">Swipe to pan &rarr;</p></div>
+          <figcaption class="diagram__cap">AI &amp; PropTech. Generation takes seconds, so the API answers immediately with a job id and the workers do the waiting — a slow model never holds a visitor's browser open.</figcaption>
+        </figure>
 
-          <!-- clients -> gateway -->
-          <path class="d-edge" d="M192 80 C 232 80, 232 148, 272 148" marker-end="url(#ah)"/>
-          <path class="d-flow" d="M192 80 C 232 80, 232 148, 272 148"/>
-          <path class="d-edge" d="M192 160 L 272 160" marker-end="url(#ah)"/>
-          <path class="d-flow" d="M192 160 L 272 160"/>
-          <path class="d-edge" d="M192 240 C 232 240, 232 172, 272 172" marker-end="url(#ah)"/>
-          <path class="d-flow" d="M192 240 C 232 240, 232 172, 272 172"/>
-          <text class="d-label" x="232" y="118">HTTPS · WS</text>
+        <figure class="arch__panel" id="panel-etl" role="tabpanel" aria-labelledby="tab-etl" data-hide>
+          <h3 class="arch__title">ETL &amp; migration pipeline</h3>
+          <div class="diagram"><svg class="diagram__svg" viewBox="0 0 900 320" role="img" aria-label="Legacy systems of any kind are extracted using per-source configs and credentials, transformed, and loaded into a target system. The transform step also emits an entity model into an OrientDB graph store, visualised for migration planning."><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="currentColor"/></marker></defs><g class="d-node"><rect x="20" y="110" width="150" height="54" rx="10"/><text x="95" y="134">Legacy systems</text><text x="95" y="152" class="d-sub">any source</text></g><g class="d-node d-node--sm"><rect x="215" y="110" width="130" height="54" rx="10"/><text x="280" y="142">Extract</text></g><g class="d-node d-node--key d-node--sm"><rect x="390" y="110" width="130" height="54" rx="10"/><text x="455" y="142">Transform</text></g><g class="d-node d-node--sm"><rect x="565" y="110" width="130" height="54" rx="10"/><text x="630" y="142">Load</text></g><g class="d-node d-node--sm"><rect x="740" y="110" width="140" height="54" rx="10"/><text x="810" y="142">Target system</text></g><g class="d-node"><rect x="360" y="225" width="190" height="50" rx="10"/><text x="455" y="247">Graph model</text><text x="455" y="265" class="d-sub">OrientDB</text></g><g class="d-node d-node--sm"><rect x="180" y="20" width="220" height="44" rx="10"/><text x="290" y="47">Source configs + credentials</text></g><path class="d-edge" d="M170 137 L 215 137" marker-end="url(#ah)"/><path class="d-flow" d="M170 137 L 215 137"/><path class="d-edge" d="M345 137 L 390 137" marker-end="url(#ah)"/><path class="d-flow" d="M345 137 L 390 137"/><path class="d-edge" d="M520 137 L 565 137" marker-end="url(#ah)"/><path class="d-flow" d="M520 137 L 565 137"/><path class="d-edge" d="M695 137 L 740 137" marker-end="url(#ah)"/><path class="d-flow" d="M695 137 L 740 137"/><path class="d-edge d-edge--dash" d="M290 64 L 280 110" marker-end="url(#ah)"/><path class="d-edge" d="M455 164 L 455 225" marker-end="url(#ah)"/><path class="d-flow" d="M455 164 L 455 225"/><text class="d-label d-label--l" x="470" y="195">entities</text><text class="d-label" x="455" y="300">visualised as a navigable graph for migration planning</text></svg><p class="diagram__hint" aria-hidden="true">Swipe to pan &rarr;</p></div>
+          <figcaption class="diagram__cap">Data platforms. Each stage is restartable on its own, so a failed load does not mean re-extracting from a legacy system that may only allow a nightly window.</figcaption>
+        </figure>
 
-          <!-- gateway -> api -->
-          <path class="d-edge" d="M412 148 C 462 148, 462 76, 512 76" marker-end="url(#ah)"/>
-          <path class="d-flow" d="M412 148 C 462 148, 462 76, 512 76"/>
-          <text class="d-label" x="462" y="38">routes · auth</text>
+        <figure class="arch__panel" id="panel-consumer" role="tabpanel" aria-labelledby="tab-consumer" data-hide>
+          <h3 class="arch__title">Consumer app, CMS and billing</h3>
+          <div class="diagram"><svg class="diagram__svg" viewBox="0 0 900 290" role="img" aria-label="Mobile apps and an Ember web app call a Java API, which serves content from WordPress VIP, runs subscriptions through Stripe, Apple in-app purchase and Google Play Billing, and emits analytics events to Grafana, Sentry and Braze. Shipped by GitHub Actions to AWS Elastic Beanstalk behind Codacy and Codecov gates."><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="currentColor"/></marker></defs><g class="d-node"><rect x="20" y="40" width="150" height="50" rx="10"/><text x="95" y="62">Mobile apps</text><text x="95" y="80" class="d-sub">iOS · Android</text></g><g class="d-node"><rect x="20" y="150" width="150" height="50" rx="10"/><text x="95" y="172">Web app</text><text x="95" y="190" class="d-sub">Ember</text></g><g class="d-node d-node--key"><rect x="235" y="95" width="165" height="54" rx="10"/><text x="317.5" y="127">Java API</text></g><g class="d-node d-node--sm"><rect x="465" y="20" width="190" height="48" rx="10"/><text x="560" y="49">WordPress VIP</text></g><g class="d-node d-node--sm"><rect x="465" y="100" width="190" height="48" rx="10"/><text x="560" y="129">Billing</text></g><g class="d-node d-node--sm"><rect x="465" y="180" width="190" height="48" rx="10"/><text x="560" y="209">Analytics</text></g><path class="d-edge" d="M170 65 C 202 65, 202 112, 235 112" marker-end="url(#ah)"/><path class="d-flow" d="M170 65 C 202 65, 202 112, 235 112"/><path class="d-edge" d="M170 175 C 202 175, 202 135, 235 135" marker-end="url(#ah)"/><path class="d-flow" d="M170 175 C 202 175, 202 135, 235 135"/><path class="d-edge" d="M400 122 C 432 122, 432 44, 465 44" marker-end="url(#ah)"/><path class="d-flow" d="M400 122 C 432 122, 432 44, 465 44"/><path class="d-edge" d="M400 122 L 465 124" marker-end="url(#ah)"/><path class="d-flow" d="M400 122 L 465 124"/><path class="d-edge" d="M400 122 C 432 122, 432 204, 465 204" marker-end="url(#ah)"/><path class="d-flow" d="M400 122 C 432 122, 432 204, 465 204"/><text class="d-label" x="432" y="14">content</text><text class="d-label" x="432" y="150">events</text><text class="d-label d-label--l" x="700" y="44">marketing pages</text><text class="d-label d-label--l" x="700" y="128">Stripe · Apple · Google</text><text class="d-label d-label--l" x="700" y="208">Grafana · Sentry · Braze</text><g class="d-group d-group--pipe"><rect x="20" y="250" width="635" height="26" rx="8"/></g><text class="d-label" x="337" y="267">GitHub Actions · AWS Elastic Beanstalk · Codacy + Codecov gates</text></svg><p class="diagram__hint" aria-hidden="true">Swipe to pan &rarr;</p></div>
+          <figcaption class="diagram__cap">Consumer subscriptions. Three billing rails have to agree on one entitlement, so the API owns that state and each store is just another way of paying for it.</figcaption>
+        </figure>
 
-          <!-- api -> queue -> workers -->
-          <path class="d-edge" d="M608 108 L 608 148" marker-end="url(#ah)"/>
-          <path class="d-flow" d="M608 108 L 608 148"/>
-          <text class="d-label d-label--l" x="622" y="132">publishes</text>
-          <path class="d-edge" d="M608 204 L 608 244" marker-end="url(#ah)"/>
-          <path class="d-flow" d="M608 204 L 608 244"/>
-          <text class="d-label d-label--l" x="622" y="228">consumes</text>
-
-          <!-- services -> data -->
-          <path class="d-edge" d="M704 76 C 744 76, 744 116, 784 116" marker-end="url(#ah)"/>
-          <path class="d-flow" d="M704 76 C 744 76, 744 116, 784 116"/>
-          <text class="d-label" x="744" y="36">reads · writes</text>
-          <path class="d-edge" d="M704 276 C 744 276, 744 244, 784 244" marker-end="url(#ah)"/>
-          <path class="d-flow" d="M704 276 C 744 276, 744 244, 784 244"/>
-          <text class="d-label" x="744" y="302">batch sync</text>
-
-          <!-- pipeline -->
-          <g class="d-group d-group--pipe">
-            <rect x="24" y="372" width="984" height="72" rx="14"/>
-          </g>
-          <g class="d-chip"><rect x="156" y="392" width="150" height="34" rx="8"/><text x="231" y="414">GitHub Actions</text></g>
-          <g class="d-chip"><rect x="346" y="392" width="150" height="34" rx="8"/><text x="421" y="414">Docker image</text></g>
-          <g class="d-chip"><rect x="536" y="392" width="150" height="34" rx="8"/><text x="611" y="414">Terraform</text></g>
-          <g class="d-chip d-chip--key"><rect x="726" y="392" width="150" height="34" rx="8"/><text x="801" y="414">Azure · AWS</text></g>
-          <path class="d-edge" d="M306 409 L 346 409" marker-end="url(#ah)"/>
-          <path class="d-edge" d="M496 409 L 536 409" marker-end="url(#ah)"/>
-          <path class="d-edge" d="M686 409 L 726 409" marker-end="url(#ah)"/>
-          <path class="d-edge d-edge--dash" d="M608 372 L 608 314" marker-end="url(#ah)"/>
-          <text class="d-label d-label--l" x="622" y="348">deploys</text>
-        </svg>
-        <p class="diagram__hint" aria-hidden="true">Swipe to pan &rarr;</p>
-        <figcaption class="diagram__cap">
-          The queue is the piece that earns its place: it lets the API answer immediately and hands the
-          slow work &mdash; syncing, batch jobs, third-party calls &mdash; to workers that can fail and retry
-          without the user waiting.
-        </figcaption>
-      </figure>
+      </div>
     </div>
   </section>
 
@@ -510,9 +452,9 @@
         <li class="timeline__item">
           <div class="timeline__when">2024 &ndash; 2025</div>
           <div class="timeline__body">
-            <h3 class="timeline__role">Full-stack Engineer <span class="timeline__at">Propel Ventures</span></h3>
+            <h3 class="timeline__role">Full-stack Engineer <span class="timeline__at">Product delivery partner</span></h3>
             <p class="timeline__desc">
-              Delivery partner work across consumer, PropTech, gaming and fintech products &mdash;
+              Work across consumer, PropTech, gaming and fintech products &mdash;
               backend services, front ends, integrations and cloud deployment. Led a small team on one
               of the builds.
             </p>
@@ -526,7 +468,7 @@
         <li class="timeline__item">
           <div class="timeline__when">2022 &ndash; 2024</div>
           <div class="timeline__body">
-            <h3 class="timeline__role">.NET / Full-stack Developer <span class="timeline__at">FPT Software</span></h3>
+            <h3 class="timeline__role">.NET / Full-stack Developer <span class="timeline__at">Enterprise software services</span></h3>
             <p class="timeline__desc">
               Healthcare, public-sector and data-platform work. Analysed legacy systems, built APIs and
               Azure infrastructure, and reviewed code and mentored team members throughout.
@@ -541,7 +483,7 @@
         <li class="timeline__item">
           <div class="timeline__when">2021 &ndash; 2022</div>
           <div class="timeline__body">
-            <h3 class="timeline__role">.NET Developer <span class="timeline__at">Axon Active</span></h3>
+            <h3 class="timeline__role">.NET Developer <span class="timeline__at">Offshore product engineering</span></h3>
             <p class="timeline__desc">
               Web tooling that runs ETL over legacy systems, models their entities and visualises them as
               navigable graphs so analysts can plan a migration &mdash; plus desktop application work in WPF.
@@ -555,7 +497,7 @@
         <li class="timeline__item">
           <div class="timeline__when">2019 &ndash; 2021</div>
           <div class="timeline__body">
-            <h3 class="timeline__role">.NET Developer <span class="timeline__at">Enclave</span></h3>
+            <h3 class="timeline__role">.NET Developer <span class="timeline__at">Software outsourcing studio</span></h3>
             <p class="timeline__desc">
               Education management, sales operations and laboratory management systems across web and
               mobile, plus back-office portal maintenance in the telecom sector.
@@ -570,7 +512,7 @@
         <li class="timeline__item timeline__item--muted">
           <div class="timeline__when">2018 &ndash; 2019</div>
           <div class="timeline__body">
-            <h3 class="timeline__role">Scrum Master &amp; Frontend <span class="timeline__at">Blockchain</span></h3>
+            <h3 class="timeline__role">Scrum Master &amp; Frontend <span class="timeline__at">Blockchain startup</span></h3>
             <p class="timeline__desc">
               Planned and ran delivery for a digital asset exchange on Ethereum, and built its interfaces.
             </p>

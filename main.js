@@ -118,6 +118,39 @@
 
   onScroll();
 
+  /*=============== ARCHITECTURE TABS ===============*/
+  var archTabs = Array.prototype.slice.call(document.querySelectorAll('.arch__tab'));
+  var archPanels = Array.prototype.slice.call(document.querySelectorAll('.arch__panel'));
+
+  function showArch(key) {
+    archTabs.forEach(function (tab) {
+      var on = tab.dataset.arch === key;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    archPanels.forEach(function (panel) {
+      if (panel.id === 'panel-' + key) {
+        panel.removeAttribute('data-hide');
+      } else {
+        panel.setAttribute('data-hide', '');
+      }
+    });
+  }
+
+  archTabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { showArch(tab.dataset.arch); });
+
+    // Left/right arrows move between tabs, as a tablist is expected to.
+    tab.addEventListener('keydown', function (e) {
+      var step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!step) return;
+      e.preventDefault();
+      var next = archTabs[(i + step + archTabs.length) % archTabs.length];
+      next.focus();
+      showArch(next.dataset.arch);
+    });
+  });
+
   /*=============== COPY TO CLIPBOARD ===============*/
   document.querySelectorAll('.copy').forEach(function (button) {
     button.addEventListener('click', function (e) {
