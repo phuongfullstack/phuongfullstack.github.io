@@ -1,398 +1,626 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phuong Tran — Full-stack Software Engineer (.NET &amp; Cloud)</title>
 
-    <!--==================== UNICONS ====================-->
-    <!-- Ensure you have a valid link to the Unicons library -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<meta name="description" content="Phuong Tran — full-stack software engineer in Da Nang, Vietnam. 7 years building backend systems with .NET, scalable SPAs with Angular/Vue/Svelte, and cloud-native platforms on Azure and AWS across healthcare, fintech, education and gaming.">
+<meta name="author" content="Phuong Tran">
+<meta name="theme-color" content="#0b0f17" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://phuongfullstack.github.io/">
 
-    <!--==================== SWIPER CSS ====================-->
-    <!-- Ensure you have a valid link to the Swiper CSS library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Phuong Tran — Full-stack Software Engineer">
+<meta property="og:description" content="7 years of .NET backend, modern frontend and cloud-native engineering across healthcare, fintech, education and gaming.">
+<meta property="og:url" content="https://phuongfullstack.github.io/">
+<meta property="og:image" content="https://phuongfullstack.github.io/1674799608220.jpeg">
+<meta name="twitter:card" content="summary_large_image">
 
-    <!--==================== CSS ====================-->
-    <!-- Link to your main CSS file (Impressive Portfolio - Light Theme version) -->
-    <link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%236366f1'/&gt;&lt;text x='50' y='68' font-size='54' font-family='monospace' font-weight='700' text-anchor='middle' fill='white'&gt;P&lt;/text&gt;&lt;/svg&gt;">
 
-    <title>Phuong Tran - Software Engineer | Crafting Digital Solutions</title>
-    <!-- Favicon (Recommended) -->
-    <!-- <link rel="icon" href="/favicon.ico"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script>
+  // Applied before first paint so the chosen theme never flashes.
+  try {
+    var t = localStorage.getItem('theme');
+    if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
 </head>
+
 <body>
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Phuong Tran</a>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link"><i class="uil uil-estate nav__icon"></i> Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link"><i class="uil uil-user nav__icon"></i> About</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link"><i class="uil uil-brackets-curly nav__icon"></i> Expertise</a></li>
-                    <li class="nav__item"><a href="#portfolio" class="nav__link"><i class="uil uil-scenery nav__icon"></i> Projects</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link"><i class="uil uil-message nav__icon"></i> Contact</a></li>
-                    <!-- Qualification & Services links removed for portfolio focus -->
-                </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
-            </div>
+<!--==================== ICON SPRITE ====================-->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Zm0 .5 9 6.5L21 7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M21 16.9v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.6 16.6 0 0 1-5.1-5.1A17 17 0 0 1 4 6.1 1.7 1.7 0 0 1 5.7 4.2h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.6.6 2.4a1.7 1.7 0 0 1-.4 1.8l-1.1 1.1a13.6 13.6 0 0 0 5.1 5.1l1.1-1.1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.6.5 2.4.6a1.7 1.7 0 0 1 1.5 1.7Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20 10.5c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10.5" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3.5v11m0 0 4-4m-4 4-4-4M4.5 18.5h15"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7m0 0H8.5M17 7v8.5"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5m0 0-6 6m6-6 6 6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M5.5 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="13.5" width="18" height="6.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 7.2h.01M7 16.8h.01"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.5 8-4.5 4 4.5 4m7-8 4.5 4-4.5 4M13.8 4.5l-3.6 15"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M6.8 18.5a4.3 4.3 0 0 1-.5-8.57 5.8 5.8 0 0 1 11.1 1.2 3.7 3.7 0 0 1-.6 7.37H6.8Z"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7.5" ry="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path fill="none" stroke="currentColor" stroke-width="1.7" d="M4.5 6v12c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3V6M4.5 12c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M9.5 3v6.2L4.6 17.4A2 2 0 0 0 6.3 20.5h11.4a2 2 0 0 0 1.7-3.1L14.5 9.2V3M8 3h8M7 14h10"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="m12 3 9 4.8-9 4.8-9-4.8L12 3Zm9 9-9 4.8L3 12m18 4.4L12 21l-9-4.6"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24"><rect x="3" y="4" width="13" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><rect x="16.5" y="9" width="5" height="11" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M7 20h5"/></symbol>
+  <symbol id="i-queue" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M3 7h10m-10 5h14m-14 5h7"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="m17 4 4 3-4 3"/></symbol>
+</svg>
 
-            <div class="nav__btns">
-                <!-- Optional Theme change button -->
-                <!-- <i class="uil uil-moon change-theme" id="theme-button"></i> -->
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!--==================== MAIN ====================-->
-    <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content grid">
-                    <div class="home__social">
-                        <!-- *** UPDATE YOUR LINKEDIN URL HERE *** -->
-                        <a href="https://www.linkedin.com/in/nhatphuongcse/" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class="uil uil-linkedin-alt"></i></a>
-                        <a href="https://github.com/phuongfullstack" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class="uil uil-github-alt"></i></a>
-                        <!-- Add other relevant social links -->
-                    </div>
-
-                    <div class="home__img">
-                        <!-- SVG Blob Shape with Image Mask -->
-                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <mask id="mask0" mask-type="alpha">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                            </mask>
-                            <g mask="url(#mask0)">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                <!-- Ensure this path is correct relative to index.html -->
-                                <image class="home__blob-img" x="12" y="18" xlink:href=""/>
-                            </g>
-                        </svg>
-                    </div>
-
-                    <div class="home__data">
-                        <h1 class="home__title">Phuong Tran</h1>
-                        <h3 class="home__subtitle">Building Scalable & Secure Software</h3>
-                        <p class="home__description">Passionate Software Engineer with 6+ years creating impactful solutions in demanding fields like finance and healthcare. Specializing in .NET, Cloud, and modern web technologies.</p>
-                        <a href="#contact" class="button button--flex">
-                            Let's Connect <i class="uil uil-message button__icon"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="home__scroll">
-                    <a href="#about" class="home__scroll-button button--flex">
-                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                        <span class="home__scroll-name">Discover More</span>
-                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== ABOUT (Narrative Focus) ====================-->
-        <section class="about section" id="about">
-            <h2 class="section__title">About Me</h2>
-            <span class="section__subtitle">My Journey & Approach</span>
-
-            <div class="about__container container grid">
-                <!-- Ensure this path is correct relative to index.html -->
-                <img src="1674799608220.jpeg" alt="Phuong Tran - Software Engineer" class="about__img">
-
-                <div class="about__data">
-                    <p class="about__description narrative">
-                        From my beginnings at <span class="highlight">Duy Tan University</span>, I've cultivated a passion for building software that not only functions flawlessly but also delivers tangible value. Over the past <span class="highlight">6+ years</span>, I've had the privilege of contributing to diverse projects at companies like <span class="highlight">FPT Software, Axon Active, and Propel Ventures</span>, tackling challenges in <span class="highlight">finance, healthcare, and gaming</span>.
-                    </p>
-                     <p class="about__description narrative">
-                        My core strength lies in full-stack development, particularly within the <span class="highlight">.NET ecosystem</span> and cloud platforms like <span class="highlight">Azure</span>. I believe in writing <span class="highlight">clean, maintainable code</span> following principles like SOLID and Clean Architecture, and I thrive on optimizing applications for peak <span class="highlight">performance and robust security</span>. Whether it's designing scalable APIs, crafting intuitive user interfaces, or streamlining DevOps processes, I'm driven by the challenge of finding elegant solutions to complex problems.
-                    </p>
-                    <div class="about__info">
-                        <div><span class="about__info-title">06+</span><span class="about__info-name">Years<br>experience</span></div>
-                        <div><span class="about__info-title">10+</span><span class="about__info-name">Diverse<br>projects</span></div>
-                        <div><span class="about__info-title">04+</span><span class="about__info-name">Domains<br>explored</span></div>
-                    </div>
-                    <div class="about__buttons">
-                        <!-- *** UPDATE PATH TO YOUR CV PDF *** -->
-                        <a download="" href="assets/PhuongTran-CV.pdf" class="button button--flex">
-                            View Full CV <i class="uil uil-download-alt button__icon"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== EXPERTISE (Replaces Skills) ====================-->
-        <section class="skills section" id="skills"> <!-- Keep ID 'skills' for nav link -->
-            <h2 class="section__title">Areas of Expertise</h2>
-            <span class="section__subtitle">Technologies I Master & Apply</span>
-
-            <div class="expertise__container container grid">
-                <!-- Expertise Area 1: Backend & API Development -->
-                <div class="expertise__area">
-                    <i class="uil uil-server-network expertise__icon"></i>
-                    <h3 class="expertise__title">Backend & API Development</h3>
-                    <p class="expertise__description">Building robust, scalable, and secure server-side logic and APIs using the .NET ecosystem.</p>
-                    <div class="expertise__tags">
-                        <span>C#</span><span>.NET Core</span><span>ASP.NET API</span><span>Entity Framework</span><span>Microservices</span><span>SignalR</span>
-                    </div>
-                </div>
-
-                 <!-- Expertise Area 2: Frontend & UI -->
-                <div class="expertise__area">
-                    <i class="uil uil-brackets-curly expertise__icon"></i>
-                    <h3 class="expertise__title">Frontend & UI/UX</h3>
-                    <p class="expertise__description">Crafting responsive, interactive, and user-friendly interfaces for web and desktop applications.</p>
-                     <div class="expertise__tags">
-                        <span>JavaScript</span><span>TypeScript</span><span>Angular</span><span>Svelte</span><span>HTML5</span><span>CSS3</span><span>WPF</span><span>Material Design</span>
-                    </div>
-                </div>
-
-                 <!-- Expertise Area 3: Cloud & DevOps -->
-                <div class="expertise__area">
-                    <i class="uil uil-cloud-computing expertise__icon"></i>
-                    <h3 class="expertise__title">Cloud & DevOps</h3>
-                    <p class="expertise__description">Leveraging cloud platforms (Azure focus) and automating workflows for efficient deployment and scaling.</p>
-                     <div class="expertise__tags">
-                        <span>Azure</span><span>Docker</span><span>GitHub Actions</span><span>Azure DevOps</span><span>Terraform</span><span>CI/CD</span><span>RabbitMQ</span>
-                    </div>
-                </div>
-
-                <!-- Expertise Area 4: Databases -->
-                <div class="expertise__area">
-                    <i class="uil uil-database expertise__icon"></i>
-                    <h3 class="expertise__title">Database Management</h3>
-                    <p class="expertise__description">Designing schemas and working with various SQL and NoSQL databases for optimal data storage and retrieval.</p>
-                    <div class="expertise__tags">
-                        <span>SQL Server</span><span>MySQL</span><span>MongoDB</span><span>CosmosDB</span><span>EF Core</span><span>Performance Tuning</span>
-                    </div>
-                </div>
-
-                 <!-- Expertise Area 5: Architecture & Quality -->
-                <div class="expertise__area">
-                    <i class="uil uil-layer-group expertise__icon"></i>
-                    <h3 class="expertise__title">Architecture & Quality</h3>
-                    <p class="expertise__description">Applying design patterns and testing methodologies to ensure software quality, maintainability, and robustness.</p>
-                     <div class="expertise__tags">
-                        <span>SOLID</span><span>Clean Architecture</span><span>DDD</span><span>System Design</span><span>NUnit</span><span>XUnit</span><span>Jest</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== PORTFOLIO (Project Showcase) ====================-->
-        <section class="portfolio section" id="portfolio">
-            <h2 class="section__title">Project Showcase</h2>
-            <span class="section__subtitle">Where Ideas Meet Execution</span>
-
-            <div class="portfolio__container container swiper">
-                <div class="swiper-wrapper">
-                    <!-- Portfolio 1: Fund Management -->
-                    <div class="portfolio__content grid swiper-slide">
-                        <!-- *** REPLACE WITH ACTUAL PROJECT IMAGE *** -->
-                        <img src="assets/images/placeholder-fund-mgmt.jpg" loading="lazy" alt="Fund Management System" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Fund Management Portal</h3>
-                            <p class="portfolio__description">
-                                <span class="highlight">Challenge:</span> Extend a core fintech system with a dedicated portal for fund managers.<br>
-                                <span class="highlight">Solution:</span> Developed a full-stack solution using .NET API and Angular frontend, integrating seamlessly.<br>
-                                <span class="highlight">Tech:</span> .NET, C#, Angular, EF, SQL Server, Azure, Terraform.
-                            </p>
-                            <a href="#" class="button button--flex button--small portfolio__button disabled-link">
-                                View Details <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Portfolio 2: Healthcare AI -->
-                    <div class="portfolio__content grid swiper-slide">
-                        <!-- *** REPLACE WITH ACTUAL PROJECT IMAGE *** -->
-                        <img src="assets/images/placeholder-healthcare.jpg" loading="lazy" alt="AI Healthcare System" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">AI-Powered Patient Care</h3>
-                             <p class="portfolio__description">
-                                <span class="highlight">Challenge:</span> Enhance patient engagement and reduce operational costs for healthcare providers.<br>
-                                <span class="highlight">Solution:</span> Contributed to an AI system using voice recognition for automated patient calls and feedback.<br>
-                                <span class="highlight">Tech:</span> .NET, C#, Angular, Azure Serverless, AI/ML Integration.
-                            </p>
-                             <a href="#" class="button button--flex button--small portfolio__button disabled-link">
-                                View Details <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Portfolio 3: Gaming Kiosk PIM -->
-                     <div class="portfolio__content grid swiper-slide">
-                        <!-- *** REPLACE WITH ACTUAL PROJECT IMAGE *** -->
-                        <img src="assets/images/placeholder-pim-gaming.jpg" loading="lazy" alt="Gaming Kiosk Interface" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Gaming Kiosk Interface (PIM)</h3>
-                             <p class="portfolio__description">
-                                <span class="highlight">Challenge:</span> Modernize the interface module for gaming terminals for better performance.<br>
-                                <span class="highlight">Solution:</span> Re-engineered the PIM using .NET Core and WebSockets for real-time interaction.<br>
-                                <span class="highlight">Tech:</span> .NET Core, C#, VanillaJS, WebSocket, Docker, Jest.
-                            </p>
-                             <a href="#" class="button button--flex button--small portfolio__button disabled-link">
-                                View Details <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                     <!-- Portfolio 4: Data Conversion -->
-                     <div class="portfolio__content grid swiper-slide">
-                        <!-- *** REPLACE WITH ACTUAL PROJECT IMAGE *** -->
-                        <img src="assets/images/placeholder-data-conversion.jpg" loading="lazy" alt="Data Conversion Tool" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Data Migration Tool (MVP)</h3>
-                              <p class="portfolio__description">
-                                <span class="highlight">Challenge:</span> Enable data transfer from legacy systems to new platforms.<br>
-                                <span class="highlight">Solution:</span> Developed the MVP application allowing configurable data migration, using Svelte for the UI.<br>
-                                <span class="highlight">Tech:</span> .NET, C#, Svelte, TypeScript, MongoDB, EF.
-                            </p>
-                             <a href="#" class="button button--flex button--small portfolio__button disabled-link">
-                                View Details <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Add more portfolio items if needed -->
-                </div>
-                <!-- Swiper Navigation -->
-                <div class="swiper-button-next"><i class="uil uil-angle-right-b swiper-portfolio-icon"></i></div>
-                <div class="swiper-button-prev"><i class="uil uil-angle-left-b swiper-portfolio-icon"></i></div>
-                <!-- Swiper Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-
-        <!--==================== PROJECT IN MIND ====================-->
-        <section class="project section">
-             <div class="project__bg">
-                <div class="project__container container grid">
-                    <div class="project__data">
-                        <h2 class="project__title">Ready to build something great?</h2>
-                        <p class="project__description">I'm passionate about collaborating on innovative projects. Let's discuss your ideas and how my expertise can contribute to your success.</p>
-                        <a href="#contact" class="button button--flex button--white">
-                            Start a Conversation
-                            <i class="uil uil-message project__icon button__icon"></i>
-                        </a>
-                    </div>
-                    <!-- *** REPLACE WITH A RELEVANT ILLUSTRATION/IMAGE *** -->
-                    <img src="assets/images/placeholder-project-mind.png" loading="lazy" alt="Collaboration Illustration" class="project__img">
-                </div>
-            </div>
-        </section>
-
-        <!--==================== CONTACT ME ====================-->
-        <section class="contact section" id="contact">
-             <h2 class="section__title">Contact Me</h2>
-            <span class="section__subtitle">Let's Get In Touch</span>
-            <div class="contact__container container grid">
-                <div> <!-- Contact Info Column -->
-                    <div class="contact__information">
-                        <i class="uil uil-phone-alt contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Call Me</h3>
-                            <span class="contact__subtitle">+84 39 250 2010</span>
-                        </div>
-                    </div>
-                     <div class="contact__information">
-                        <i class="uil uil-envelope-alt contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Email</h3>
-                            <span class="contact__subtitle">nhatphuongb1@gmail.com</span>
-                        </div>
-                    </div>
-                     <div class="contact__information">
-                        <i class="uil uil-map-marker-alt contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Location</h3>
-                            <!-- *** UPDATE WITH YOUR SPECIFIC LOCATION IF DESIRED *** -->
-                            <span class="contact__subtitle">Da Nang, Vietnam</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form (Requires backend implementation to function) -->
-                <form action="" class="contact__form grid" id="contact-form">
-                     <div class="contact__inputs grid">
-                         <div class="contact__content">
-                             <label for="contact-name" class="contact__label">Name</label>
-                             <input type="text" name="user_name" required class="contact__input" id="contact-name">
-                         </div>
-                          <div class="contact__content">
-                             <label for="contact-email" class="contact__label">Email</label>
-                             <input type="email" name="user_email" required class="contact__input" id="contact-email">
-                         </div>
-                     </div>
-                     <div class="contact__content">
-                        <label for="contact-project" class="contact__label">Project / Subject</label>
-                        <input type="text" name="user_subject" class="contact__input" id="contact-project">
-                    </div>
-                     <div class="contact__content">
-                        <label for="contact-message" class="contact__label">Message</label>
-                        <textarea name="user_message" required cols="0" rows="7" class="contact__input" id="contact-message"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="button button--flex">
-                            Send Message
-                            <i class="uil uil-message button__icon"></i>
-                        </button>
-                    </div>
-                     <!-- Status message area for form submission feedback -->
-                     <p class="contact__message" id="contact-message-status"></p>
-                </form>
-
-            </div>
-        </section>
-    </main>
-
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
-         <div class="footer__bg">
-             <div class="footer__container container grid">
-                 <div>
-                     <h1 class="footer__title">Phuong Tran</h1>
-                     <span class="footer__subtitle">Software Engineer</span>
-                 </div>
-
-                 <ul class="footer__links">
-                     <li><a href="#skills" class="footer__link">Expertise</a></li>
-                     <li><a href="#portfolio" class="footer__link">Projects</a></li>
-                     <li><a href="#contact" class="footer__link">Contact</a></li>
-                 </ul>
-
-                 <div class="footer__socials">
-                      <!-- *** UPDATE YOUR LINKEDIN URL HERE *** -->
-                     <a href="https://www.linkedin.com/in/nhatphuongcse/" target="_blank" rel="noopener noreferrer" class="footer__social">
-                         <i class="uil uil-linkedin-alt"></i>
-                     </a>
-                      <a href="https://github.com/phuongfullstack" target="_blank" rel="noopener noreferrer" class="footer__social">
-                         <i class="uil uil-github-alt"></i>
-                     </a>
-                     <!-- Add other relevant social links -->
-                 </div>
-             </div>
-
-             <p class="footer__copy">&#169; <span id="current-year"></span> Phuong Tran. All rights reserved.</p>
-         </div>
-    </footer>
-
-    <!--==================== SCROLL TOP ====================-->
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scrollup__icon"></i>
+<!--==================== HEADER ====================-->
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#top" class="nav__logo">
+      <span class="nav__logo-mark">PT</span>
+      <span class="nav__logo-text">Phuong Tran</span>
     </a>
 
-    <!--==================== SWIPER JS ====================-->
-    <!-- Ensure you have a valid link to the Swiper JS library -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#stack" class="nav__link">Stack</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <button class="nav__close" id="nav-close" aria-label="Close menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
 
-    <!--==================== MAIN JS ====================-->
-    <!-- Link to your main JavaScript file -->
-    <script src="main.js"></script>
+    <div class="nav__actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Switch colour theme">
+        <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn btn--sm btn--ghost nav__cv" href="assets/Phuong-Tran-CV.pdf" download>
+        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> CV
+      </a>
+      <button class="icon-btn nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!--==================== HERO ====================-->
+  <section class="hero section" id="home">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__grid">
+
+      <div class="hero__content">
+        <p class="hero__status"><span class="dot"></span> Da Nang, Vietnam &middot; open to remote roles</p>
+
+        <h1 class="hero__title">Phuong Tran</h1>
+        <p class="hero__role">Full-stack Software Engineer <span class="sep">/</span> <span class="grad">.NET &amp; Cloud</span></p>
+
+        <p class="hero__lead">
+          Seven years designing, building and shipping web and desktop systems across
+          <strong>healthcare</strong>, <strong>fintech</strong>, <strong>fund management</strong>,
+          <strong>education</strong> and <strong>gaming</strong>. Backend depth in .NET, scalable
+          front ends in Angular, Vue and Svelte, and cloud-native delivery on Azure and AWS.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">
+            See the work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="assets/Phuong-Tran-CV.pdf" class="btn btn--ghost" download>
+            Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+          </a>
+        </div>
+
+        <ul class="hero__links">
+          <li><a href="https://github.com/phuongfullstack" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/nhatphuongcse/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+          <li><a href="mailto:nhatphuongb1@gmail.com" aria-label="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+        </ul>
+      </div>
+
+      <div class="hero__card">
+        <div class="codecard">
+          <div class="codecard__bar">
+            <span class="codecard__dots"><i></i><i></i><i></i></span>
+            <span class="codecard__file">Engineer.cs</span>
+          </div>
+          <pre class="codecard__body"><code><span class="c-k">public sealed record</span> <span class="c-t">Engineer</span>
+{
+    <span class="c-k">string</span> Name      = <span class="c-s">"Phuong Tran"</span>;
+    <span class="c-k">string</span> Based     = <span class="c-s">"Da Nang, VN"</span>;
+    <span class="c-k">int</span>    Years     = <span class="c-n">7</span>;
+
+    <span class="c-k">string</span>[] Core     = [<span class="c-s">".NET"</span>, <span class="c-s">"C#"</span>, <span class="c-s">"TypeScript"</span>];
+    <span class="c-k">string</span>[] Frontend = [<span class="c-s">"Angular"</span>, <span class="c-s">"Vue"</span>, <span class="c-s">"Svelte"</span>];
+    <span class="c-k">string</span>[] Cloud    = [<span class="c-s">"Azure"</span>, <span class="c-s">"AWS"</span>, <span class="c-s">"Docker"</span>];
+
+    <span class="c-c">// architecture · CI/CD · mentoring</span>
+}</code></pre>
+        </div>
+
+        <dl class="stats">
+          <div class="stats__item"><dt>7</dt><dd>years<br>engineering</dd></div>
+          <div class="stats__item"><dt>15+</dt><dd>shipped<br>projects</dd></div>
+          <div class="stats__item"><dt>6</dt><dd>industry<br>domains</dd></div>
+          <div class="stats__item"><dt>4</dt><dd>product<br>companies</dd></div>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <!--==================== ABOUT ====================-->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section__eyebrow">01 &mdash; About</p>
+      <h2 class="section__title">Backend depth, full-stack reach</h2>
+
+      <div class="about__grid">
+        <div class="about__media">
+          <img src="1674799608220.jpeg" alt="Portrait of Phuong Tran" class="about__img" width="420" height="420" loading="lazy">
+          <div class="about__badge">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Duy Tan University &middot; B.Eng. Software Engineering
+          </div>
+        </div>
+
+        <div class="about__body">
+          <p>
+            I build the parts of a product that have to keep working: APIs, domain logic, data models,
+            integrations and the pipelines that put them in production. Most of that has been in the
+            <strong>.NET ecosystem</strong> &mdash; .NET Core and .NET Framework, ASP.NET Web API, Entity Framework &mdash;
+            paired with whichever front end the product needs.
+          </p>
+          <p>
+            Along the way I've re-platformed a gaming kiosk module onto modern .NET, engineered portfolio and
+            transaction modules for an Australian fintech, integrated Stripe, Apple and Google billing for a
+            consumer app with a 9-person team, and led a small team building an AI image-generation widget
+            end to end.
+          </p>
+          <p>
+            I care about the unglamorous things &mdash; readable code, tests that mean something, infrastructure
+            described in Terraform instead of clicked into a console, and pull requests that leave the
+            reviewer better informed. I review a lot of code and mentor where I can.
+          </p>
+
+          <ul class="about__points">
+            <li><span class="about__points-k">Architecture</span> microservices, serverless, containerised workloads, event-driven integration</li>
+            <li><span class="about__points-k">Delivery</span> Agile/Scrum, CI/CD with GitHub Actions &amp; Azure DevOps, IaC with Terraform</li>
+            <li><span class="about__points-k">Quality</span> xUnit, NUnit, Moq, Jest, Jasmine, code review, Codacy &amp; Codecov gates</li>
+            <li><span class="about__points-k">Team</span> mentoring, leading small teams, writing the docs nobody else writes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--==================== STACK ====================-->
+  <section class="section section--alt" id="stack">
+    <div class="container">
+      <p class="section__eyebrow">02 &mdash; Stack</p>
+      <h2 class="section__title">Tools I reach for</h2>
+      <p class="section__lead">Ordered roughly by how much production time each has behind it.</p>
+
+      <div class="stack__grid">
+
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></div>
+          <h3>Backend &amp; APIs</h3>
+          <ul class="tags">
+            <li class="tag tag--core">C#</li><li class="tag tag--core">.NET Core</li><li class="tag">.NET Framework</li>
+            <li class="tag tag--core">ASP.NET Web API</li><li class="tag tag--core">Entity Framework</li>
+            <li class="tag">SignalR</li><li class="tag">WebSockets</li><li class="tag">Java</li><li class="tag">Kong Gateway</li>
+          </ul>
+        </article>
+
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></div>
+          <h3>Frontend</h3>
+          <ul class="tags">
+            <li class="tag tag--core">TypeScript</li><li class="tag tag--core">Angular</li><li class="tag">Vue 3</li>
+            <li class="tag">Svelte</li><li class="tag">Ember</li><li class="tag">React</li><li class="tag">VanillaJS</li>
+            <li class="tag">HTML5</li><li class="tag">CSS3</li><li class="tag">Material Design</li><li class="tag">Bootstrap</li><li class="tag">Kendo UI</li>
+          </ul>
+        </article>
+
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-cloud"/></svg></div>
+          <h3>Cloud &amp; DevOps</h3>
+          <ul class="tags">
+            <li class="tag tag--core">Azure</li><li class="tag">AWS</li><li class="tag">GCP / Firebase</li>
+            <li class="tag tag--core">Docker</li><li class="tag">Terraform</li><li class="tag tag--core">GitHub Actions</li>
+            <li class="tag">Azure DevOps</li><li class="tag">Elastic Beanstalk</li><li class="tag">Scaleway</li>
+          </ul>
+        </article>
+
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-db"/></svg></div>
+          <h3>Data</h3>
+          <ul class="tags">
+            <li class="tag tag--core">SQL Server</li><li class="tag">PostgreSQL</li><li class="tag">MySQL</li>
+            <li class="tag">MongoDB</li><li class="tag">Cosmos DB</li><li class="tag">Redis</li>
+            <li class="tag">OrientDB</li><li class="tag">Firebase</li>
+          </ul>
+        </article>
+
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-queue"/></svg></div>
+          <h3>Messaging &amp; Integration</h3>
+          <ul class="tags">
+            <li class="tag tag--core">RabbitMQ</li><li class="tag">Azure Service Bus</li><li class="tag">Amazon SQS</li>
+            <li class="tag">Redis Queue</li><li class="tag">MSMQ</li><li class="tag">Stripe</li>
+            <li class="tag">Apple / Google billing</li><li class="tag">Outseta</li>
+          </ul>
+        </article>
+
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg></div>
+          <h3>Testing &amp; Quality</h3>
+          <ul class="tags">
+            <li class="tag tag--core">xUnit</li><li class="tag tag--core">NUnit</li><li class="tag">Moq</li>
+            <li class="tag">Jest</li><li class="tag">Jasmine</li><li class="tag">JUnit</li><li class="tag">Mockito</li>
+            <li class="tag">Codacy</li><li class="tag">Codecov</li>
+          </ul>
+        </article>
+
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-device"/></svg></div>
+          <h3>Desktop &amp; Mobile</h3>
+          <ul class="tags">
+            <li class="tag tag--core">WPF</li><li class="tag">WinForms</li><li class="tag">UWP</li>
+            <li class="tag">Flutter</li><li class="tag">Android</li>
+          </ul>
+        </article>
+
+        <article class="card stack__card">
+          <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></div>
+          <h3>Architecture &amp; Practice</h3>
+          <ul class="tags">
+            <li class="tag tag--core">Microservices</li><li class="tag">Serverless</li><li class="tag">Containerisation</li>
+            <li class="tag">Clean Architecture</li><li class="tag">SOLID</li><li class="tag tag--core">Agile / Scrum</li>
+            <li class="tag">Jira</li><li class="tag">Kanban</li><li class="tag">Mentoring</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!--==================== EXPERIENCE ====================-->
+  <section class="section" id="experience">
+    <div class="container">
+      <p class="section__eyebrow">03 &mdash; Experience</p>
+      <h2 class="section__title">Where I've built things</h2>
+
+      <ol class="timeline">
+
+        <li class="timeline__item">
+          <div class="timeline__when">2024 &ndash; 2025</div>
+          <div class="timeline__body">
+            <h3 class="timeline__role">Full-stack Engineer <span class="timeline__at">Propel Ventures</span></h3>
+            <p class="timeline__desc">
+              Delivery partner work across four products: a consumer family photo-sharing app, an AI
+              image-generation widget for commercial real estate, a gaming-kiosk interface module, and a
+              fund manager portal for an Australian fintech. Led a small team on the Proptexx build.
+            </p>
+            <ul class="tags tags--sm">
+              <li class="tag">.NET Core</li><li class="tag">Java</li><li class="tag">Vue 3</li><li class="tag">Angular</li>
+              <li class="tag">Ember</li><li class="tag">Postgres</li><li class="tag">Redis</li><li class="tag">AWS</li><li class="tag">Azure</li><li class="tag">Terraform</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item">
+          <div class="timeline__when">2022 &ndash; 2024</div>
+          <div class="timeline__body">
+            <h3 class="timeline__role">.NET / Full-stack Developer <span class="timeline__at">FPT Software</span></h3>
+            <p class="timeline__desc">
+              An AI-assisted healthcare care-plan platform, a property tax system for a US county, a
+              source-to-target data migration MVP, and an ETL desktop tool for git repositories. Analysed
+              legacy systems, built APIs and Azure infrastructure, reviewed code and mentored team members.
+            </p>
+            <ul class="tags tags--sm">
+              <li class="tag">.NET</li><li class="tag">C#</li><li class="tag">Angular</li><li class="tag">Svelte</li>
+              <li class="tag">Entity Framework</li><li class="tag">MongoDB</li><li class="tag">Azure Serverless</li><li class="tag">WPF</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item">
+          <div class="timeline__when">2021 &ndash; 2022</div>
+          <div class="timeline__body">
+            <h3 class="timeline__role">.NET Developer <span class="timeline__at">Axon Active</span></h3>
+            <p class="timeline__desc">
+              Built a web platform that runs ETL over legacy systems, models their entities and visualises
+              them as navigable graphs so analysts can plan a migration &mdash; plus a WPF point-of-sale
+              desktop application.
+            </p>
+            <ul class="tags tags--sm">
+              <li class="tag">.NET</li><li class="tag">C#</li><li class="tag">WPF</li><li class="tag">ExtJS Sencha</li><li class="tag">OrientDB</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item">
+          <div class="timeline__when">2019 &ndash; 2021</div>
+          <div class="timeline__body">
+            <h3 class="timeline__role">.NET Developer <span class="timeline__at">Enclave</span></h3>
+            <p class="timeline__desc">
+              Multi-platform education management system (12-person team), a sales operations queue for
+              truck and housing equipment, a water-testing laboratory management platform, and back-office
+              portal maintenance for a Malaysian telecom.
+            </p>
+            <ul class="tags tags--sm">
+              <li class="tag">.NET</li><li class="tag">C#</li><li class="tag">Angular</li><li class="tag">AngularJS</li>
+              <li class="tag">TypeScript</li><li class="tag">SQL Server</li><li class="tag">VB.NET</li><li class="tag">WebForms</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item timeline__item--muted">
+          <div class="timeline__when">2018 &ndash; 2019</div>
+          <div class="timeline__body">
+            <h3 class="timeline__role">Scrum Master &amp; Frontend <span class="timeline__at">Decentralised Asset Exchange</span></h3>
+            <p class="timeline__desc">
+              Planned and ran delivery for a digital asset exchange on Ethereum, and built its interfaces.
+            </p>
+            <ul class="tags tags--sm">
+              <li class="tag">Solidity</li><li class="tag">React</li><li class="tag">JavaScript</li><li class="tag">Ethereum</li>
+            </ul>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!--==================== PROJECTS ====================-->
+  <section class="section section--alt" id="projects">
+    <div class="container">
+      <p class="section__eyebrow">04 &mdash; Projects</p>
+      <h2 class="section__title">Selected work</h2>
+      <p class="section__lead">Client and product work. Source is private, so these are write-ups rather than repositories.</p>
+
+      <div class="filters" role="tablist" aria-label="Filter projects by domain">
+        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter" data-filter="fintech" role="tab" aria-selected="false">Fintech</button>
+        <button class="filter" data-filter="health" role="tab" aria-selected="false">Healthcare</button>
+        <button class="filter" data-filter="consumer" role="tab" aria-selected="false">Consumer</button>
+        <button class="filter" data-filter="platform" role="tab" aria-selected="false">Platform</button>
+      </div>
+
+      <div class="projects__grid" id="projects-grid">
+
+        <article class="card project" data-tags="consumer">
+          <header class="project__head">
+            <h3 class="project__title">Tinybeans</h3>
+            <span class="project__meta">2024 &ndash; 2025 &middot; team of 9+</span>
+          </header>
+          <p class="project__what">A private family photo-sharing app &mdash; journal, visual diary and time capsule in one.</p>
+          <ul class="project__did">
+            <li>Built and maintained the Java API layer and an Ember web app.</li>
+            <li>Integrated Stripe, Apple in-app purchase, Google Play Billing and TaxJar.</li>
+            <li>Ran themes, plugins and content on WordPress VIP.</li>
+            <li>Shipped releases through GitHub Actions to AWS Elastic Beanstalk, gated by Codacy and Codecov.</li>
+            <li>Monitored with Grafana, Sentry, Leanplum and Braze.</li>
+          </ul>
+          <ul class="tags tags--sm">
+            <li class="tag">Java</li><li class="tag">Ember</li><li class="tag">WordPress VIP</li><li class="tag">AWS</li><li class="tag">Stripe</li>
+          </ul>
+        </article>
+
+        <article class="card project" data-tags="platform">
+          <header class="project__head">
+            <h3 class="project__title">Proptexx</h3>
+            <span class="project__meta">2025 &middot; team of 4 &middot; tech lead</span>
+          </header>
+          <p class="project__what">An AI image-generation widget for commercial real estate and interior products.</p>
+          <ul class="project__did">
+            <li>Designed API services so different client types can create and manage widget workspaces.</li>
+            <li>Built the broker between client requests and the AI generation module.</li>
+            <li>Built the embeddable browser widget and admin dashboard in Vue 3.</li>
+            <li>Wrote workers for data synchronisation and batch processing.</li>
+            <li>Integrated Outseta for subscription management; mentored and led the team.</li>
+          </ul>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET Core</li><li class="tag">Vue 3</li><li class="tag">Postgres</li><li class="tag">Redis</li><li class="tag">Scaleway</li>
+          </ul>
+        </article>
+
+        <article class="card project" data-tags="fintech">
+          <header class="project__head">
+            <h3 class="project__title">Fund Management Portal</h3>
+            <span class="project__meta">2024 &middot; team of 6</span>
+          </header>
+          <p class="project__what">A fund manager portal extending the flagship platform of an Australian fintech.</p>
+          <ul class="project__did">
+            <li>Engineered backend modules for investment portfolio and transaction management.</li>
+            <li>Built C#/.NET APIs consumed across a microservice estate via Kong Gateway.</li>
+            <li>Adjusted Azure infrastructure with Terraform.</li>
+            <li>Built the Angular front end plus base components to speed up feature work.</li>
+          </ul>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">SQL Server</li><li class="tag">Terraform</li><li class="tag">xUnit</li>
+          </ul>
+        </article>
+
+        <article class="card project" data-tags="platform">
+          <header class="project__head">
+            <h3 class="project__title">Programming Interface Module (PIM)</h3>
+            <span class="project__meta">2024 &ndash; 2025 &middot; team of 4</span>
+          </header>
+          <p class="project__what">The touchscreen module on a gaming kiosk that activates and manages player sessions.</p>
+          <ul class="project__did">
+            <li>Re-developed PIM on the latest .NET after reverse-engineering the existing integration.</li>
+            <li>Built the front end in VanillaJS over a WebSocket link to the gaming system.</li>
+            <li>Containerised the build and automated deployment with Docker and GitHub Actions.</li>
+          </ul>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET Core</li><li class="tag">VanillaJS</li><li class="tag">WebSocket</li><li class="tag">Docker</li><li class="tag">NUnit</li>
+          </ul>
+        </article>
+
+        <article class="card project" data-tags="health">
+          <header class="project__head">
+            <h3 class="project__title">AI Care-Plan Platform</h3>
+            <span class="project__meta">2023 &ndash; 2024 &middot; team of 6</span>
+          </header>
+          <p class="project__what">A healthcare platform that designs and runs care plans for defined patient populations, using voice recognition to place and answer check-in calls.</p>
+          <ul class="project__did">
+            <li>Analysed the legacy system and wrote the base documentation the team worked from.</li>
+            <li>Implemented APIs and built the infrastructure on Azure serverless services.</li>
+            <li>Built the Angular front end and a shared component base.</li>
+          </ul>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">Azure Serverless</li><li class="tag">Entity Framework</li>
+          </ul>
+        </article>
+
+        <article class="card project" data-tags="fintech platform">
+          <header class="project__head">
+            <h3 class="project__title">Integrated Property Tax System</h3>
+            <span class="project__meta">2022 &ndash; 2023 &middot; team of 5</span>
+          </header>
+          <p class="project__what">Property tax collection for a US county &mdash; I owned the roll-correction module.</p>
+          <ul class="project__did">
+            <li>Built tax roll adjustment against multiple factors, integrated with neighbouring modules.</li>
+            <li>Produced the reports and notifications each stakeholder group depends on.</li>
+            <li>Implemented APIs on Azure cloud services; reviewed code and mentored members.</li>
+          </ul>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET</li><li class="tag">Svelte</li><li class="tag">TypeScript</li><li class="tag">MongoDB</li><li class="tag">Azure</li>
+          </ul>
+        </article>
+
+        <article class="card project" data-tags="platform">
+          <header class="project__head">
+            <h3 class="project__title">Legacy System Modelling &amp; Visualisation</h3>
+            <span class="project__meta">2022 &middot; solo</span>
+          </header>
+          <p class="project__what">A web app that ETLs a legacy codebase, models its entities and draws them as navigable graphs so teams can plan a migration.</p>
+          <ul class="project__did">
+            <li>Built the ETL pipeline and the graph store on OrientDB.</li>
+            <li>Built the interactive visualisation and component drill-down.</li>
+          </ul>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET</li><li class="tag">ExtJS Sencha</li><li class="tag">OrientDB</li><li class="tag">JavaScript</li>
+          </ul>
+        </article>
+
+        <article class="card project" data-tags="platform">
+          <header class="project__head">
+            <h3 class="project__title">Data Conversion MVP</h3>
+            <span class="project__meta">2023 &middot; team of 5</span>
+          </header>
+          <p class="project__what">Any-source to any-target data migration, starting with title order data out of legacy systems.</p>
+          <ul class="project__did">
+            <li>Implemented configurable source definitions and the migration run pipeline.</li>
+            <li>Built the Svelte UI; reviewed pull requests, tested and deployed.</li>
+          </ul>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET</li><li class="tag">Svelte</li><li class="tag">TypeScript</li><li class="tag">MongoDB</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <details class="more">
+        <summary>Earlier projects</summary>
+        <ul class="more__list">
+          <li><strong>Git ETL Desktop Tool</strong> <span>2022 &middot; WPF, .NET</span> &mdash; pulls source from multiple git providers, runs configurable ETL per data source and exports results.</li>
+          <li><strong>Professional Education Management System</strong> <span>2021 &middot; .NET, Angular, SQL Server</span> &mdash; multi-platform student activity management; set up backend and frontend infrastructure for a 12-person team.</li>
+          <li><strong>Point of Sale Desktop Application</strong> <span>2021 &middot; WPF, .NET</span></li>
+          <li><strong>Truck &amp; Housing Equipment Sales</strong> <span>2020 &middot; .NET, Angular, SQL Server</span> &mdash; operations queue for a sales pipeline.</li>
+          <li><strong>Water Laboratory Management System</strong> <span>2019 &middot; .NET, AngularJS, VB.NET</span> &mdash; water quality analysis records shared between labs.</li>
+          <li><strong>Back-Office Dashboard</strong> <span>2019 &middot; .NET WebForms</span> &mdash; portal maintenance for a Malaysian communications provider.</li>
+          <li><strong>Decentralised Asset Exchange</strong> <span>2018 &ndash; 2019 &middot; Solidity, React, Ethereum</span> &mdash; scrum master and frontend engineer.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!--==================== CONTACT ====================-->
+  <section class="section" id="contact">
+    <div class="container">
+      <p class="section__eyebrow">05 &mdash; Contact</p>
+      <h2 class="section__title">Let's talk</h2>
+      <p class="section__lead">
+        Open to backend, full-stack and .NET platform roles &mdash; remote, or on-site in Da Nang.
+        Email is the fastest way to reach me.
+      </p>
+
+      <div class="contact__grid">
+        <a class="card contact__card" href="mailto:nhatphuongb1@gmail.com">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+          <span class="contact__k">Email</span>
+          <span class="contact__v">nhatphuongb1@gmail.com</span>
+          <button class="copy" type="button" data-copy="nhatphuongb1@gmail.com" aria-label="Copy email address">
+            <svg class="icon copy__idle" aria-hidden="true"><use href="#i-copy"/></svg>
+            <svg class="icon copy__done" aria-hidden="true"><use href="#i-check"/></svg>
+          </button>
+        </a>
+
+        <a class="card contact__card" href="tel:+84392502010">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+          <span class="contact__k">Phone</span>
+          <span class="contact__v">+84 39 250 2010</span>
+        </a>
+
+        <a class="card contact__card" href="https://www.linkedin.com/in/nhatphuongcse/" target="_blank" rel="noopener noreferrer">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></span>
+          <span class="contact__k">LinkedIn</span>
+          <span class="contact__v">in/nhatphuongcse</span>
+        </a>
+
+        <a class="card contact__card" href="https://github.com/phuongfullstack" target="_blank" rel="noopener noreferrer">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></span>
+          <span class="contact__k">GitHub</span>
+          <span class="contact__v">@phuongfullstack</span>
+        </a>
+      </div>
+
+      <div class="cta">
+        <div>
+          <h3 class="cta__title">Prefer the full history?</h3>
+          <p class="cta__text">Every project, team size and technology, in two pages.</p>
+        </div>
+        <a class="btn btn--primary" href="assets/Phuong-Tran-CV.pdf" download>
+          Download CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!--==================== FOOTER ====================-->
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__copy">&copy; <span id="year"></span> Phuong Tran &middot; Da Nang, Vietnam</p>
+    <p class="footer__built">Hand-built with HTML, CSS and vanilla JS. No frameworks, no trackers.</p>
+  </div>
+</footer>
+
+<a href="#top" class="scrollup" id="scroll-up" aria-label="Back to top">
+  <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
+</a>
+
+<script src="main.js" defer></script>
 </body>
 </html>

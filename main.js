@@ -1,245 +1,177 @@
-/*=============== MENU SHOW/HIDDEN ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close');
+/*===============================================================
+  Phuong Tran — portfolio behaviour
+  Vanilla JS, no dependencies. Every block guards its own nodes so
+  a missing section never breaks the rest of the page.
+================================================================*/
+(function () {
+  'use strict';
 
-/*===== MENU SHOW =====*/
-// Validate if navToggle exists before adding listener
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu');
+  /*=============== THEME ===============*/
+  var root = document.documentElement;
+  var themeToggle = document.getElementById('theme-toggle');
+
+  function setTheme(theme) {
+    root.dataset.theme = theme;
+    try { localStorage.setItem('theme', theme); } catch (e) {}
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      setTheme(root.dataset.theme === 'light' ? 'dark' : 'light');
     });
-}
+  }
 
-/*===== MENU HIDDEN =====*/
-// Validate if navClose exists before adding listener
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu');
+  // Follow the OS until the visitor makes a choice of their own.
+  var media = window.matchMedia('(prefers-color-scheme: light)');
+  media.addEventListener('change', function (e) {
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (err) {}
+    if (!stored) root.dataset.theme = e.matches ? 'light' : 'dark';
+  });
+
+  /*=============== MOBILE NAV ===============*/
+  var navMenu = document.getElementById('nav-menu');
+  var navToggle = document.getElementById('nav-toggle');
+  var navClose = document.getElementById('nav-close');
+
+  function openNav() {
+    if (!navMenu) return;
+    navMenu.classList.add('is-open');
+    document.body.classList.add('is-locked');
+    if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeNav() {
+    if (!navMenu) return;
+    navMenu.classList.remove('is-open');
+    document.body.classList.remove('is-locked');
+    if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (navToggle) navToggle.addEventListener('click', openNav);
+  if (navMenu) {
+    navMenu.addEventListener('click', function (e) {
+      // The scrim is a pseudo-element of the panel, so a click that lands on
+      // the panel itself (not a child) came from outside the drawer.
+      if (e.target === navMenu) closeNav();
     });
-}
+  }
+  if (navClose) navClose.addEventListener('click', closeNav);
 
-/*=============== REMOVE MENU MOBILE ON LINK CLICK ===============*/
-const navLink = document.querySelectorAll('.nav__link');
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
 
-function linkAction(){
-    // When a nav link is clicked, remove the show-menu class to hide the mobile menu
-    navMenu.classList.remove('show-menu');
-}
-navLink.forEach(n => n.addEventListener('click', linkAction));
+  /*=============== HEADER STATE + SCROLL SPY ===============*/
+  var header = document.getElementById('header');
+  var scrollUp = document.getElementById('scroll-up');
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__link'));
 
-/*=============== EXPERTISE ACCORDION (Replaces Skills) ===============*/
-// Note: The HTML structure was changed to cards instead of accordion.
-// This section is removed as the accordion JS is no longer needed.
-// If you revert to the accordion structure, uncomment and adapt this.
-/*
-const skillsContent = document.getElementsByClassName('skills__content'),
-      skillsHeader = document.querySelectorAll('.skills__header');
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', closeNav);
+  });
 
-function toggleSkills(){
-    let itemClass = this.parentNode.className;
+  var sections = navLinks
+    .map(function (link) {
+      var id = link.getAttribute('href');
+      return id && id.charAt(0) === '#' ? document.querySelector(id) : null;
+    })
+    .filter(Boolean);
 
-    for(let i = 0; i < skillsContent.length; i++){
-        skillsContent[i].className = 'skills__content skills__close';
+  var ticking = false;
+
+  function onScroll() {
+    var y = window.scrollY;
+
+    if (header) header.classList.toggle('is-scrolled', y > 20);
+    if (scrollUp) scrollUp.classList.toggle('is-visible', y > 480);
+
+    // The section whose top has most recently passed the header line wins.
+    var offset = y + (header ? header.offsetHeight : 0) + 40;
+    var current = null;
+
+    sections.forEach(function (section) {
+      if (section.offsetTop <= offset) current = section.id;
+    });
+
+    navLinks.forEach(function (link) {
+      link.classList.toggle('is-active', link.getAttribute('href') === '#' + current);
+    });
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(onScroll);
     }
+  }, { passive: true });
 
-    if(itemClass === 'skills__content skills__close'){
-        this.parentNode.className = 'skills__content skills__open';
-    }
-}
+  onScroll();
 
-skillsHeader.forEach((el) => {
-    el.addEventListener('click', toggleSkills);
-});
-*/
+  /*=============== PROJECT FILTERS ===============*/
+  var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
+  var projects = Array.prototype.slice.call(document.querySelectorAll('.project'));
 
-/*=============== QUALIFICATION TABS (REMOVED) ===============*/
-// This section is removed as the Qualification section was removed from HTML.
+  filters.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var wanted = button.dataset.filter;
 
+      filters.forEach(function (other) {
+        var active = other === button;
+        other.classList.toggle('is-active', active);
+        other.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
 
-/*=============== SERVICES MODAL (REMOVED) ===============*/
-// This section is removed as the Services section was removed from HTML.
-
-
-/*=============== PORTFOLIO SWIPER INITIALIZATION ===============*/
-// Initialize Swiper for the portfolio section
-let swiperPortfolio = new Swiper(".portfolio__container", {
-    cssMode: true, // More performant, good for simple sliders
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    // Optional: Add breakpoints for responsive behavior
-    // breakpoints:{
-    //     568:{ slidesPerView: 2, } // Example: Show 2 slides on medium screens
-    // }
-});
-
-/*=============== TESTIMONIAL SWIPER INITIALIZATION ===============*/
-// Initialize Swiper for the testimonial section
-let swiperTestimonial = new Swiper(".testimonial__container", {
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 48, // Space between slides
-
-    pagination: {
-      el: ".swiper-pagination-testimonial", // Use specific class for testimonial pagination
-      clickable: true,
-      dynamicBullets: true, // Bullets change size dynamically
-    },
-    breakpoints:{
-        568:{ // Show 2 slides on screens >= 568px
-          slidesPerView: 2,
-        }
-    }
-});
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-// Highlight the correct nav link when scrolling through sections
-const sections = document.querySelectorAll('section[id]'); // Get all sections with an ID
-
-function scrollActive(){
-    const scrollY = window.pageYOffset; // Current scroll position
-
-    sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 58; // Offset slightly less than header height
-        const sectionId = current.getAttribute('id');
-        const correspondingLink = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
-
-        if(correspondingLink) { // Check if the link exists in the menu
-            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-                correspondingLink.classList.add('active-link');
-            } else {
-                correspondingLink.classList.remove('active-link');
-            }
-        }
+      projects.forEach(function (project) {
+        var tags = (project.dataset.tags || '').split(/\s+/);
+        project.hidden = wanted !== 'all' && tags.indexOf(wanted) === -1;
+      });
     });
-}
-window.addEventListener('scroll', scrollActive);
+  });
 
-/*=============== CHANGE HEADER BACKGROUND ON SCROLL ===============*/
-function scrollHeader(){
-    const header = document.getElementById('header');
-    // When the scroll is greater than 80 viewport height, add the scroll-header class
-    if(this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header');
-}
-window.addEventListener('scroll', scrollHeader);
+  /*=============== COPY TO CLIPBOARD ===============*/
+  document.querySelectorAll('.copy').forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      // The button sits inside a mailto: card — don't follow the link.
+      e.preventDefault();
+      e.stopPropagation();
 
-/*=============== SHOW SCROLL TOP BUTTON ===============*/
-function scrollUp(){
-    const scrollUp = document.getElementById('scroll-up');
-    // When the scroll is higher than 560 viewport height, add the show-scroll class
-    if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll');
-}
-window.addEventListener('scroll', scrollUp);
+      var value = button.dataset.copy || '';
+      var done = function () {
+        button.classList.add('is-done');
+        setTimeout(function () { button.classList.remove('is-done'); }, 1600);
+      };
 
-/*=============== DARK LIGHT THEME (Optional) ===============*/
-// Add logic here if you implement a theme toggle button
-/* Example:
-const themeButton = document.getElementById('theme-button');
-const darkTheme = 'dark-theme';
-const iconTheme = 'uil-sun'; // Icon for light mode
-
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme');
-const selectedIcon = localStorage.getItem('selected-icon');
-
-// Obtain the current theme
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun';
-
-// Validate if the user previously chose a topic
-if (selectedTheme) {
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
-  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme);
-}
-
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
-    document.body.classList.toggle(darkTheme);
-    themeButton.classList.toggle(iconTheme);
-    // Save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme());
-    localStorage.setItem('selected-icon', getCurrentIcon());
-});
-*/
-
-/*=============== SCROLL REVEAL ANIMATION (Using Intersection Observer) ===============*/
-// Select all elements that should have a reveal animation
-const revealElements = document.querySelectorAll('.section[id], .home__content, .about__img, .about__data, .expertise__area, .portfolio__content, .project__container > *, .testimonial__content, .contact__information, .contact__form > *');
-
-const revealObserverOptions = {
-    root: null, // Relative to the viewport
-    rootMargin: '0px',
-    threshold: 0.1 // Trigger when 10% of the element is visible
-};
-
-// Callback function for the Intersection Observer
-const revealCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible'); // Add class to trigger CSS animation
-            // Optional: Add staggered delay using data-attribute or index
-            // const delay = entry.target.dataset.delay || 0;
-            // entry.target.style.transitionDelay = `${delay}ms`;
-            observer.unobserve(entry.target); // Stop observing once animated
-        }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done, function () {});
+      }
     });
-};
+  });
 
-// Create and configure the Intersection Observer
-const revealObserver = new IntersectionObserver(revealCallback, revealObserverOptions);
+  /*=============== REVEAL ON SCROLL ===============*/
+  var revealTargets = document.querySelectorAll(
+    '.section__eyebrow, .section__title, .section__lead, .card, .timeline__item, .cta, .filters, .about__media, .about__body, .more'
+  );
 
-// Add base animation class and observe each element
-revealElements.forEach(el => {
-    el.classList.add('animated'); // Base class for initial hidden state (opacity: 0, transform)
-    revealObserver.observe(el);
-});
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
 
+    revealTargets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i % 6) * 60 + 'ms';
+      observer.observe(el);
+    });
+  }
 
-/*=============== UPDATE FOOTER YEAR ===============*/
-const yearSpan = document.getElementById('current-year');
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear(); // Automatically set current year
-}
-
-/*=============== CONTACT FORM (Basic Frontend - Needs Backend) ===============*/
-// Add basic form handling feedback (optional, requires backend for actual sending)
-const contactForm = document.getElementById('contact-form'),
-      contactMessage = document.getElementById('contact-message-status');
-
-const sendEmail = (e) => {
-    if (!contactForm) return; // Exit if form doesn't exist
-    e.preventDefault(); // Prevent default form submission
-
-    // Example: Show sending message (replace with actual sending logic)
-    contactMessage.textContent = 'Sending...';
-
-    // --- SIMULATE BACKEND INTERACTION ---
-    // Replace this timeout with your actual fetch/AJAX call to your backend
-    setTimeout(() => {
-        // Example success:
-        contactMessage.textContent = 'Message sent successfully! ✅';
-        contactForm.reset(); // Clear form fields
-
-        // Example error:
-        // contactMessage.textContent = 'Message not sent (service error) ❌';
-
-        // Clear message after a few seconds
-        setTimeout(() => {
-            contactMessage.textContent = '';
-        }, 5000);
-
-    }, 2000); // Simulate 2 second delay
-};
-
-if (contactForm) {
-    contactForm.addEventListener('submit', sendEmail);
-}
+  /*=============== FOOTER YEAR ===============*/
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
