@@ -127,6 +127,8 @@
       var on = tab.dataset.arch === key;
       tab.classList.toggle('is-active', on);
       tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      // Roving tabindex: the tablist is one Tab stop, arrows move within it.
+      tab.setAttribute('tabindex', on ? '0' : '-1');
     });
     archPanels.forEach(function (panel) {
       if (panel.id === 'panel-' + key) {

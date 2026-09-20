@@ -288,19 +288,7 @@ body.is-locked { overflow: hidden; }
   overflow: hidden;
 }
 
-.hero__glow {
-  position: absolute;
-  top: -35%;
-  left: 50%;
-  width: min(1100px, 130vw);
-  aspect-ratio: 1;
-  translate: -50% 0;
-  background: radial-gradient(circle at 35% 35%, rgba(99, 102, 241, .28), transparent 58%),
-              radial-gradient(circle at 70% 55%, rgba(34, 211, 238, .18), transparent 55%);
-  filter: blur(10px);
-  pointer-events: none;
-}
-[data-theme="light"] .hero__glow { opacity: .55; }
+
 
 .hero__grid {
   position: relative;
@@ -904,9 +892,6 @@ body.is-locked { overflow: hidden; }
 @keyframes float-b {
   50% { transform: translate3d(-8%, 6%, 0) scale(1.08); }
 }
-
-/* The .hero__glow of the base sheet is superseded by .hero__bg. */
-.hero__glow { display: none; }
 
 /*=============== ROTATING ROLE ===============*/
 .rotator {
