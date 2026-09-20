@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phuong Tran — Full-stack Software Engineer (.NET &amp; Cloud)</title>
 
-<meta name="description" content="Phuong Tran — full-stack software engineer in Da Nang, Vietnam. 7 years building backend systems with .NET, scalable SPAs with Angular/Vue/Svelte, and cloud-native platforms on Azure and AWS across healthcare, fintech, education and gaming.">
+<meta name="description" content="Phuong Tran — full-stack software engineer in Da Nang, Vietnam. 7 years and 15 projects of .NET backend, Angular/Vue/Svelte front ends and cloud-native delivery on Azure and AWS, across healthcare, fintech, gaming, public sector and education.">
 <meta name="author" content="Phuong Tran">
 <meta name="theme-color" content="#0b0f17" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
@@ -32,6 +32,8 @@
     if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
     document.documentElement.dataset.theme = t;
   } catch (e) {}
+  // Chart bars start collapsed only when scripting can expand them again.
+  document.documentElement.classList.add('js');
 </script>
 </head>
 
@@ -63,6 +65,9 @@
   <symbol id="i-queue" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M3 7h10m-10 5h14m-14 5h7"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="m17 4 4 3-4 3"/></symbol>
 </svg>
 
+<!--==================== SCROLL PROGRESS ====================-->
+<div class="progress" id="progress" aria-hidden="true"><i></i></div>
+
 <!--==================== HEADER ====================-->
 <header class="header" id="header">
   <nav class="nav container">
@@ -74,7 +79,9 @@
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
         <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#numbers" class="nav__link">Numbers</a></li>
         <li><a href="#stack" class="nav__link">Stack</a></li>
+        <li><a href="#how" class="nav__link">How I build</a></li>
         <li><a href="#experience" class="nav__link">Experience</a></li>
         <li><a href="#work" class="nav__link">Work</a></li>
         <li><a href="#contact" class="nav__link">Contact</a></li>
@@ -103,14 +110,24 @@
 
   <!--==================== HERO ====================-->
   <section class="hero section" id="home">
-    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid-lines"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+    </div>
+
     <div class="container hero__grid">
 
       <div class="hero__content">
         <p class="hero__status"><span class="dot"></span> Da Nang, Vietnam &middot; open to remote roles</p>
 
         <h1 class="hero__title">Phuong Tran</h1>
-        <p class="hero__role">Full-stack Software Engineer <span class="sep">/</span> <span class="grad">.NET &amp; Cloud</span></p>
+
+        <p class="hero__role">
+          <span class="hero__role-static">Full-stack Software Engineer</span>
+          <span class="sep">/</span>
+          <span class="grad rotator" id="rotator" aria-live="polite">.NET &amp; Cloud</span>
+        </p>
 
         <p class="hero__lead">
           Seven years designing, building and shipping web and desktop systems across
@@ -120,7 +137,7 @@
         </p>
 
         <div class="hero__actions">
-          <a href="#work" class="btn btn--primary">
+          <a href="#numbers" class="btn btn--primary">
             See the work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
           <a href="assets/Phuong-Tran-CV.pdf" class="btn btn--ghost" download>
@@ -136,7 +153,7 @@
       </div>
 
       <div class="hero__card">
-        <div class="codecard">
+        <div class="codecard" id="codecard">
           <div class="codecard__bar">
             <span class="codecard__dots"><i></i><i></i><i></i></span>
             <span class="codecard__file">Engineer.cs</span>
@@ -156,15 +173,23 @@
         </div>
 
         <dl class="stats">
-          <div class="stats__item"><dt>7</dt><dd>years<br>engineering</dd></div>
-          <div class="stats__item"><dt>15+</dt><dd>shipped<br>projects</dd></div>
-          <div class="stats__item"><dt>6</dt><dd>industry<br>domains</dd></div>
-          <div class="stats__item"><dt>4</dt><dd>product<br>companies</dd></div>
+          <div class="stats__item"><dt data-count="7">7</dt><dd>years<br>engineering</dd></div>
+          <div class="stats__item"><dt data-count="15">15</dt><dd>shipped<br>projects</dd></div>
+          <div class="stats__item"><dt data-count="9">9</dt><dd>industry<br>domains</dd></div>
+          <div class="stats__item"><dt data-count="4">4</dt><dd>product<br>companies</dd></div>
         </dl>
       </div>
 
     </div>
   </section>
+
+  <!--==================== MARQUEE ====================-->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>C#</span><span>.NET Core</span><span>ASP.NET Web API</span><span>Entity Framework</span><span>TypeScript</span><span>Angular</span><span>Vue 3</span><span>Svelte</span><span>Azure</span><span>AWS</span><span>Docker</span><span>Terraform</span><span>SQL Server</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>RabbitMQ</span><span>GitHub Actions</span><span>xUnit</span><span>WPF</span>
+      <span>C#</span><span>.NET Core</span><span>ASP.NET Web API</span><span>Entity Framework</span><span>TypeScript</span><span>Angular</span><span>Vue 3</span><span>Svelte</span><span>Azure</span><span>AWS</span><span>Docker</span><span>Terraform</span><span>SQL Server</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>RabbitMQ</span><span>GitHub Actions</span><span>xUnit</span><span>WPF</span>
+    </div>
+  </div>
 
   <!--==================== ABOUT ====================-->
   <section class="section" id="about">
@@ -210,12 +235,142 @@
     </div>
   </section>
 
-  <!--==================== STACK ====================-->
-  <section class="section section--alt" id="stack">
+  <!--==================== BY THE NUMBERS ====================-->
+  <section class="section section--alt" id="numbers">
     <div class="container">
-      <p class="section__eyebrow">02 &mdash; Stack</p>
+      <p class="section__eyebrow">02 &mdash; By the numbers</p>
+      <h2 class="section__title">Seven years, measured</h2>
+      <p class="section__lead">
+        Everything below is counted from the dated project history in my CV &mdash; no rounding up.
+      </p>
+
+      <div class="tiles">
+        <div class="tile">
+          <span class="tile__value" data-count="84">84</span>
+          <span class="tile__unit">months</span>
+          <span class="tile__label">of .NET in production</span>
+        </div>
+        <div class="tile">
+          <span class="tile__value" data-count="15">15</span>
+          <span class="tile__unit">projects</span>
+          <span class="tile__label">delivered end to end</span>
+        </div>
+        <div class="tile">
+          <span class="tile__value" data-count="12">12</span>
+          <span class="tile__unit">people</span>
+          <span class="tile__label">largest team worked in</span>
+        </div>
+        <div class="tile">
+          <span class="tile__value" data-count="9">9</span>
+          <span class="tile__unit">domains</span>
+          <span class="tile__label">from fintech to gaming</span>
+        </div>
+      </div>
+
+      <!-- Chart 1: domain timeline -->
+      <figure class="chart">
+        <figcaption class="chart__head">
+          <h3 class="chart__title">Where the time went</h3>
+          <p class="chart__sub">Each band is one domain, drawn across the months I worked in it. Bands overlap where projects ran in parallel.</p>
+        </figcaption>
+
+        <div class="gantt" role="img" aria-label="Timeline of nine work domains between 2018 and 2025: blockchain 2018 to 2019, education and enterprise web 2019 to 2021, data platforms and ETL 2022 to 2023, public sector 2022 to 2023, healthcare 2023 to 2024, fintech and fund management 2024, gaming systems 2024 to 2025, consumer subscription apps 2024 to 2025, AI and PropTech 2025.">
+          <div class="gantt__axis">
+            <span style="--x:7.0%">2019</span>
+            <span style="--x:21.1%">2020</span>
+            <span style="--x:35.2%">2021</span>
+            <span style="--x:49.3%">2022</span>
+            <span style="--x:63.4%">2023</span>
+            <span style="--x:77.5%">2024</span>
+            <span style="--x:91.5%">2025</span>
+          </div>
+
+          <div class="gantt__rows">
+            <div class="gantt__grid" aria-hidden="true">
+              <i style="--x:7.0%"></i><i style="--x:21.1%"></i><i style="--x:35.2%"></i>
+              <i style="--x:49.3%"></i><i style="--x:63.4%"></i><i style="--x:77.5%"></i>
+              <i style="--x:91.5%"></i>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">AI &amp; PropTech</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:91.5%; --w:4.6%"></i></div>
+              <span class="gantt__len">5 mo</span>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">Consumer apps</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:77.5%; --w:20.0%"></i></div>
+              <span class="gantt__len">18 mo</span>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">Gaming systems</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:89.2%; --w:2.4%"></i></div>
+              <span class="gantt__len">3 mo</span>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">Fintech</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:78.6%; --w:10.6%"></i></div>
+              <span class="gantt__len">10 mo</span>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">Healthcare</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:63.4%; --w:14.1%"></i></div>
+              <span class="gantt__len">13 mo</span>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">Public sector</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:51.7%; --w:14.1%"></i></div>
+              <span class="gantt__len">13 mo</span>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">Data &amp; ETL</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:49.3%; --w:16.5%"></i></div>
+              <span class="gantt__len">15 mo</span>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">Education &amp; web</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:9.4%; --w:33.9%"></i></div>
+              <span class="gantt__len">29 mo</span>
+            </div>
+            <div class="gantt__row">
+              <span class="gantt__label">Blockchain</span>
+              <div class="gantt__track"><i class="gantt__bar" style="--l:1.1%; --w:11.8%"></i></div>
+              <span class="gantt__len">10 mo</span>
+            </div>
+          </div>
+        </div>
+        <p class="chart__note">Bands shorter than a few weeks are drawn at a minimum width so they stay visible; the duration beside each band is the real figure.</p>
+      </figure>
+
+      <!-- Chart 2: technology depth -->
+      <figure class="chart">
+        <figcaption class="chart__head">
+          <h3 class="chart__title">Depth per technology</h3>
+          <p class="chart__sub">Months of project time behind each one. Parallel projects mean these sum past the 82-month calendar span.</p>
+        </figcaption>
+
+        <div class="bars" role="img" aria-label="Months of project time per technology: .NET and C# 84, TypeScript 58, Angular 44, Entity Framework 35, Azure 33, SQL Server 32, JavaScript 20, Java 17, AWS 17, Svelte 14.">
+          <div class="bars__row"><span class="bars__key">.NET / C#</span><div class="bars__track"><i style="--v:100%"></i></div><span class="bars__val">84</span></div>
+          <div class="bars__row"><span class="bars__key">TypeScript</span><div class="bars__track"><i style="--v:69%"></i></div><span class="bars__val">58</span></div>
+          <div class="bars__row"><span class="bars__key">Angular</span><div class="bars__track"><i style="--v:52.4%"></i></div><span class="bars__val">44</span></div>
+          <div class="bars__row"><span class="bars__key">Entity Framework</span><div class="bars__track"><i style="--v:41.7%"></i></div><span class="bars__val">35</span></div>
+          <div class="bars__row"><span class="bars__key">Azure</span><div class="bars__track"><i style="--v:39.3%"></i></div><span class="bars__val">33</span></div>
+          <div class="bars__row"><span class="bars__key">SQL Server</span><div class="bars__track"><i style="--v:38.1%"></i></div><span class="bars__val">32</span></div>
+          <div class="bars__row"><span class="bars__key">JavaScript</span><div class="bars__track"><i style="--v:23.8%"></i></div><span class="bars__val">20</span></div>
+          <div class="bars__row"><span class="bars__key">Java</span><div class="bars__track"><i style="--v:20.2%"></i></div><span class="bars__val">17</span></div>
+          <div class="bars__row"><span class="bars__key">AWS</span><div class="bars__track"><i style="--v:20.2%"></i></div><span class="bars__val">17</span></div>
+          <div class="bars__row"><span class="bars__key">Svelte</span><div class="bars__track"><i style="--v:16.7%"></i></div><span class="bars__val">14</span></div>
+        </div>
+        <p class="chart__note">Unit: months. Bar length is the value; the number beside each bar is the same figure.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!--==================== STACK ====================-->
+  <section class="section" id="stack">
+    <div class="container">
+      <p class="section__eyebrow">03 &mdash; Stack</p>
       <h2 class="section__title">Tools I reach for</h2>
-      <p class="section__lead">Ordered roughly by how much production time each has behind it.</p>
+      <p class="section__lead">Accent-marked chips are the ones with the most production time behind them.</p>
 
       <div class="stack__grid">
 
@@ -302,10 +457,141 @@
     </div>
   </section>
 
+  <!--==================== HOW I BUILD ====================-->
+  <section class="section section--alt" id="how">
+    <div class="container">
+      <p class="section__eyebrow">04 &mdash; How I build</p>
+      <h2 class="section__title">The shape of the systems</h2>
+      <p class="section__lead">
+        Domains differ; the skeleton rarely does. This is the arrangement most of my work has landed on.
+      </p>
+
+      <figure class="diagram">
+        <svg class="diagram__svg" viewBox="0 0 1040 480" role="img"
+             aria-label="Clients — a web single-page app, a desktop application and a kiosk device — reach an API gateway over HTTPS and WebSocket. The gateway routes authenticated traffic to .NET API services, which read and write a data layer of SQL Server or Postgres, MongoDB or Cosmos DB, and a Redis cache. The API services publish to a message queue; background workers consume from it and batch-sync to the same data layer. A pipeline of GitHub Actions, Docker images and Terraform deploys the services to Azure or AWS.">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 1 L9 5 L0 9 z" fill="currentColor"/>
+            </marker>
+          </defs>
+
+          <!-- clients -->
+          <g class="d-node">
+            <rect x="24" y="52" width="168" height="56" rx="11"/>
+            <text x="108" y="75">Web SPA</text>
+            <text x="108" y="93" class="d-sub">Angular · Vue · Svelte</text>
+          </g>
+          <g class="d-node">
+            <rect x="24" y="132" width="168" height="56" rx="11"/>
+            <text x="108" y="155">Desktop app</text>
+            <text x="108" y="173" class="d-sub">WPF · WinForms</text>
+          </g>
+          <g class="d-node">
+            <rect x="24" y="212" width="168" height="56" rx="11"/>
+            <text x="108" y="235">Kiosk / device</text>
+            <text x="108" y="253" class="d-sub">VanillaJS</text>
+          </g>
+
+          <!-- gateway -->
+          <g class="d-node d-node--key">
+            <rect x="272" y="128" width="140" height="64" rx="11"/>
+            <text x="342" y="154">API gateway</text>
+            <text x="342" y="172" class="d-sub">Kong · auth</text>
+          </g>
+
+          <!-- services -->
+          <g class="d-node">
+            <rect x="512" y="44" width="192" height="64" rx="11"/>
+            <text x="608" y="70">.NET API services</text>
+            <text x="608" y="88" class="d-sub">ASP.NET · EF Core</text>
+          </g>
+          <g class="d-node d-node--key">
+            <rect x="512" y="148" width="192" height="56" rx="11"/>
+            <text x="608" y="171">Message queue</text>
+            <text x="608" y="189" class="d-sub">RabbitMQ · Service Bus</text>
+          </g>
+          <g class="d-node">
+            <rect x="512" y="244" width="192" height="64" rx="11"/>
+            <text x="608" y="270">Background workers</text>
+            <text x="608" y="288" class="d-sub">sync · batch jobs</text>
+          </g>
+
+          <!-- data layer -->
+          <g class="d-group">
+            <rect x="784" y="44" width="224" height="264" rx="14"/>
+            <text x="896" y="72" class="d-group-title">Data layer</text>
+          </g>
+          <g class="d-node d-node--sm">
+            <rect x="802" y="92" width="188" height="48" rx="9"/>
+            <text x="896" y="121">SQL Server · Postgres</text>
+          </g>
+          <g class="d-node d-node--sm">
+            <rect x="802" y="156" width="188" height="48" rx="9"/>
+            <text x="896" y="185">MongoDB · Cosmos DB</text>
+          </g>
+          <g class="d-node d-node--sm">
+            <rect x="802" y="220" width="188" height="48" rx="9"/>
+            <text x="896" y="249">Redis cache</text>
+          </g>
+
+          <!-- clients -> gateway -->
+          <path class="d-edge" d="M192 80 C 232 80, 232 148, 272 148" marker-end="url(#ah)"/>
+          <path class="d-flow" d="M192 80 C 232 80, 232 148, 272 148"/>
+          <path class="d-edge" d="M192 160 L 272 160" marker-end="url(#ah)"/>
+          <path class="d-flow" d="M192 160 L 272 160"/>
+          <path class="d-edge" d="M192 240 C 232 240, 232 172, 272 172" marker-end="url(#ah)"/>
+          <path class="d-flow" d="M192 240 C 232 240, 232 172, 272 172"/>
+          <text class="d-label" x="232" y="118">HTTPS · WS</text>
+
+          <!-- gateway -> api -->
+          <path class="d-edge" d="M412 148 C 462 148, 462 76, 512 76" marker-end="url(#ah)"/>
+          <path class="d-flow" d="M412 148 C 462 148, 462 76, 512 76"/>
+          <text class="d-label" x="462" y="38">routes · auth</text>
+
+          <!-- api -> queue -> workers -->
+          <path class="d-edge" d="M608 108 L 608 148" marker-end="url(#ah)"/>
+          <path class="d-flow" d="M608 108 L 608 148"/>
+          <text class="d-label d-label--l" x="622" y="132">publishes</text>
+          <path class="d-edge" d="M608 204 L 608 244" marker-end="url(#ah)"/>
+          <path class="d-flow" d="M608 204 L 608 244"/>
+          <text class="d-label d-label--l" x="622" y="228">consumes</text>
+
+          <!-- services -> data -->
+          <path class="d-edge" d="M704 76 C 744 76, 744 116, 784 116" marker-end="url(#ah)"/>
+          <path class="d-flow" d="M704 76 C 744 76, 744 116, 784 116"/>
+          <text class="d-label" x="744" y="36">reads · writes</text>
+          <path class="d-edge" d="M704 276 C 744 276, 744 244, 784 244" marker-end="url(#ah)"/>
+          <path class="d-flow" d="M704 276 C 744 276, 744 244, 784 244"/>
+          <text class="d-label" x="744" y="302">batch sync</text>
+
+          <!-- pipeline -->
+          <g class="d-group d-group--pipe">
+            <rect x="24" y="372" width="984" height="72" rx="14"/>
+          </g>
+          <g class="d-chip"><rect x="156" y="392" width="150" height="34" rx="8"/><text x="231" y="414">GitHub Actions</text></g>
+          <g class="d-chip"><rect x="346" y="392" width="150" height="34" rx="8"/><text x="421" y="414">Docker image</text></g>
+          <g class="d-chip"><rect x="536" y="392" width="150" height="34" rx="8"/><text x="611" y="414">Terraform</text></g>
+          <g class="d-chip d-chip--key"><rect x="726" y="392" width="150" height="34" rx="8"/><text x="801" y="414">Azure · AWS</text></g>
+          <path class="d-edge" d="M306 409 L 346 409" marker-end="url(#ah)"/>
+          <path class="d-edge" d="M496 409 L 536 409" marker-end="url(#ah)"/>
+          <path class="d-edge" d="M686 409 L 726 409" marker-end="url(#ah)"/>
+          <path class="d-edge d-edge--dash" d="M608 372 L 608 314" marker-end="url(#ah)"/>
+          <text class="d-label d-label--l" x="622" y="348">deploys</text>
+        </svg>
+        <p class="diagram__hint" aria-hidden="true">Swipe to pan &rarr;</p>
+        <figcaption class="diagram__cap">
+          The queue is the piece that earns its place: it lets the API answer immediately and hands the
+          slow work &mdash; syncing, batch jobs, third-party calls &mdash; to workers that can fail and retry
+          without the user waiting.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!--==================== EXPERIENCE ====================-->
   <section class="section" id="experience">
     <div class="container">
-      <p class="section__eyebrow">03 &mdash; Experience</p>
+      <p class="section__eyebrow">05 &mdash; Experience</p>
       <h2 class="section__title">Where I've built things</h2>
 
       <ol class="timeline">
@@ -390,7 +676,7 @@
   <!--==================== WORK ====================-->
   <section class="section section--alt" id="work">
     <div class="container">
-      <p class="section__eyebrow">04 &mdash; Work</p>
+      <p class="section__eyebrow">06 &mdash; Work</p>
       <h2 class="section__title">Domains I build in</h2>
       <p class="section__lead">
         Client and product work under NDA, so this is the shape of it rather than a project list:
@@ -401,7 +687,7 @@
 
         <article class="card domain">
           <h3 class="domain__title">Fintech &amp; fund management</h3>
-          <span class="domain__when">2024</span>
+          <span class="domain__when">2024 &middot; 10 mo</span>
           <p class="domain__what">Investment portfolio and transaction modules behind an API gateway, on Terraform-managed Azure.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">SQL Server</li><li class="tag">Terraform</li>
@@ -410,7 +696,7 @@
 
         <article class="card domain">
           <h3 class="domain__title">Healthcare</h3>
-          <span class="domain__when">2023 &ndash; 2024</span>
+          <span class="domain__when">2023 &ndash; 2024 &middot; 13 mo</span>
           <p class="domain__what">A care-plan platform with voice-driven patient check-ins, built on Azure serverless services.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">Azure Serverless</li><li class="tag">Entity Framework</li>
@@ -419,7 +705,7 @@
 
         <article class="card domain">
           <h3 class="domain__title">AI &amp; PropTech</h3>
-          <span class="domain__when">2025</span>
+          <span class="domain__when">2025 &middot; 5 mo</span>
           <p class="domain__what">Workspace APIs, an embeddable browser widget and an admin dashboard for an AI image-generation product.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET Core</li><li class="tag">Vue 3</li><li class="tag">Postgres</li><li class="tag">Redis</li>
@@ -428,7 +714,7 @@
 
         <article class="card domain">
           <h3 class="domain__title">Consumer subscription apps</h3>
-          <span class="domain__when">2024 &ndash; 2025</span>
+          <span class="domain__when">2024 &ndash; 2025 &middot; 18 mo</span>
           <p class="domain__what">API work, a content platform and billing integration across Stripe, Apple and Google.</p>
           <ul class="tags tags--sm">
             <li class="tag">Java</li><li class="tag">Ember</li><li class="tag">AWS</li><li class="tag">Stripe</li>
@@ -437,7 +723,7 @@
 
         <article class="card domain">
           <h3 class="domain__title">Gaming systems</h3>
-          <span class="domain__when">2024 &ndash; 2025</span>
+          <span class="domain__when">2024 &ndash; 2025 &middot; 3 mo</span>
           <p class="domain__what">A kiosk session-activation module re-platformed onto modern .NET over a WebSocket link.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET Core</li><li class="tag">VanillaJS</li><li class="tag">WebSocket</li><li class="tag">Docker</li>
@@ -446,7 +732,7 @@
 
         <article class="card domain">
           <h3 class="domain__title">Public sector</h3>
-          <span class="domain__when">2022 &ndash; 2023</span>
+          <span class="domain__when">2022 &ndash; 2023 &middot; 13 mo</span>
           <p class="domain__what">A tax roll-correction module with the reporting and notifications its stakeholders depend on.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET</li><li class="tag">Svelte</li><li class="tag">MongoDB</li><li class="tag">Azure</li>
@@ -455,7 +741,7 @@
 
         <article class="card domain">
           <h3 class="domain__title">Data platforms &amp; ETL</h3>
-          <span class="domain__when">2022 &ndash; 2023</span>
+          <span class="domain__when">2022 &ndash; 2023 &middot; 15 mo</span>
           <p class="domain__what">Source-to-target migration tooling, and legacy-system modelling visualised as navigable graphs.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET</li><li class="tag">OrientDB</li><li class="tag">Svelte</li><li class="tag">WPF</li>
@@ -464,10 +750,19 @@
 
         <article class="card domain">
           <h3 class="domain__title">Education &amp; enterprise web</h3>
-          <span class="domain__when">2019 &ndash; 2021</span>
+          <span class="domain__when">2019 &ndash; 2021 &middot; 29 mo</span>
           <p class="domain__what">Multi-platform student management, sales operations queues and laboratory management systems.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">SQL Server</li><li class="tag">VB.NET</li>
+          </ul>
+        </article>
+
+        <article class="card domain">
+          <h3 class="domain__title">Blockchain</h3>
+          <span class="domain__when">2018 &ndash; 2019 &middot; 10 mo</span>
+          <p class="domain__what">Delivery planning and interface engineering for a digital asset exchange on Ethereum.</p>
+          <ul class="tags tags--sm">
+            <li class="tag">Solidity</li><li class="tag">React</li><li class="tag">Ethereum</li><li class="tag">JavaScript</li>
           </ul>
         </article>
 
@@ -482,7 +777,7 @@
   <!--==================== CONTACT ====================-->
   <section class="section" id="contact">
     <div class="container">
-      <p class="section__eyebrow">05 &mdash; Contact</p>
+      <p class="section__eyebrow">07 &mdash; Contact</p>
       <h2 class="section__title">Let's talk</h2>
       <p class="section__lead">
         Open to backend, full-stack and .NET platform roles &mdash; remote, or on-site in Da Nang.
