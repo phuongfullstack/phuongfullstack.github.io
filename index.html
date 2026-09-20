@@ -76,7 +76,7 @@
         <li><a href="#about" class="nav__link">About</a></li>
         <li><a href="#stack" class="nav__link">Stack</a></li>
         <li><a href="#experience" class="nav__link">Experience</a></li>
-        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#work" class="nav__link">Work</a></li>
         <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
       <button class="nav__close" id="nav-close" aria-label="Close menu">
@@ -120,7 +120,7 @@
         </p>
 
         <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">
+          <a href="#work" class="btn btn--primary">
             See the work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
           <a href="assets/Phuong-Tran-CV.pdf" class="btn btn--ghost" download>
@@ -189,8 +189,8 @@
           </p>
           <p>
             Along the way I've re-platformed a gaming kiosk module onto modern .NET, engineered portfolio and
-            transaction modules for an Australian fintech, integrated Stripe, Apple and Google billing for a
-            consumer app with a 9-person team, and led a small team building an AI image-generation widget
+            transaction modules for a fintech platform, integrated Stripe, Apple and Google billing for a
+            consumer subscription product, and led a small team building an AI image-generation widget
             end to end.
           </p>
           <p>
@@ -315,9 +315,9 @@
           <div class="timeline__body">
             <h3 class="timeline__role">Full-stack Engineer <span class="timeline__at">Propel Ventures</span></h3>
             <p class="timeline__desc">
-              Delivery partner work across four products: a consumer family photo-sharing app, an AI
-              image-generation widget for commercial real estate, a gaming-kiosk interface module, and a
-              fund manager portal for an Australian fintech. Led a small team on the Proptexx build.
+              Delivery partner work across consumer, PropTech, gaming and fintech products &mdash;
+              backend services, front ends, integrations and cloud deployment. Led a small team on one
+              of the builds.
             </p>
             <ul class="tags tags--sm">
               <li class="tag">.NET Core</li><li class="tag">Java</li><li class="tag">Vue 3</li><li class="tag">Angular</li>
@@ -331,9 +331,8 @@
           <div class="timeline__body">
             <h3 class="timeline__role">.NET / Full-stack Developer <span class="timeline__at">FPT Software</span></h3>
             <p class="timeline__desc">
-              An AI-assisted healthcare care-plan platform, a property tax system for a US county, a
-              source-to-target data migration MVP, and an ETL desktop tool for git repositories. Analysed
-              legacy systems, built APIs and Azure infrastructure, reviewed code and mentored team members.
+              Healthcare, public-sector and data-platform work. Analysed legacy systems, built APIs and
+              Azure infrastructure, and reviewed code and mentored team members throughout.
             </p>
             <ul class="tags tags--sm">
               <li class="tag">.NET</li><li class="tag">C#</li><li class="tag">Angular</li><li class="tag">Svelte</li>
@@ -347,9 +346,8 @@
           <div class="timeline__body">
             <h3 class="timeline__role">.NET Developer <span class="timeline__at">Axon Active</span></h3>
             <p class="timeline__desc">
-              Built a web platform that runs ETL over legacy systems, models their entities and visualises
-              them as navigable graphs so analysts can plan a migration &mdash; plus a WPF point-of-sale
-              desktop application.
+              Web tooling that runs ETL over legacy systems, models their entities and visualises them as
+              navigable graphs so analysts can plan a migration &mdash; plus desktop application work in WPF.
             </p>
             <ul class="tags tags--sm">
               <li class="tag">.NET</li><li class="tag">C#</li><li class="tag">WPF</li><li class="tag">ExtJS Sencha</li><li class="tag">OrientDB</li>
@@ -362,9 +360,8 @@
           <div class="timeline__body">
             <h3 class="timeline__role">.NET Developer <span class="timeline__at">Enclave</span></h3>
             <p class="timeline__desc">
-              Multi-platform education management system (12-person team), a sales operations queue for
-              truck and housing equipment, a water-testing laboratory management platform, and back-office
-              portal maintenance for a Malaysian telecom.
+              Education management, sales operations and laboratory management systems across web and
+              mobile, plus back-office portal maintenance in the telecom sector.
             </p>
             <ul class="tags tags--sm">
               <li class="tag">.NET</li><li class="tag">C#</li><li class="tag">Angular</li><li class="tag">AngularJS</li>
@@ -376,7 +373,7 @@
         <li class="timeline__item timeline__item--muted">
           <div class="timeline__when">2018 &ndash; 2019</div>
           <div class="timeline__body">
-            <h3 class="timeline__role">Scrum Master &amp; Frontend <span class="timeline__at">Decentralised Asset Exchange</span></h3>
+            <h3 class="timeline__role">Scrum Master &amp; Frontend <span class="timeline__at">Blockchain</span></h3>
             <p class="timeline__desc">
               Planned and ran delivery for a digital asset exchange on Ethereum, and built its interfaces.
             </p>
@@ -390,168 +387,95 @@
     </div>
   </section>
 
-  <!--==================== PROJECTS ====================-->
-  <section class="section section--alt" id="projects">
+  <!--==================== WORK ====================-->
+  <section class="section section--alt" id="work">
     <div class="container">
-      <p class="section__eyebrow">04 &mdash; Projects</p>
-      <h2 class="section__title">Selected work</h2>
-      <p class="section__lead">Client and product work. Source is private, so these are write-ups rather than repositories.</p>
+      <p class="section__eyebrow">04 &mdash; Work</p>
+      <h2 class="section__title">Domains I build in</h2>
+      <p class="section__lead">
+        Client and product work under NDA, so this is the shape of it rather than a project list:
+        the domain, when, and what it was built with.
+      </p>
 
-      <div class="filters" role="tablist" aria-label="Filter projects by domain">
-        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="filter" data-filter="fintech" role="tab" aria-selected="false">Fintech</button>
-        <button class="filter" data-filter="health" role="tab" aria-selected="false">Healthcare</button>
-        <button class="filter" data-filter="consumer" role="tab" aria-selected="false">Consumer</button>
-        <button class="filter" data-filter="platform" role="tab" aria-selected="false">Platform</button>
-      </div>
+      <div class="domains__grid">
 
-      <div class="projects__grid" id="projects-grid">
-
-        <article class="card project" data-tags="consumer">
-          <header class="project__head">
-            <h3 class="project__title">Tinybeans</h3>
-            <span class="project__meta">2024 &ndash; 2025 &middot; team of 9+</span>
-          </header>
-          <p class="project__what">A private family photo-sharing app &mdash; journal, visual diary and time capsule in one.</p>
-          <ul class="project__did">
-            <li>Built and maintained the Java API layer and an Ember web app.</li>
-            <li>Integrated Stripe, Apple in-app purchase, Google Play Billing and TaxJar.</li>
-            <li>Ran themes, plugins and content on WordPress VIP.</li>
-            <li>Shipped releases through GitHub Actions to AWS Elastic Beanstalk, gated by Codacy and Codecov.</li>
-            <li>Monitored with Grafana, Sentry, Leanplum and Braze.</li>
-          </ul>
+        <article class="card domain">
+          <h3 class="domain__title">Fintech &amp; fund management</h3>
+          <span class="domain__when">2024</span>
+          <p class="domain__what">Investment portfolio and transaction modules behind an API gateway, on Terraform-managed Azure.</p>
           <ul class="tags tags--sm">
-            <li class="tag">Java</li><li class="tag">Ember</li><li class="tag">WordPress VIP</li><li class="tag">AWS</li><li class="tag">Stripe</li>
+            <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">SQL Server</li><li class="tag">Terraform</li>
           </ul>
         </article>
 
-        <article class="card project" data-tags="platform">
-          <header class="project__head">
-            <h3 class="project__title">Proptexx</h3>
-            <span class="project__meta">2025 &middot; team of 4 &middot; tech lead</span>
-          </header>
-          <p class="project__what">An AI image-generation widget for commercial real estate and interior products.</p>
-          <ul class="project__did">
-            <li>Designed API services so different client types can create and manage widget workspaces.</li>
-            <li>Built the broker between client requests and the AI generation module.</li>
-            <li>Built the embeddable browser widget and admin dashboard in Vue 3.</li>
-            <li>Wrote workers for data synchronisation and batch processing.</li>
-            <li>Integrated Outseta for subscription management; mentored and led the team.</li>
-          </ul>
-          <ul class="tags tags--sm">
-            <li class="tag">.NET Core</li><li class="tag">Vue 3</li><li class="tag">Postgres</li><li class="tag">Redis</li><li class="tag">Scaleway</li>
-          </ul>
-        </article>
-
-        <article class="card project" data-tags="fintech">
-          <header class="project__head">
-            <h3 class="project__title">Fund Management Portal</h3>
-            <span class="project__meta">2024 &middot; team of 6</span>
-          </header>
-          <p class="project__what">A fund manager portal extending the flagship platform of an Australian fintech.</p>
-          <ul class="project__did">
-            <li>Engineered backend modules for investment portfolio and transaction management.</li>
-            <li>Built C#/.NET APIs consumed across a microservice estate via Kong Gateway.</li>
-            <li>Adjusted Azure infrastructure with Terraform.</li>
-            <li>Built the Angular front end plus base components to speed up feature work.</li>
-          </ul>
-          <ul class="tags tags--sm">
-            <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">SQL Server</li><li class="tag">Terraform</li><li class="tag">xUnit</li>
-          </ul>
-        </article>
-
-        <article class="card project" data-tags="platform">
-          <header class="project__head">
-            <h3 class="project__title">Programming Interface Module (PIM)</h3>
-            <span class="project__meta">2024 &ndash; 2025 &middot; team of 4</span>
-          </header>
-          <p class="project__what">The touchscreen module on a gaming kiosk that activates and manages player sessions.</p>
-          <ul class="project__did">
-            <li>Re-developed PIM on the latest .NET after reverse-engineering the existing integration.</li>
-            <li>Built the front end in VanillaJS over a WebSocket link to the gaming system.</li>
-            <li>Containerised the build and automated deployment with Docker and GitHub Actions.</li>
-          </ul>
-          <ul class="tags tags--sm">
-            <li class="tag">.NET Core</li><li class="tag">VanillaJS</li><li class="tag">WebSocket</li><li class="tag">Docker</li><li class="tag">NUnit</li>
-          </ul>
-        </article>
-
-        <article class="card project" data-tags="health">
-          <header class="project__head">
-            <h3 class="project__title">AI Care-Plan Platform</h3>
-            <span class="project__meta">2023 &ndash; 2024 &middot; team of 6</span>
-          </header>
-          <p class="project__what">A healthcare platform that designs and runs care plans for defined patient populations, using voice recognition to place and answer check-in calls.</p>
-          <ul class="project__did">
-            <li>Analysed the legacy system and wrote the base documentation the team worked from.</li>
-            <li>Implemented APIs and built the infrastructure on Azure serverless services.</li>
-            <li>Built the Angular front end and a shared component base.</li>
-          </ul>
+        <article class="card domain">
+          <h3 class="domain__title">Healthcare</h3>
+          <span class="domain__when">2023 &ndash; 2024</span>
+          <p class="domain__what">A care-plan platform with voice-driven patient check-ins, built on Azure serverless services.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">Azure Serverless</li><li class="tag">Entity Framework</li>
           </ul>
         </article>
 
-        <article class="card project" data-tags="fintech platform">
-          <header class="project__head">
-            <h3 class="project__title">Integrated Property Tax System</h3>
-            <span class="project__meta">2022 &ndash; 2023 &middot; team of 5</span>
-          </header>
-          <p class="project__what">Property tax collection for a US county &mdash; I owned the roll-correction module.</p>
-          <ul class="project__did">
-            <li>Built tax roll adjustment against multiple factors, integrated with neighbouring modules.</li>
-            <li>Produced the reports and notifications each stakeholder group depends on.</li>
-            <li>Implemented APIs on Azure cloud services; reviewed code and mentored members.</li>
-          </ul>
+        <article class="card domain">
+          <h3 class="domain__title">AI &amp; PropTech</h3>
+          <span class="domain__when">2025</span>
+          <p class="domain__what">Workspace APIs, an embeddable browser widget and an admin dashboard for an AI image-generation product.</p>
           <ul class="tags tags--sm">
-            <li class="tag">.NET</li><li class="tag">Svelte</li><li class="tag">TypeScript</li><li class="tag">MongoDB</li><li class="tag">Azure</li>
+            <li class="tag">.NET Core</li><li class="tag">Vue 3</li><li class="tag">Postgres</li><li class="tag">Redis</li>
           </ul>
         </article>
 
-        <article class="card project" data-tags="platform">
-          <header class="project__head">
-            <h3 class="project__title">Legacy System Modelling &amp; Visualisation</h3>
-            <span class="project__meta">2022 &middot; solo</span>
-          </header>
-          <p class="project__what">A web app that ETLs a legacy codebase, models its entities and draws them as navigable graphs so teams can plan a migration.</p>
-          <ul class="project__did">
-            <li>Built the ETL pipeline and the graph store on OrientDB.</li>
-            <li>Built the interactive visualisation and component drill-down.</li>
-          </ul>
+        <article class="card domain">
+          <h3 class="domain__title">Consumer subscription apps</h3>
+          <span class="domain__when">2024 &ndash; 2025</span>
+          <p class="domain__what">API work, a content platform and billing integration across Stripe, Apple and Google.</p>
           <ul class="tags tags--sm">
-            <li class="tag">.NET</li><li class="tag">ExtJS Sencha</li><li class="tag">OrientDB</li><li class="tag">JavaScript</li>
+            <li class="tag">Java</li><li class="tag">Ember</li><li class="tag">AWS</li><li class="tag">Stripe</li>
           </ul>
         </article>
 
-        <article class="card project" data-tags="platform">
-          <header class="project__head">
-            <h3 class="project__title">Data Conversion MVP</h3>
-            <span class="project__meta">2023 &middot; team of 5</span>
-          </header>
-          <p class="project__what">Any-source to any-target data migration, starting with title order data out of legacy systems.</p>
-          <ul class="project__did">
-            <li>Implemented configurable source definitions and the migration run pipeline.</li>
-            <li>Built the Svelte UI; reviewed pull requests, tested and deployed.</li>
-          </ul>
+        <article class="card domain">
+          <h3 class="domain__title">Gaming systems</h3>
+          <span class="domain__when">2024 &ndash; 2025</span>
+          <p class="domain__what">A kiosk session-activation module re-platformed onto modern .NET over a WebSocket link.</p>
           <ul class="tags tags--sm">
-            <li class="tag">.NET</li><li class="tag">Svelte</li><li class="tag">TypeScript</li><li class="tag">MongoDB</li>
+            <li class="tag">.NET Core</li><li class="tag">VanillaJS</li><li class="tag">WebSocket</li><li class="tag">Docker</li>
+          </ul>
+        </article>
+
+        <article class="card domain">
+          <h3 class="domain__title">Public sector</h3>
+          <span class="domain__when">2022 &ndash; 2023</span>
+          <p class="domain__what">A tax roll-correction module with the reporting and notifications its stakeholders depend on.</p>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET</li><li class="tag">Svelte</li><li class="tag">MongoDB</li><li class="tag">Azure</li>
+          </ul>
+        </article>
+
+        <article class="card domain">
+          <h3 class="domain__title">Data platforms &amp; ETL</h3>
+          <span class="domain__when">2022 &ndash; 2023</span>
+          <p class="domain__what">Source-to-target migration tooling, and legacy-system modelling visualised as navigable graphs.</p>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET</li><li class="tag">OrientDB</li><li class="tag">Svelte</li><li class="tag">WPF</li>
+          </ul>
+        </article>
+
+        <article class="card domain">
+          <h3 class="domain__title">Education &amp; enterprise web</h3>
+          <span class="domain__when">2019 &ndash; 2021</span>
+          <p class="domain__what">Multi-platform student management, sales operations queues and laboratory management systems.</p>
+          <ul class="tags tags--sm">
+            <li class="tag">.NET</li><li class="tag">Angular</li><li class="tag">SQL Server</li><li class="tag">VB.NET</li>
           </ul>
         </article>
 
       </div>
 
-      <details class="more">
-        <summary>Earlier projects</summary>
-        <ul class="more__list">
-          <li><strong>Git ETL Desktop Tool</strong> <span>2022 &middot; WPF, .NET</span> &mdash; pulls source from multiple git providers, runs configurable ETL per data source and exports results.</li>
-          <li><strong>Professional Education Management System</strong> <span>2021 &middot; .NET, Angular, SQL Server</span> &mdash; multi-platform student activity management; set up backend and frontend infrastructure for a 12-person team.</li>
-          <li><strong>Point of Sale Desktop Application</strong> <span>2021 &middot; WPF, .NET</span></li>
-          <li><strong>Truck &amp; Housing Equipment Sales</strong> <span>2020 &middot; .NET, Angular, SQL Server</span> &mdash; operations queue for a sales pipeline.</li>
-          <li><strong>Water Laboratory Management System</strong> <span>2019 &middot; .NET, AngularJS, VB.NET</span> &mdash; water quality analysis records shared between labs.</li>
-          <li><strong>Back-Office Dashboard</strong> <span>2019 &middot; .NET WebForms</span> &mdash; portal maintenance for a Malaysian communications provider.</li>
-          <li><strong>Decentralised Asset Exchange</strong> <span>2018 &ndash; 2019 &middot; Solidity, React, Ethereum</span> &mdash; scrum master and frontend engineer.</li>
-        </ul>
-      </details>
+      <p class="domains__note">
+        Happy to walk through any of it in detail &mdash; architecture, trade-offs, what broke &mdash; in a conversation.
+      </p>
     </div>
   </section>
 

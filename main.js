@@ -110,27 +110,6 @@
 
   onScroll();
 
-  /*=============== PROJECT FILTERS ===============*/
-  var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
-  var projects = Array.prototype.slice.call(document.querySelectorAll('.project'));
-
-  filters.forEach(function (button) {
-    button.addEventListener('click', function () {
-      var wanted = button.dataset.filter;
-
-      filters.forEach(function (other) {
-        var active = other === button;
-        other.classList.toggle('is-active', active);
-        other.setAttribute('aria-selected', active ? 'true' : 'false');
-      });
-
-      projects.forEach(function (project) {
-        var tags = (project.dataset.tags || '').split(/\s+/);
-        project.hidden = wanted !== 'all' && tags.indexOf(wanted) === -1;
-      });
-    });
-  });
-
   /*=============== COPY TO CLIPBOARD ===============*/
   document.querySelectorAll('.copy').forEach(function (button) {
     button.addEventListener('click', function (e) {
@@ -152,7 +131,7 @@
 
   /*=============== REVEAL ON SCROLL ===============*/
   var revealTargets = document.querySelectorAll(
-    '.section__eyebrow, .section__title, .section__lead, .card, .timeline__item, .cta, .filters, .about__media, .about__body, .more'
+    '.section__eyebrow, .section__title, .section__lead, .card, .timeline__item, .cta, .about__media, .about__body'
   );
 
   if ('IntersectionObserver' in window) {

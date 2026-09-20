@@ -93,27 +93,31 @@ and the pipelines that put them in production — plus the code review and mento
 
 | Years | Company | Focus |
 | --- | --- | --- |
-| **2024 – 2025** | Propel Ventures | Consumer app, AI PropTech widget, gaming kiosk module, fintech fund portal |
-| **2022 – 2024** | FPT Software | AI healthcare platform, US county property tax system, data migration, ETL tooling |
-| **2021 – 2022** | Axon Active | Legacy system modelling &amp; visualisation, WPF point-of-sale |
-| **2019 – 2021** | Enclave | Education management, sales operations, laboratory management, back-office portals |
+| **2024 – 2025** | Propel Ventures | Consumer, PropTech, gaming and fintech products; led a small team |
+| **2022 – 2024** | FPT Software | Healthcare, public-sector and data-platform work; code review and mentoring |
+| **2021 – 2022** | Axon Active | Legacy system modelling &amp; visualisation, desktop applications |
+| **2019 – 2021** | Enclave | Education, sales operations and laboratory management systems |
 
 🎓 **Duy Tan University** — B.Eng. Software Engineering
 
 ---
 
-## 🚀 Selected projects
+## 🚀 Domains
 
-| Project | What it is | Stack |
+Client and product work under NDA, so this is the shape of it rather than a project list.
+
+| Domain | When | Built with |
 | --- | --- | --- |
-| **Tinybeans** | Private family photo-sharing app — journal, diary and time capsule. Java API, Ember web app, Stripe / Apple IAP / Google Play billing, WordPress VIP. | `Java` `Ember` `AWS` `Stripe` |
-| **Proptexx** | AI image-generation widget for commercial real estate. Workspace APIs, embeddable widget, admin dashboard, batch workers. Led a team of 4. | `.NET Core` `Vue 3` `Postgres` `Redis` |
-| **Fund Management Portal** | Investment portfolio and transaction modules for an Australian fintech, behind Kong Gateway on Terraform-managed Azure. | `.NET` `Angular` `SQL Server` `Terraform` |
-| **PIM** | Gaming kiosk session-activation module, re-developed on modern .NET with a WebSocket link to the gaming system. | `.NET Core` `VanillaJS` `WebSocket` `Docker` |
-| **AI Care-Plan Platform** | Healthcare platform that designs and runs care plans, using voice recognition for patient check-in calls. | `.NET` `Angular` `Azure Serverless` |
-| **Integrated Property Tax** | Roll-correction module for a US county's property tax collection system, with stakeholder reporting. | `.NET` `Svelte` `MongoDB` `Azure` |
+| Fintech &amp; fund management | 2024 | `.NET` `Angular` `SQL Server` `Terraform` |
+| Healthcare | 2023 – 2024 | `.NET` `Angular` `Azure Serverless` |
+| AI &amp; PropTech | 2025 | `.NET Core` `Vue 3` `Postgres` `Redis` |
+| Consumer subscription apps | 2024 – 2025 | `Java` `Ember` `AWS` `Stripe` |
+| Gaming systems | 2024 – 2025 | `.NET Core` `VanillaJS` `WebSocket` `Docker` |
+| Public sector | 2022 – 2023 | `.NET` `Svelte` `MongoDB` `Azure` |
+| Data platforms &amp; ETL | 2022 – 2023 | `.NET` `OrientDB` `Svelte` `WPF` |
+| Education &amp; enterprise web | 2019 – 2021 | `.NET` `Angular` `SQL Server` `VB.NET` |
 
-→ [**Full project history on the portfolio site**](https://phuongfullstack.github.io)
+Happy to walk through any of it in detail — architecture, trade-offs, what broke — in a conversation.
 
 ---
 
