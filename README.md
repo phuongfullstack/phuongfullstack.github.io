@@ -19,8 +19,10 @@ public sealed record Engineer
     string[] Core     = [".NET", "C#", "TypeScript"];
     string[] Frontend = ["Angular", "Vue 3", "Svelte"];
     string[] Cloud    = ["Azure", "AWS", "Docker"];
-    string[] Domains  = ["Healthcare", "Fintech", "Fund Management",
-                         "Education", "Gaming", "PropTech"];
+    string[] Domains  = ["Healthcare", "Fintech", "Procurement SaaS",
+                         "Public Sector", "Education", "Gaming",
+                         "PropTech", "Data Platforms", "Blockchain"];
+    string   English  = "Upper Intermediate (B2)";
 }
 ```
 
@@ -42,7 +44,7 @@ Counted from the dated project history in my CV, not rounded up.
 
 | | | | |
 |---|---|---|---|
-| **113** months of .NET in production | **16** projects delivered | **12** people in the largest team | **9** domains |
+| **113** months of .NET in production | **16** projects delivered | **12** people in the largest team | **10** domains |
 
 **Months of project time per technology** &mdash; parallel projects mean these sum past the 98 months of dated project history:
 
@@ -79,11 +81,15 @@ Terraform          █████████                                  
 ![Entity Framework](https://img.shields.io/badge/Entity_Framework-512BD4?style=flat-square&logo=nuget&logoColor=white)
 ![SignalR](https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logo=dotnet&logoColor=white)
 ![WebSockets](https://img.shields.io/badge/WebSockets-010101?style=flat-square&logo=socketdotio&logoColor=white)
+![gRPC](https://img.shields.io/badge/gRPC-244C5A?style=flat-square&logo=grpc&logoColor=white)
+![Auth0](https://img.shields.io/badge/Auth0_%2F_OIDC-EB5424?style=flat-square&logo=auth0&logoColor=white)
+![Kong](https://img.shields.io/badge/Kong_Gateway-003459?style=flat-square&logo=kong&logoColor=white)
 ![Microservices](https://img.shields.io/badge/Microservices-2F855A?style=flat-square&logo=apachekafka&logoColor=white)
 
 **Frontend**
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![Vue 3](https://img.shields.io/badge/Vue_3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
 ![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=flat-square&logo=svelte&logoColor=white)
 ![Ember](https://img.shields.io/badge/Ember-E04E39?style=flat-square&logo=emberdotjs&logoColor=white)
@@ -100,6 +106,9 @@ Terraform          █████████                                  
 ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 ![Azure DevOps](https://img.shields.io/badge/Azure_DevOps-0078D7?style=flat-square&logo=azuredevops&logoColor=white)
+![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+![Serilog](https://img.shields.io/badge/Serilog-1B1B1B?style=flat-square&logo=serilog&logoColor=white)
+![App Insights](https://img.shields.io/badge/Application_Insights-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 
 **Data &amp; Messaging**
 
@@ -121,13 +130,28 @@ Terraform          █████████                                  
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 
-**Desktop &amp; Testing**
+**Desktop &amp; Mobile**
 
 ![WPF](https://img.shields.io/badge/WPF-512BD4?style=flat-square&logo=windows&logoColor=white)
+![WinForms](https://img.shields.io/badge/WinForms-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Electron](https://img.shields.io/badge/Electron.js-47848F?style=flat-square&logo=electron&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+
+**Testing &amp; Quality**
+
 ![xUnit](https://img.shields.io/badge/xUnit-512BD4?style=flat-square&logo=dotnet&logoColor=white)
 ![NUnit](https://img.shields.io/badge/NUnit-1E8A4C?style=flat-square&logo=dotnet&logoColor=white)
+![Moq](https://img.shields.io/badge/Moq-512BD4?style=flat-square&logo=nuget&logoColor=white)
 ![Jest](https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![k6](https://img.shields.io/badge/k6-7D64FF?style=flat-square&logo=k6&logoColor=white)
+![Codacy](https://img.shields.io/badge/Codacy-222F29?style=flat-square&logo=codacy&logoColor=white)
+
+**AI-assisted development**
+
+![Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=flat-square&logo=githubcopilot&logoColor=white)
+![Cursor](https://img.shields.io/badge/Cursor-000000?style=flat-square&logo=cursor&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=claude&logoColor=white)
 
 ---
 
@@ -154,10 +178,10 @@ Client and product work under NDA, so this is the shape of it rather than a proj
 | **Enterprise procurement SaaS** | 2025 – present | 16 mo | `.NET` `Angular` `Next.js` `Azure` `Terraform` `Auth0` |
 | Fintech &amp; fund management | 2024 | 10 mo | `.NET` `Angular` `SQL Server` `Terraform` |
 | Healthcare | 2023 – 2024 | 13 mo | `.NET` `Angular` `Azure Serverless` |
-| AI &amp; PropTech | 2025 | 5 mo | `.NET Core` `Vue 3` `Postgres` `Redis` |
+| AI &amp; PropTech | 2025 | 5 mo | `.NET Core` `Vue 3` `Postgres` `Redis` `GCP` |
 | Consumer subscription apps | 2024 – 2025 | 18 mo | `Java` `Ember` `AWS` `Stripe` |
 | Gaming systems | 2024 – 2025 | 3 mo | `.NET Core` `VanillaJS` `WebSocket` `Docker` |
-| Public sector | 2022 – 2023 | 13 mo | `.NET` `Svelte` `MongoDB` `Azure` |
+| Public sector | 2022 – 2023 | 13 mo | `.NET` `ASP.NET Web API` `SQL Server` `Azure` `Serilog` |
 | Data platforms &amp; ETL | 2022 – 2023 | 15 mo | `.NET` `OrientDB` `Svelte` `WPF` |
 | Education &amp; enterprise web | 2019 – 2021 | 30 mo | `.NET` `Angular` `SQL Server` `VB.NET` |
 | Blockchain | 2018 – 2019 | 11 mo | `Solidity` `React` `Ethereum` |
@@ -168,10 +192,18 @@ Happy to walk through any of it in detail — architecture, trade-offs, what bro
 
 ## 🧭 How I work
 
-- **Architecture** — microservices, serverless, containerised workloads, event-driven integration
-- **Quality** — xUnit, NUnit, Moq, Jest, Jasmine; Codacy and Codecov gates on every PR
-- **Delivery** — Agile/Scrum, CI/CD with GitHub Actions and Azure DevOps, infrastructure in Terraform
-- **Team** — code review, mentoring, leading small teams, and writing the docs nobody else writes
+- **Architecture** — clean / layered / hexagonal, DDD, microservices, serverless, containerised
+  workloads, event-driven integration, dependency injection and NuGet versioning
+- **Security** — OAuth2 / OIDC via Auth0, applied at every service boundary
+- **Observability** — structured logging with Serilog, distributed tracing and metrics, Azure
+  Application Insights — wired in from the start, against SLA / RTO / RPO targets
+- **Quality** — xUnit, NUnit, Moq, Jest, Jasmine; k6 for load, Playwright for end-to-end;
+  Codacy and Codecov gates on every PR
+- **Delivery** — Agile/Scrum, multi-stage CI/CD on GitHub Actions and Azure DevOps, infrastructure
+  in Terraform across four isolated environments
+- **Team** — code review, mentoring, leading small teams, architect on a team of ten, and writing
+  the docs nobody else writes
+- **Tools** — AI-assisted development with Copilot, Cursor and Claude. English: upper intermediate (B2)
 
 ---
 
@@ -193,15 +225,16 @@ This repo is the source of [phuongfullstack.github.io](https://phuongfullstack.g
 dependency-free portfolio served straight from GitHub Pages.
 
 ```
-index.html   markup, charts and the architecture diagram (inline SVG)
+index.html   markup, charts and seven architecture diagrams (inline SVG)
 style.css    design tokens, layout, dark/light themes, chart + motion layer
-main.js      theme toggle, nav, scroll spy, counters, chart draw-in
+main.js      theme toggle, nav, scroll spy, counters, chart draw-in, arch tabs
 assets/      CV PDF
 ```
 
-The charts are plain HTML and CSS &mdash; no charting library. Every animation is
-gated behind `prefers-reduced-motion`, and the charts render fully with JavaScript
-disabled.
+The charts are plain HTML and CSS and the diagrams are hand-authored inline SVG &mdash; no
+charting or diagram library. Every animation is gated behind `prefers-reduced-motion`; with
+JavaScript disabled the charts render at full length and all seven architecture models stack
+instead of hiding behind tabs.
 
 No build step and no runtime dependencies: open `index.html` in a browser, or run
 `python3 -m http.server` in the repo root, to preview changes.
