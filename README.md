@@ -36,21 +36,21 @@ Counted from the dated project history in my CV, not rounded up.
 
 | | | | |
 |---|---|---|---|
-| **84** months of .NET in production | **15** projects delivered | **12** people in the largest team | **9** domains |
+| **97** months of .NET in production | **15** projects delivered | **12** people in the largest team | **9** domains |
 
-**Months of project time per technology** &mdash; parallel projects mean these sum past the 82 months of dated project history:
+**Months of project time per technology** &mdash; parallel projects mean these sum past the 83 months of dated project history:
 
 ```
-.NET / C#          ████████████████████████████████████████  84
-TypeScript         ███████████████████████████▌              58
-Angular            ████████████████████▉                     44
-Entity Framework   ████████████████▋                          35
-Azure              ███████████████▋                           33
-SQL Server         ███████████████▎                           32
-JavaScript         █████████▌                                 20
-Java               ████████                                   17
-AWS                ████████                                   17
-Svelte             ██████▋                                    14
+.NET / C#          ████████████████████████████████████████  97
+TypeScript         ███████████████████████████               65
+Angular            ████████████████████                      49
+Entity Framework   ████████████████                          39
+SQL Server         ███████████████                           36
+Azure              ███████████████                           36
+JavaScript         █████████                                 23
+Java               ███████                                   18
+AWS                ███████                                   18
+Svelte             ███████                                   16
 ```
 
 ---
@@ -140,8 +140,8 @@ Client and product work under NDA, so this is the shape of it rather than a proj
 | Gaming systems | 2024 – 2025 | 3 mo | `.NET Core` `VanillaJS` `WebSocket` `Docker` |
 | Public sector | 2022 – 2023 | 13 mo | `.NET` `Svelte` `MongoDB` `Azure` |
 | Data platforms &amp; ETL | 2022 – 2023 | 15 mo | `.NET` `OrientDB` `Svelte` `WPF` |
-| Education &amp; enterprise web | 2019 – 2021 | 29 mo | `.NET` `Angular` `SQL Server` `VB.NET` |
-| Blockchain | 2018 – 2019 | 10 mo | `Solidity` `React` `Ethereum` |
+| Education &amp; enterprise web | 2019 – 2021 | 30 mo | `.NET` `Angular` `SQL Server` `VB.NET` |
+| Blockchain | 2018 – 2019 | 11 mo | `Solidity` `React` `Ethereum` |
 
 Happy to walk through any of it in detail — architecture, trade-offs, what broke — in a conversation.
 

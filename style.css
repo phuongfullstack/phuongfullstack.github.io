@@ -492,6 +492,21 @@ body.is-locked { overflow: hidden; }
 
 .card h3 { font-size: var(--step-1); margin-bottom: .85rem; }
 
+/* Skill cards: the evidence line and the capability blurb under each title. */
+.stack__meta {
+  margin: -.55rem 0 .8rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--accent);
+}
+
+.stack__blurb {
+  margin: 0 0 1.2rem;
+  font-size: var(--step--1);
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+
 /* Grid rows stretch every card to the tallest one — pin the tag list to the
    bottom so short cards don't end in a block of empty space. */
 .stack__card { display: flex; flex-direction: column; }
@@ -583,7 +598,7 @@ body.is-locked { overflow: hidden; }
 .stack__grid {
   display: grid;
   gap: 1.1rem;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 }
 
 /*=============== TIMELINE ===============*/
