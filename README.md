@@ -17,8 +17,9 @@ public sealed record Engineer
     int      Years    = 8;
     string   Role     = "Architect Engineer";
     string[] Core     = [".NET", "C#", "TypeScript"];
-    string[] Frontend = ["Angular", "Vue 3", "Svelte"];
-    string[] Cloud    = ["Azure", "AWS", "Docker"];
+    string[] Frontend = ["Angular", "React", "Next.js"];
+    string[] AlsoUsed = ["Vue 3", "Svelte", "Ember", "VanillaJS"];
+    string[] Cloud    = ["Azure", "AWS", "Docker", "Terraform"];
     string[] Domains  = ["Healthcare", "Fintech", "Procurement SaaS",
                          "Public Sector", "Education", "Gaming",
                          "PropTech", "Data Platforms", "Blockchain"];
