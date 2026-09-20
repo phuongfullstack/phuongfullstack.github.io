@@ -14,7 +14,7 @@ public sealed record Engineer
 {
     string   Name     = "Phuong Tran";
     string   Based    = "Da Nang, Vietnam";
-    int      Years    = 7;
+    int      Years    = 8;
     string[] Core     = [".NET", "C#", "TypeScript"];
     string[] Frontend = ["Angular", "Vue 3", "Svelte"];
     string[] Cloud    = ["Azure", "AWS", "Docker"];
@@ -23,7 +23,7 @@ public sealed record Engineer
 }
 ```
 
-Seven years designing, building and shipping web and desktop systems. Backend depth in the
+Eight years designing, building and shipping web and desktop systems. Backend depth in the
 **.NET ecosystem**, scalable front ends in **Angular, Vue and Svelte**, and cloud-native delivery
 on **Azure and AWS**. I spend most of my time on APIs, domain logic, data models, integrations
 and the pipelines that put them in production — plus the code review and mentoring around them.
@@ -38,7 +38,7 @@ Counted from the dated project history in my CV, not rounded up.
 |---|---|---|---|
 | **84** months of .NET in production | **15** projects delivered | **12** people in the largest team | **9** domains |
 
-**Months of project time per technology** &mdash; parallel projects mean these sum past the 82-month calendar span:
+**Months of project time per technology** &mdash; parallel projects mean these sum past the 82 months of dated project history:
 
 ```
 .NET / C#          ████████████████████████████████████████  84
