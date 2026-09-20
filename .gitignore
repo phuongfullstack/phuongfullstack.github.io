@@ -1,0 +1,10 @@
+# Playwright is installed ad hoc when the page needs rendering for a check.
+# It is test tooling, not part of the site — the site itself has no build
+# step and no runtime dependencies.
+node_modules/
+package.json
+package-lock.json
+
+# Local preview servers and OS noise
+.DS_Store
+*.log
