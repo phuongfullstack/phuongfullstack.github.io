@@ -17,7 +17,7 @@ public sealed record Engineer
     int      Years    = 8;
     string   Role     = "Architect Engineer";
     string[] Core     = [".NET", "C#", "TypeScript"];
-    string[] Frontend = ["Angular", "React", "Next.js"];
+    string[] Frontend = ["React", "Next.js", "Angular"];
     string[] AlsoUsed = ["Vue 3", "Svelte", "Ember", "VanillaJS"];
     string[] Cloud    = ["Azure", "AWS", "Docker", "Terraform"];
     string[] Domains  = ["Healthcare", "Fintech", "Procurement SaaS",
@@ -30,12 +30,15 @@ public sealed record Engineer
 Eight years building production web and desktop systems — frequently owning them end to end,
 from cloud infrastructure and architecture through backend, frontend and DevOps delivery.
 Deep backend expertise in **.NET** with clean / layered / hexagonal architecture, comfortable
-across **Angular, Vue and React**, and cloud-native on **Azure and AWS** with IaC, CI/CD and
-structured observability.
+across **React / Next.js, Angular, Vue and Svelte**, and cloud-native on **Azure and AWS** with IaC,
+CI/CD and structured observability.
 
 **Currently** architect engineer on an AI-driven enterprise procurement platform (team of 10):
-Azure infrastructure in Terraform, .NET services, Angular front end, OAuth2/OIDC via Auth0,
-k6 load tests and Playwright E2E across four environments.
+.NET microservices and Next.js micro-frontends, infrastructure for the whole project in Terraform
+on Azure, OAuth2/OIDC via Auth0, k6 load tests and Playwright E2E across four environments.
+
+**Recently** built and deployed a new clinic CRM solo, end to end (Jan – May 2026): desktop (Electron) and web (React) apps over a
+.NET 10 API, real-time RingCentral call mirroring with instant patient lookup, and Tebra integration, on Azure and Cloudflare.
 
 ---
 
@@ -45,21 +48,21 @@ Counted from the dated project history in my CV, not rounded up.
 
 | | | | |
 |---|---|---|---|
-| **113** months of .NET in production | **16** projects delivered | **12** people in the largest team | **10** domains |
+| **118** months of .NET in production | **17** projects delivered | **12** people in the largest team | **10** domains |
 
 **Months of project time per technology** &mdash; parallel projects mean these sum past the 98 months of dated project history:
 
 ```
-.NET / C#          ████████████████████████████████████████  113
-TypeScript         ████████████████████████                   68
-Angular            ███████████████████████                    65
-Entity Framework   ███████████████████                        55
-Azure              ██████████████████                         52
+.NET / C#          ████████████████████████████████████████  118
+TypeScript         █████████████████████████                  73
+Entity Framework   ████████████████████                       60
+Azure              ███████████████████                        57
+Angular            █████████████████                          49
 SQL Server         █████████████████                          49
-GitHub Actions     ████████████                               34
-ASP.NET Web API    ██████████                                 29
+GitHub Actions     █████████████                              39
+ASP.NET Web API    ████████████                               34
+Terraform          ███████████                                31
 Serilog            ██████████                                 29
-Terraform          █████████                                  26
 ```
 
 ---
@@ -89,12 +92,12 @@ Terraform          █████████                                  
 
 **Frontend**
 
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
 ![Vue 3](https://img.shields.io/badge/Vue_3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
 ![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=flat-square&logo=svelte&logoColor=white)
 ![Ember](https://img.shields.io/badge/Ember-E04E39?style=flat-square&logo=emberdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 
@@ -103,6 +106,7 @@ Terraform          █████████                                  
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
@@ -118,9 +122,11 @@ Terraform          █████████                                  
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
 ![Cosmos DB](https://img.shields.io/badge/Cosmos_DB-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white)
+![RingCentral](https://img.shields.io/badge/RingCentral-0684BD?style=flat-square&logo=ringcentral&logoColor=white)
 
-**Building now** &mdash; in development, outside the CV
+**Building now** &mdash; personal projects in development
 
 ![Electron](https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
@@ -148,11 +154,12 @@ Terraform          █████████                                  
 ![k6](https://img.shields.io/badge/k6-7D64FF?style=flat-square&logo=k6&logoColor=white)
 ![Codacy](https://img.shields.io/badge/Codacy-222F29?style=flat-square&logo=codacy&logoColor=white)
 
-**AI-assisted development**
+**AI engineering tools**
 
 ![Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=flat-square&logo=githubcopilot&logoColor=white)
 ![Cursor](https://img.shields.io/badge/Cursor-000000?style=flat-square&logo=cursor&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=claude&logoColor=white)
+![Windsurf](https://img.shields.io/badge/Windsurf-0B100F?style=flat-square&logo=windsurf&logoColor=white)
 
 ---
 
@@ -160,7 +167,8 @@ Terraform          █████████                                  
 
 | Years | Setting | Focus |
 | --- | --- | --- |
-| **2025 – present** | Architect engineer | Enterprise procurement platform: Terraform/Azure infrastructure, .NET + Angular, CI/CD, observability |
+| **2025 – present** | Architect engineer | Enterprise procurement platform: .NET microservices + Next.js micro-frontends, project-wide Terraform/Azure infrastructure, CI/CD, observability |
+| **Jan – May 2026** | Sole full-stack developer | Clinic CRM built from scratch: desktop + web apps, real-time call mirroring and patient lookup, .NET 10, RingCentral, Tebra |
 | **2024 – 2025** | Product delivery partner | Consumer, PropTech, gaming and fintech products; led a small team |
 | **2022 – 2024** | Enterprise software services | Healthcare, public-sector and data-platform work; code review and mentoring |
 | **2021 – 2022** | Offshore product engineering | Legacy system modelling &amp; visualisation, desktop applications |
@@ -176,7 +184,8 @@ Client and product work under NDA, so this is the shape of it rather than a proj
 
 | Domain | When | Time | Built with |
 | --- | --- | --- | --- |
-| **Enterprise procurement SaaS** | 2025 – present | 16 mo | `.NET` `Angular` `Next.js` `Azure` `Terraform` `Auth0` |
+| **Enterprise procurement SaaS** | 2025 – present | 16 mo | `.NET` `Next.js` `Micro-frontends` `Azure` `Terraform` `Auth0` |
+| Healthcare CRM | 2026 | 5 mo | `.NET 10` `React` `Electron` `Azure` `Cloudflare` `RingCentral` `Tebra` |
 | Fintech &amp; fund management | 2024 | 10 mo | `.NET` `Angular` `SQL Server` `Terraform` |
 | Healthcare | 2023 – 2024 | 13 mo | `.NET` `Angular` `Azure Serverless` |
 | AI &amp; PropTech | 2025 | 5 mo | `.NET Core` `Vue 3` `Postgres` `Redis` `GCP` |
@@ -193,7 +202,7 @@ Happy to walk through any of it in detail — architecture, trade-offs, what bro
 
 ## 🧭 How I work
 
-- **Architecture** — clean / layered / hexagonal, DDD, microservices, serverless, containerised
+- **Architecture** — clean / layered / hexagonal, DDD, microservices, micro-frontends, serverless, containerised
   workloads, event-driven integration, dependency injection and NuGet versioning
 - **Security** — OAuth2 / OIDC via Auth0, applied at every service boundary
 - **Observability** — structured logging with Serilog, distributed tracing and metrics, Azure
@@ -204,7 +213,7 @@ Happy to walk through any of it in detail — architecture, trade-offs, what bro
   in Terraform across four isolated environments
 - **Team** — code review, mentoring, leading small teams, architect on a team of ten, and writing
   the docs nobody else writes
-- **Tools** — AI-assisted development with Copilot, Cursor and Claude. English: upper intermediate (B2)
+- **Tools** — AI-augmented engineering with GitHub Copilot, Cursor, Claude and Windsurf. English: upper intermediate (B2)
 
 ---
 

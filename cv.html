@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phuong Tran — Resume</title>
+<meta name="description" content="Resume of Phuong Tran, Senior Full-stack Engineer (.NET, Azure, React/Next.js, Angular), Da Nang, Vietnam — open to remote roles.">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #bfbfbf;
+    --accent: #1f3a5f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #eceff1; }
+  body {
+    font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.26;
+    color: var(--ink);
+  }
+  a { color: inherit; text-decoration: none; }
+
+  main {
+    max-width: 210mm;
+    margin: 24px auto;
+    padding: 14mm 16mm;
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(0,0,0,.1);
+  }
+
+  /* Header */
+  header { text-align: center; }
+  h1 { font-size: 22pt; font-weight: 700; letter-spacing: .02em; color: var(--accent); line-height: 1.1; }
+  .headline { font-size: 11.5pt; font-weight: 700; margin-top: 2px; }
+  .contact { margin-top: 3px; color: var(--muted); }
+  .contact + .contact { margin-top: 0; }
+  .contact span + span::before { content: "|"; margin: 0 5px; color: var(--rule); }
+
+  /* Sections */
+  section { margin-top: 9px; }
+  h2 {
+    font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--accent); border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px; margin-bottom: 6px;
+    break-after: avoid;
+  }
+  .note { color: var(--muted); font-style: italic; margin: -2px 0 6px; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: 11em 1fr; gap: 1px 8px; }
+  .skills dt { font-weight: 700; }
+
+  /* Entries */
+  .entry { margin-bottom: 7px; }
+  .entry .row, .entry .role, .entry .context { break-after: avoid; }
+  li, .tech { break-inside: avoid; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .row h3 { font-size: 10.4pt; font-weight: 700; }
+  .row h3 span { font-weight: 400; }
+  .date { white-space: nowrap; font-weight: 700; }
+  .role { font-style: italic; color: var(--muted); }
+  .context { margin-top: 1px; color: var(--muted); }
+  ul { padding-left: 15px; margin-top: 2px; }
+  li { margin: 1px 0; padding-left: 2px; }
+  .tech { margin-top: 2px; color: var(--muted); }
+  .tech b { color: var(--ink); }
+  mark { background: #fff3a3; color: inherit; padding: 0 2px; }
+  code { font-family: Consolas, "Liberation Mono", monospace; font-size: .92em; }
+
+  .compact .row { margin-bottom: 1px; }
+  .compact .row div span { color: var(--muted); }
+  .compact .date { font-weight: 400; color: var(--muted); }
+
+  @page { size: A4; margin: 10mm 14mm 9mm; }
+  @media print {
+    html { background: #fff; }
+    main { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  }
+  @media screen and (max-width: 760px) {
+    main { margin: 0; padding: 20px 16px; box-shadow: none; }
+    .row { display: block; }
+    .date { display: block; font-weight: 400; color: var(--muted); }
+    .skills { grid-template-columns: 1fr; }
+    .skills dd { margin-bottom: 4px; }
+    .contact span { display: inline-block; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>PHUONG TRAN</h1>
+  <div class="headline">Senior Full-stack Engineer | .NET · Azure &amp; AWS · React / Next.js · Angular · Vue · Svelte</div>
+  <div class="contact">
+    <span>Da Nang, Vietnam · Open to remote</span>
+    <span>+84 39 250 2010</span>
+    <span><a href="mailto:nhatphuongb1@gmail.com">nhatphuongb1@gmail.com</a></span>
+  </div>
+  <div class="contact">
+    <span><a href="https://www.linkedin.com/in/nhatphuongcse/">linkedin.com/in/nhatphuongcse</a></span>
+    <span><a href="https://github.com/phuongfullstack">github.com/phuongfullstack</a></span>
+    <span><a href="https://phuongfullstack.github.io">phuongfullstack.github.io</a></span>
+  </div>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p>
+    Senior full-stack engineer with 8+ years delivering production web and desktop software for clients in the US,
+    Canada, Europe, Australia, Japan and Malaysia, across healthcare, fintech, consumer and enterprise SaaS. Deep expertise in .NET
+    backends and microservices built on clean and hexagonal architecture, paired with React/Next.js, Angular, Vue and Svelte front ends.
+    Owns Azure and AWS platforms end-to-end (infrastructure as code, CI/CD, observability, OAuth2/OIDC), integrates LLMs into
+    production features, and leads engineering standards and mentoring for teams of up to 10.
+  </p>
+</section>
+
+<section>
+  <h2>Technical Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>C#, TypeScript, JavaScript, SQL, Java, Python</dd>
+    <dt>Backend</dt><dd>.NET (up to .NET 10), ASP.NET Web API, Entity Framework, SignalR, gRPC, WebSocket</dd>
+    <dt>Frontend</dt><dd>React, Next.js, Angular, Vue 3, Svelte, Ember.js, Vite, Tailwind CSS, Kendo UI</dd>
+    <dt>Desktop</dt><dd>Electron, WPF, WinForms, UWP</dd>
+    <dt>Cloud &amp; Infra</dt><dd>Azure (App Service, Functions, Service Bus), AWS, GCP, Cloudflare, Terraform, Bicep, Docker</dd>
+    <dt>CI/CD &amp; Observability</dt><dd>GitHub Actions, Azure DevOps, Application Insights, Serilog, distributed tracing, Grafana, Sentry</dd>
+    <dt>Data &amp; Messaging</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB, Cosmos DB, Redis, SQLite, Firebase, RabbitMQ</dd>
+    <dt>Architecture</dt><dd>Microservices, Micro-frontends, Clean/Hexagonal, DDD, Event-driven, Serverless, OAuth2/OIDC</dd>
+    <dt>Testing &amp; Quality</dt><dd>xUnit, NUnit, Moq, Jest, Jasmine, Playwright (E2E), k6 (load), Codacy, Codecov</dd>
+    <dt>AI &amp; LLM</dt><dd>LLM application integration (Google Gemini API), AI-driven analytics and forecasting features</dd>
+    <dt>AI Engineering Tools</dt><dd>GitHub Copilot, Cursor, Claude, Windsurf for AI-augmented design, coding and review</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <p class="note">Client projects, most recent first. Some engagements ran in parallel.</p>
+
+  <div class="entry">
+    <div class="row">
+      <h3>AI-Driven Enterprise Procurement Platform <span>— Japanese engineering &amp; construction client</span></h3>
+      <span class="date">Jun 2025 – Present</span>
+    </div>
+    <div class="role">Architect Engineer (Full-stack &amp; DevOps) · Team of 10</div>
+    <ul>
+      <li>Designed the microservices and micro-frontend architecture, bootstrapped the codebase and set team coding standards.</li>
+      <li>Owned infrastructure for the entire project: provisioned Azure with Terraform and ran four isolated environments (dev, staging, UAT, production) with configuration parity and controlled release promotion.</li>
+      <li>Built .NET microservices and Next.js micro-frontends on a shared component library; designed AI-driven analytics endpoints behind procurement KPI dashboards and real-time order-bottleneck alerts.</li>
+      <li>Designed REST and pub/sub integration contracts; secured all service boundaries with Auth0 OAuth2/OIDC.</li>
+      <li>Built multi-stage CI/CD pipelines in GitHub Actions and Azure DevOps with quality gates; added metrics, distributed tracing and Serilog structured logging to meet SLA, RTO and RPO targets.</li>
+      <li>Established automated testing from scratch: k6 load tests and Playwright end-to-end suites running on every release.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET, C#, EF Core, Next.js, TypeScript, Azure, Terraform, Docker, PostgreSQL, Redis, Auth0, Serilog, k6, Playwright</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Clinic CRM <span>— CRM platform for medical clinics (web and desktop)</span></h3>
+      <span class="date">Jan 2026 – May 2026</span>
+    </div>
+    <div class="role">Sole Full-stack Developer · owned development and deployment end to end</div>
+    <p class="context">New CRM platform for medical clinics: patients, calls, referrals, orders, notes, tasks and reports.</p>
+    <ul>
+      <li>Built a desktop app (Electron) and a web app (React) from a single TypeScript monorepo, backed by a Clean Architecture .NET 10 API over PostgreSQL.</li>
+      <li>Implemented real-time call mirroring from RingCentral telephony, with instant patient lookup when a call comes in.</li>
+      <li>Integrated the Tebra practice-management system for patient data, plus RingCentral SMS.</li>
+      <li>Provisioned Azure and Cloudflare infrastructure with Terraform and deployed to production through GitHub Actions CI/CD.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET 10, EF Core, PostgreSQL, Azure, Cloudflare, React, Electron, TypeScript, SQLite, Auth0, RingCentral, Tebra, Terraform</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Tinybeans <span>— family photo-sharing app with millions of users</span></h3>
+      <span class="date">Jan 2024 – Jun 2025</span>
+    </div>
+    <div class="role">Full-stack Developer · Team of 9+</div>
+    <ul>
+      <li>Developed Java REST APIs for the core photo-sharing and family-timeline services used across iOS, Android and web.</li>
+      <li>Integrated subscription billing across Stripe, Apple In-App Purchase and Google Play Billing, with TaxJar for sales tax.</li>
+      <li>Built Ember.js web-app features and maintained the WordPress VIP marketing site (themes, plugins, content).</li>
+      <li>Shipped continuously via GitHub Actions and AWS Elastic Beanstalk with Codacy/Codecov coverage gates; instrumented Grafana, Sentry, Leanplum and Braze.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Java, Ember.js, MySQL, AWS (S3, SNS, SQS, CloudFront, Elastic Beanstalk), WordPress VIP, Stripe, Braze</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Proptexx <span>— AI image-generation SaaS for real estate and interior design</span></h3>
+      <span class="date">Jan 2025 – May 2025</span>
+    </div>
+    <div class="role">Full-stack Developer · Team of 4</div>
+    <ul>
+      <li>Led and mentored a team of 4 engineers: set technical direction, ran code reviews and kept delivery milestones on track.</li>
+      <li>Designed .NET services that provision per-client workspaces in front of the AI image-generation module.</li>
+      <li>Built the embeddable widget and admin dashboard in Vue 3; integrated Outseta for plan tiers, billing and usage quotas.</li>
+      <li>Implemented Redis-queued background workers for batch image generation and cross-service data synchronization.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET Core, C#, Vue 3, PostgreSQL, Redis, GCP, Outseta</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Precommitment Session Module <span>— gaming kiosk terminal</span></h3>
+      <span class="date">Nov 2024 – Jan 2025</span>
+    </div>
+    <div class="role">Full-stack Developer · Team of 4</div>
+    <ul>
+      <li>Sole .NET engineer on a hardware team; rebuilt the legacy module on modern .NET with DI and NUnit/Jest tests.</li>
+      <li>Mapped PCS gaming protocols and integrated live kiosk hardware over WebSocket with full backward compatibility.</li>
+      <li>Built a config-driven VanillaJS touchscreen UI; containerized it with Docker and shipped via GitHub Actions.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET Core, C#, WebSocket, JavaScript, Docker, NUnit, Jest, Wireshark</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Fund Management Portal <span>— Australian fintech platform</span></h3>
+      <span class="date">Feb 2024 – Nov 2024</span>
+    </div>
+    <div class="role">Full-stack Developer · Team of 6</div>
+    <ul>
+      <li>Delivered portfolio and transaction modules in C#/.NET from API design to Azure production, with xUnit/Moq tests.</li>
+      <li>Managed Azure environments with Terraform and integrated internal microservices through Kong API Gateway.</li>
+      <li>Built reusable Angular data-table, form and chart components that standardized UI patterns across the portal.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET, C#, Entity Framework, Angular, TypeScript, SQL Server, Kong, Terraform, Azure</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>AI-Powered Remote Care Platform <span>— healthcare</span></h3>
+      <span class="date">Jan 2023 – Jan 2024</span>
+    </div>
+    <div class="role">Full-stack Developer · Team of 6</div>
+    <ul>
+      <li>Analyzed the legacy system and defined a phased migration to .NET and Azure serverless (Functions, Service Bus).</li>
+      <li>Built clean-architecture REST APIs with OAuth2 security, structured logging and Application Insights monitoring.</li>
+      <li>Created an Angular component library for care-plan, dashboard and patient-management screens.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Integrated Property Tax System <span>— US county government</span></h3>
+      <span class="date">Mar 2022 – Mar 2023</span>
+    </div>
+    <div class="role">Full-stack Developer · Team of 5</div>
+    <ul>
+      <li>Built tax-roll correction features and ASP.NET Web APIs on Azure with Serilog and Azure Monitor.</li>
+      <li>Reviewed code, enforced coding standards and mentored junior developers on .NET best practices.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Legacy Modernization Tooling <span>— 3 projects</span></h3>
+      <span class="date">Jan 2022 – Mar 2023</span>
+    </div>
+    <ul>
+      <li>Sole developer of a legacy-system visualizer (OrientDB graph, ExtJS) and a WPF Git ETL desktop tool.</li>
+      <li>Built the ETL pipeline for a legacy title-order data-conversion MVP (.NET, Svelte, MongoDB).</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Personal Projects</h2>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Cross-platform Desktop App <span>— Electron, personal project</span></h3>
+      <span class="date">In development</span>
+    </div>
+    <ul>
+      <li>Shared React core with code-signed auto-updates (electron-updater), Supabase auth and data, and Playwright E2E tests.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Electron, React, React Router, Vite, Tailwind CSS, Radix UI, TipTap, Supabase, Bun, Playwright, nginx</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>LLM-Powered Analysis Tool <span>— personal project</span></h3>
+      <span class="date">In development</span>
+    </div>
+    <ul>
+      <li>Gemini-based analysis backed by .NET 10 APIs and SignalR real-time hubs; deployed on Vercel, Render and Firebase.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET 10, SignalR, Google Gemini API, Next.js, Vercel, Render, Firebase</div>
+  </div>
+</section>
+
+<section class="compact">
+  <h2>Earlier Experience</h2>
+  <div class="row"><div><b>Education Management System</b> <span>— set up the stack, CI/CD and coding standards for a 12-person team (.NET, Angular)</span></div><span class="date">2021</span></div>
+  <div class="row"><div><b>Point of Sale Desktop App</b> <span>— sales transactions, product lookup and receipts (WPF)</span></div><span class="date">2021</span></div>
+  <div class="row"><div><b>Truck &amp; Equipment Sales System</b> <span>— order tracking and queue prioritization (Angular)</span></div><span class="date">2020</span></div>
+  <div class="row"><div><b>Water Laboratory Management</b> <span>— sample tracking and inter-lab data sharing (AngularJS, .NET)</span></div><span class="date">2019</span></div>
+  <div class="row"><div><b>Telecom Back-Office Portal</b> <span>— Malaysian operator (ASP.NET WebForms)</span></div><span class="date">2019</span></div>
+  <div class="row"><div><b>Decentralized Asset Exchange</b> <span>— Scrum Master and React front end (Solidity, Ethereum)</span></div><span class="date">2018 – 2019</span></div>
+</section>
+
+<section>
+  <h2>Education &amp; Languages</h2>
+  <div class="row"><div><b>Bachelor of Software Engineering</b> — Duy Tan University, Da Nang, Vietnam</div><div>English (B2) · Vietnamese (Native)</div></div>
+</section>
+
+</main>
+</body>
+</html>
