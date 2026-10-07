@@ -37,7 +37,7 @@ CI/CD and structured observability.
 .NET microservices and Next.js micro-frontends, infrastructure for the whole project in Terraform
 on Azure, OAuth2/OIDC via Auth0, k6 load tests and Playwright E2E across four environments.
 
-**Recently** built and deployed a new clinic CRM solo, end to end (Jan – Apr 2026): desktop (Electron) and web (React) apps over a
+**Recently** built and deployed a new clinic CRM solo, end to end (Jan – May 2026): desktop (Electron) and web (React) apps over a
 .NET 10 API, real-time RingCentral call mirroring with instant patient lookup, and Tebra integration, on Azure and Cloudflare.
 
 ---
@@ -48,20 +48,20 @@ Counted from the dated project history in my CV, not rounded up.
 
 | | | | |
 |---|---|---|---|
-| **117** months of .NET in production | **17** projects delivered | **12** people in the largest team | **10** domains |
+| **118** months of .NET in production | **17** projects delivered | **12** people in the largest team | **10** domains |
 
 **Months of project time per technology** &mdash; parallel projects mean these sum past the 98 months of dated project history:
 
 ```
-.NET / C#          ████████████████████████████████████████  117
-TypeScript         █████████████████████████                  72
-Entity Framework   ████████████████████                       59
-Azure              ███████████████████                        56
+.NET / C#          ████████████████████████████████████████  118
+TypeScript         █████████████████████████                  73
+Entity Framework   ████████████████████                       60
+Azure              ███████████████████                        57
 Angular            █████████████████                          49
 SQL Server         █████████████████                          49
-GitHub Actions     █████████████                              38
-ASP.NET Web API    ███████████                                33
-Terraform          ██████████                                 30
+GitHub Actions     █████████████                              39
+ASP.NET Web API    ████████████                               34
+Terraform          ███████████                                31
 Serilog            ██████████                                 29
 ```
 
@@ -168,7 +168,7 @@ Serilog            ██████████                               
 | Years | Setting | Focus |
 | --- | --- | --- |
 | **2025 – present** | Architect engineer | Enterprise procurement platform: .NET microservices + Next.js micro-frontends, project-wide Terraform/Azure infrastructure, CI/CD, observability |
-| **Jan – Apr 2026** | Sole full-stack developer | Clinic CRM built from scratch: desktop + web apps, real-time call mirroring and patient lookup, .NET 10, RingCentral, Tebra |
+| **Jan – May 2026** | Sole full-stack developer | Clinic CRM built from scratch: desktop + web apps, real-time call mirroring and patient lookup, .NET 10, RingCentral, Tebra |
 | **2024 – 2025** | Product delivery partner | Consumer, PropTech, gaming and fintech products; led a small team |
 | **2022 – 2024** | Enterprise software services | Healthcare, public-sector and data-platform work; code review and mentoring |
 | **2021 – 2022** | Offshore product engineering | Legacy system modelling &amp; visualisation, desktop applications |
@@ -185,7 +185,7 @@ Client and product work under NDA, so this is the shape of it rather than a proj
 | Domain | When | Time | Built with |
 | --- | --- | --- | --- |
 | **Enterprise procurement SaaS** | 2025 – present | 16 mo | `.NET` `Next.js` `Micro-frontends` `Azure` `Terraform` `Auth0` |
-| Healthcare CRM | 2026 | 4 mo | `.NET 10` `React` `Electron` `Azure` `Cloudflare` `RingCentral` `Tebra` |
+| Healthcare CRM | 2026 | 5 mo | `.NET 10` `React` `Electron` `Azure` `Cloudflare` `RingCentral` `Tebra` |
 | Fintech &amp; fund management | 2024 | 10 mo | `.NET` `Angular` `SQL Server` `Terraform` |
 | Healthcare | 2023 – 2024 | 13 mo | `.NET` `Angular` `Azure Serverless` |
 | AI &amp; PropTech | 2025 | 5 mo | `.NET Core` `Vue 3` `Postgres` `Redis` `GCP` |
