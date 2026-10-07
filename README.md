@@ -38,7 +38,7 @@ CI/CD and structured observability.
 on Azure, OAuth2/OIDC via Auth0, k6 load tests and Playwright E2E across four environments.
 
 **Recently** built a clinic CRM solo (Jan – Apr 2026): a .NET 10 API, web and Electron desktop clients from one
-TypeScript monorepo, offline encrypted SQLite, and RingCentral and Tebra integrations.
+TypeScript monorepo, offline encrypted SQLite, RingCentral and Tebra integrations, on Azure and Cloudflare.
 
 ---
 
@@ -106,6 +106,7 @@ Serilog            ██████████                               
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
@@ -184,7 +185,7 @@ Client and product work under NDA, so this is the shape of it rather than a proj
 | Domain | When | Time | Built with |
 | --- | --- | --- | --- |
 | **Enterprise procurement SaaS** | 2025 – present | 16 mo | `.NET` `Next.js` `Micro-frontends` `Azure` `Terraform` `Auth0` |
-| Healthcare CRM | 2026 | 4 mo | `.NET 10` `React` `Electron` `PostgreSQL` `RingCentral` `Tebra` |
+| Healthcare CRM | 2026 | 4 mo | `.NET 10` `React` `Electron` `Azure` `Cloudflare` `RingCentral` `Tebra` |
 | Fintech &amp; fund management | 2024 | 10 mo | `.NET` `Angular` `SQL Server` `Terraform` |
 | Healthcare | 2023 – 2024 | 13 mo | `.NET` `Angular` `Azure Serverless` |
 | AI &amp; PropTech | 2025 | 5 mo | `.NET Core` `Vue 3` `Postgres` `Redis` `GCP` |
