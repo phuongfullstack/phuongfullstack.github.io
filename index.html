@@ -364,7 +364,7 @@
           <div class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-device"/></svg></div>
           <h3>Desktop &amp; Mobile</h3>
           <p class="stack__meta">2 WPF projects &middot; since 2021</p>
-          <p class="stack__blurb">WPF applications &mdash; a point-of-sale system, and an ETL tool that pulls source from several git providers and exports the processed result. An Electron client with an encrypted offline SQLite replica for a clinic CRM. WinForms and UWP alongside; Flutter and Android on mobile.</p>
+          <p class="stack__blurb">WPF applications &mdash; a point-of-sale system, and an ETL tool that pulls source from several git providers and exports the processed result. An offline-capable Electron client for a clinic CRM. WinForms and UWP alongside; Flutter and Android on mobile.</p>
           <ul class="tags"><li class="tag tag--core">WPF</li><li class="tag">WinForms</li><li class="tag">UWP</li><li class="tag tag--core">Electron</li><li class="tag">Flutter</li><li class="tag">Android</li></ul>
         </article>
 
@@ -495,13 +495,11 @@
           <div class="timeline__body">
             <h3 class="timeline__role">Sole Full-stack Developer <span class="timeline__at">Clinic CRM</span></h3>
             <p class="timeline__desc">
-              Built a clinic CRM end to end, ported from a legacy Electron app: patients, calls,
-              referrals, orders, notes, tasks and reports. A Clean Architecture .NET 10 API is the only
-              path to PostgreSQL, with EF Core migrations, row-level security, triggers and per-row audit
-              attribution. Web and Electron clients share screens, design tokens and domain logic in one
-              TypeScript monorepo; the desktop client works offline on an encrypted SQLite replica, pops up
-              the patient on incoming calls and signs in with PKCE. Integrated RingCentral calls and SMS and
-              Tebra patient sync, with E.164 normalisation kept identical across .NET, TypeScript and SQL.
+              Built a new CRM for medical clinics end to end as the sole developer: patients, calls,
+              referrals, orders, notes, tasks and reports. A Clean Architecture .NET 10 API over PostgreSQL,
+              React web and Electron desktop clients from one TypeScript monorepo with offline support on
+              desktop, RingCentral telephony and Tebra integration, and infrastructure on Azure and
+              Cloudflare managed in Terraform.
             </p>
             <ul class="tags tags--sm">
               <li class="tag">.NET 10</li><li class="tag">EF Core</li><li class="tag">PostgreSQL</li><li class="tag">React</li><li class="tag">Electron</li>
@@ -616,7 +614,7 @@
         <article class="card domain">
           <h3 class="domain__title">Healthcare CRM</h3>
           <span class="domain__when">2026 &middot; 4 mo &middot; solo build</span>
-          <p class="domain__what">A clinic CRM on web and desktop from one TypeScript monorepo: offline-capable Electron client, RingCentral telephony and Tebra patient sync over a .NET 10 API.</p>
+          <p class="domain__what">A new clinic CRM on web and desktop, built solo: .NET 10 API, React and Electron clients, RingCentral and Tebra integrations, on Azure and Cloudflare.</p>
           <ul class="tags tags--sm">
             <li class="tag">.NET 10</li><li class="tag">React</li><li class="tag">Electron</li><li class="tag">Azure</li><li class="tag">Cloudflare</li><li class="tag">RingCentral</li>
           </ul>

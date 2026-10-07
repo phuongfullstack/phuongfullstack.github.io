@@ -161,13 +161,12 @@
       <span class="date">Jan 2026 – Apr 2026</span>
     </div>
     <div class="role">Sole Full-stack Developer · end-to-end ownership of API, web, desktop and infrastructure</div>
-    <p class="context">Port of a legacy Electron app covering patients, calls, referrals, orders, notes, tasks and reports.</p>
+    <p class="context">New CRM platform for medical clinics: patients, calls, referrals, orders, notes, tasks and reports.</p>
     <ul>
-      <li>Built a Clean Architecture .NET 10 API as the sole database gateway; EF Core migrations with row-level security, triggers and per-row audit attribution.</li>
-      <li>Designed a TypeScript monorepo where web (React/Vite) and Electron clients share screens, tokens and domain logic.</li>
-      <li>Delivered an offline-capable desktop client: encrypted SQLite replica, sync outbox, incoming-call patient popup and system-browser PKCE sign-in, with no RingCentral secrets on workstations.</li>
-      <li>Integrated RingCentral (calls, SMS) and Tebra SOAP patient sync; E.164 normalization kept identical across .NET, TypeScript and SQL by parity tests.</li>
-      <li>Redesigned role-based Settings (20 pages, 6 sections into 4); a UI-vs-API permission audit uncovered a privilege-escalation gap (<code>users:manage</code> could self-promote to admin).</li>
+      <li>Built the platform from scratch: a Clean Architecture .NET 10 API over PostgreSQL with row-level security and audit logging.</li>
+      <li>Delivered web (React) and desktop (Electron) clients from a single TypeScript monorepo, with offline support on desktop.</li>
+      <li>Integrated RingCentral telephony (calls, SMS) and the Tebra practice-management system.</li>
+      <li>Provisioned infrastructure on Azure and Cloudflare with Terraform and automated delivery through GitHub Actions.</li>
     </ul>
     <div class="tech"><b>Tech:</b> .NET 10, EF Core, PostgreSQL, Azure, Cloudflare, React, Electron, TypeScript, SQLite, Auth0, RingCentral, Tebra, Terraform</div>
   </div>

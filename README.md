@@ -37,8 +37,8 @@ CI/CD and structured observability.
 .NET microservices and Next.js micro-frontends, infrastructure for the whole project in Terraform
 on Azure, OAuth2/OIDC via Auth0, k6 load tests and Playwright E2E across four environments.
 
-**Recently** built a clinic CRM solo (Jan – Apr 2026): a .NET 10 API, web and Electron desktop clients from one
-TypeScript monorepo, offline encrypted SQLite, RingCentral and Tebra integrations, on Azure and Cloudflare.
+**Recently** built a new clinic CRM solo (Jan – Apr 2026): a .NET 10 API, React web and Electron desktop
+clients from one TypeScript monorepo, RingCentral and Tebra integrations, on Azure and Cloudflare.
 
 ---
 
@@ -168,7 +168,7 @@ Serilog            ██████████                               
 | Years | Setting | Focus |
 | --- | --- | --- |
 | **2025 – present** | Architect engineer | Enterprise procurement platform: .NET microservices + Next.js micro-frontends, project-wide Terraform/Azure infrastructure, CI/CD, observability |
-| **Jan – Apr 2026** | Sole full-stack developer | Clinic CRM: .NET 10 API, React web + Electron desktop monorepo, offline SQLite, RingCentral and Tebra |
+| **Jan – Apr 2026** | Sole full-stack developer | Clinic CRM built from scratch: .NET 10 API, React web + Electron desktop, RingCentral and Tebra, Azure and Cloudflare |
 | **2024 – 2025** | Product delivery partner | Consumer, PropTech, gaming and fintech products; led a small team |
 | **2022 – 2024** | Enterprise software services | Healthcare, public-sector and data-platform work; code review and mentoring |
 | **2021 – 2022** | Offshore product engineering | Legacy system modelling &amp; visualisation, desktop applications |
