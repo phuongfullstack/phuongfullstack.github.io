@@ -16,7 +16,7 @@
   html { background: #eceff1; }
   body {
     font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
-    font-size: 10.2pt;
+    font-size: 10pt;
     line-height: 1.26;
     color: var(--ink);
   }
@@ -53,16 +53,21 @@
   .skills dt { font-weight: 700; }
 
   /* Entries */
-  .entry { margin-bottom: 7px; break-inside: avoid; }
+  .entry { margin-bottom: 7px; }
+  .entry .row, .entry .role, .entry .context { break-after: avoid; }
+  li, .tech { break-inside: avoid; }
   .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .row h3 { font-size: 10.4pt; font-weight: 700; }
   .row h3 span { font-weight: 400; }
   .date { white-space: nowrap; font-weight: 700; }
   .role { font-style: italic; color: var(--muted); }
+  .context { margin-top: 1px; color: var(--muted); }
   ul { padding-left: 15px; margin-top: 2px; }
   li { margin: 1px 0; padding-left: 2px; }
   .tech { margin-top: 2px; color: var(--muted); }
   .tech b { color: var(--ink); }
+  mark { background: #fff3a3; color: inherit; padding: 0 2px; }
+  code { font-family: Consolas, "Liberation Mono", monospace; font-size: .92em; }
 
   .compact .row { margin-bottom: 1px; }
   .compact .row div span { color: var(--muted); }
@@ -120,7 +125,7 @@
     <dt>Desktop</dt><dd>Electron, WPF, WinForms, UWP</dd>
     <dt>Cloud &amp; Infra</dt><dd>Azure (App Service, Functions, Service Bus), AWS (S3, SQS, SNS), GCP, Terraform, Bicep, Docker</dd>
     <dt>CI/CD &amp; Observability</dt><dd>GitHub Actions, Azure DevOps, Application Insights, Serilog, distributed tracing, Grafana, Sentry</dd>
-    <dt>Data &amp; Messaging</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB, Cosmos DB, Redis, Supabase, Firebase, RabbitMQ</dd>
+    <dt>Data &amp; Messaging</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB, Cosmos DB, Redis, SQLite, Firebase, RabbitMQ</dd>
     <dt>Architecture</dt><dd>Microservices, Micro-frontends, Clean/Hexagonal, DDD, Event-driven, Serverless, OAuth2/OIDC</dd>
     <dt>Testing &amp; Quality</dt><dd>xUnit, NUnit, Moq, Jest, Jasmine, Playwright (E2E), k6 (load), Codacy, Codecov</dd>
     <dt>AI &amp; LLM</dt><dd>LLM application integration (Google Gemini API), AI-driven analytics and forecasting features</dd>
@@ -134,15 +139,32 @@
 
   <div class="entry">
     <div class="row">
+      <h3>Clinic CRM <span>— CRM platform for medical clinics (web and desktop)</span></h3>
+      <span class="date"><mark>[MM/YYYY – MM/YYYY]</mark></span>
+    </div>
+    <div class="role"><mark>[Role]</mark> · Team of <mark>[N]</mark></div>
+    <p class="context">Port of a legacy Electron app covering patients, calls, referrals, orders, notes, tasks and reports.</p>
+    <ul>
+      <li>Built a Clean Architecture .NET 10 API as the sole database gateway; EF Core migrations with row-level security, triggers and per-row audit attribution.</li>
+      <li>Designed a TypeScript monorepo where web (React/Vite) and Electron clients share screens, tokens and domain logic.</li>
+      <li>Delivered an offline-capable desktop client: encrypted SQLite replica, sync outbox, incoming-call patient popup and system-browser PKCE sign-in, with no RingCentral secrets on workstations.</li>
+      <li>Integrated RingCentral (calls, SMS) and Tebra SOAP patient sync; E.164 normalization kept identical across .NET, TypeScript and SQL by parity tests.</li>
+      <li>Redesigning role-based Settings (20 pages, 6 sections into 4); a UI-vs-API permission audit uncovered a privilege-escalation gap (<code>users:manage</code> could self-promote to admin).</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET 10, EF Core, PostgreSQL, Azure, React 18, Electron, TypeScript, SQLite, Auth0, RingCentral, Tebra, Terraform, xUnit</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
       <h3>AI-Driven Enterprise Procurement Platform <span>— Japanese engineering &amp; construction client</span></h3>
       <span class="date">Jun 2025 – Present</span>
     </div>
     <div class="role">Architect Engineer (Full-stack &amp; DevOps) · Team of 10</div>
     <ul>
-      <li>Designed the microservices and micro-frontend architecture, bootstrapped the codebase, and set the layered design, dependency-injection conventions and coding standards adopted by the 10-person team.</li>
+      <li>Designed the microservices and micro-frontend architecture, bootstrapped the codebase and set team coding standards.</li>
       <li>Owned infrastructure for the entire project: provisioned Azure with Terraform and ran four isolated environments (dev, staging, UAT, production) with configuration parity and controlled release promotion.</li>
       <li>Built .NET microservices and Next.js micro-frontends on a shared component library; designed AI-driven analytics endpoints behind procurement KPI dashboards and real-time order-bottleneck alerts.</li>
-      <li>Defined integration contracts using bidirectional REST and event-based pub/sub messaging; secured every service boundary with OAuth2/OIDC via Auth0.</li>
+      <li>Designed REST and pub/sub integration contracts; secured all service boundaries with Auth0 OAuth2/OIDC.</li>
       <li>Built multi-stage CI/CD pipelines in GitHub Actions and Azure DevOps with quality gates; added metrics, distributed tracing and Serilog structured logging to meet SLA, RTO and RPO targets.</li>
       <li>Established automated testing from scratch: k6 load tests and Playwright end-to-end suites running on every release.</li>
     </ul>
@@ -157,10 +179,9 @@
     <div class="role">Full-stack Developer · Team of 9+</div>
     <ul>
       <li>Developed Java REST APIs for the core photo-sharing and family-timeline services used across iOS, Android and web.</li>
-      <li>Integrated subscription billing on every platform: Stripe (web), Apple In-App Purchase and Google Play Billing, with TaxJar for sales tax.</li>
+      <li>Integrated subscription billing across Stripe, Apple In-App Purchase and Google Play Billing, with TaxJar for sales tax.</li>
       <li>Built Ember.js web-app features and maintained the WordPress VIP marketing site (themes, plugins, content).</li>
-      <li>Shipped releases continuously through GitHub Actions and AWS Elastic Beanstalk; enforced coverage standards with Codacy and Codecov.</li>
-      <li>Instrumented Grafana, Sentry, Leanplum and Braze to monitor system health and drive user-engagement campaigns.</li>
+      <li>Shipped continuously via GitHub Actions and AWS Elastic Beanstalk with Codacy/Codecov coverage gates; instrumented Grafana, Sentry, Leanplum and Braze.</li>
     </ul>
     <div class="tech"><b>Tech:</b> Java, Ember.js, MySQL, AWS (S3, SNS, SQS, CloudFront, Elastic Beanstalk), WordPress VIP, Stripe, Braze</div>
   </div>
@@ -173,7 +194,7 @@
     <div class="role">Full-stack Developer · Team of 4</div>
     <ul>
       <li>Led and mentored a team of 4 engineers: set technical direction, ran code reviews and kept delivery milestones on track.</li>
-      <li>Designed .NET services that provision per-client workspaces and broker requests between embedded widgets and the AI image-generation module.</li>
+      <li>Designed .NET services that provision per-client workspaces in front of the AI image-generation module.</li>
       <li>Built the embeddable widget and admin dashboard in Vue 3; integrated Outseta for plan tiers, billing and usage quotas.</li>
       <li>Implemented Redis-queued background workers for batch image generation and cross-service data synchronization.</li>
     </ul>
@@ -187,8 +208,8 @@
     </div>
     <div class="role">Full-stack Developer · Team of 4</div>
     <ul>
-      <li>Sole .NET engineer on an embedded-hardware team; rebuilt the legacy module on modern .NET with layered architecture, dependency injection and unit tests (NUnit, Jest).</li>
-      <li>Mapped the PCS gaming-system protocols and integrated with live kiosk hardware over WebSocket, keeping every PCS-driven screen flow backward compatible.</li>
+      <li>Sole .NET engineer on a hardware team; rebuilt the legacy module on modern .NET with DI and NUnit/Jest tests.</li>
+      <li>Mapped PCS gaming protocols and integrated live kiosk hardware over WebSocket with full backward compatibility.</li>
       <li>Built a config-driven VanillaJS touchscreen UI; containerized it with Docker and shipped via GitHub Actions.</li>
     </ul>
     <div class="tech"><b>Tech:</b> .NET Core, C#, WebSocket, JavaScript, Docker, NUnit, Jest, Wireshark</div>
@@ -201,7 +222,7 @@
     </div>
     <div class="role">Full-stack Developer · Team of 6</div>
     <ul>
-      <li>Delivered portfolio and transaction-management modules in C#/.NET end-to-end, from API design and code review to Azure production releases, with xUnit and Moq unit tests.</li>
+      <li>Delivered portfolio and transaction modules in C#/.NET from API design to Azure production, with xUnit/Moq tests.</li>
       <li>Managed Azure environments with Terraform and integrated internal microservices through Kong API Gateway.</li>
       <li>Built reusable Angular data-table, form and chart components that standardized UI patterns across the portal.</li>
     </ul>
@@ -239,9 +260,8 @@
       <span class="date">Jan 2022 – Mar 2023</span>
     </div>
     <ul>
-      <li><b>Legacy system visualizer:</b> sole developer; ETL of code entities into an OrientDB graph with an interactive ExtJS UI.</li>
-      <li><b>Git ETL desktop app:</b> sole developer; WPF tool that extracts and exports data from multiple Git sources.</li>
-      <li><b>Data conversion MVP:</b> ETL pipeline migrating legacy title-order data to a new platform (.NET, Svelte, MongoDB).</li>
+      <li>Sole developer of a legacy-system visualizer (OrientDB graph, ExtJS) and a WPF Git ETL desktop tool.</li>
+      <li>Built the ETL pipeline for a legacy title-order data-conversion MVP (.NET, Svelte, MongoDB).</li>
     </ul>
   </div>
 </section>
