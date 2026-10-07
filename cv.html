@@ -3,296 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phuong Tran — CV</title>
-<meta name="description" content="CV of Phuong Tran, Senior Full-stack Engineer (.NET, Azure, Angular) based in Da Nang, Vietnam.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Phuong Tran — Resume</title>
+<meta name="description" content="Resume of Phuong Tran, Senior Full-stack Engineer (.NET, Azure, Angular), Da Nang, Vietnam — open to remote roles.">
 <style>
   :root {
-    --ink: #1f2328;
-    --muted: #57606a;
-    --faint: #8c959f;
-    --rule: #d8dee4;
-    --accent: #1f4e79;
-    --chip: #eef3f8;
+    --ink: #1a1a1a;
+    --muted: #555;
+    --rule: #bfbfbf;
+    --accent: #1f3a5f;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { background: #e9ecef; }
+  html { background: #eceff1; }
   body {
-    font-family: Inter, "Segoe UI", Calibri, Arial, sans-serif;
-    font-size: 9.6pt;
-    line-height: 1.38;
+    font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.28;
     color: var(--ink);
-    -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent); text-decoration: none; }
+  a { color: inherit; text-decoration: none; }
 
-  .page {
-    width: 210mm;
+  main {
+    max-width: 210mm;
     margin: 24px auto;
-    padding: 13mm 15mm 11mm;
+    padding: 14mm 16mm;
     background: #fff;
-    box-shadow: 0 2px 16px rgba(0,0,0,.12);
+    box-shadow: 0 2px 14px rgba(0,0,0,.1);
   }
 
   /* Header */
-  header { display: flex; gap: 16px; align-items: center; padding-bottom: 12px; border-bottom: 2px solid var(--accent); }
-  header img { width: 74px; height: 74px; border-radius: 50%; object-fit: cover; flex: none; }
-  header h1 { font-size: 23pt; font-weight: 700; letter-spacing: -.01em; line-height: 1.1; }
-  header .title { font-size: 11pt; font-weight: 600; color: var(--accent); margin: 2px 0 6px; }
-  .contact { display: flex; flex-wrap: wrap; gap: 2px 14px; color: var(--muted); font-size: 8.8pt; }
-  .contact span::before { content: ""; }
+  header { text-align: center; }
+  h1 { font-size: 22pt; font-weight: 700; letter-spacing: .02em; color: var(--accent); line-height: 1.1; }
+  .headline { font-size: 11.5pt; font-weight: 700; margin-top: 2px; }
+  .contact { margin-top: 3px; color: var(--muted); }
+  .contact + .contact { margin-top: 0; }
+  .contact span + span::before { content: "|"; margin: 0 5px; color: var(--rule); }
 
   /* Sections */
   section { margin-top: 11px; }
   h2 {
-    font-size: 9pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--accent); padding-bottom: 3px; margin-bottom: 7px; border-bottom: 1px solid var(--rule);
+    font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--accent); border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px; margin-bottom: 6px;
+    break-after: avoid;
   }
-  .summary { color: var(--ink); }
-
-  .stack { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
-  .stack span { background: var(--chip); color: var(--accent); font-weight: 600; font-size: 8.4pt; padding: 2px 8px; border-radius: 3px; }
-
-  .highlights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 9px; }
-  .highlights div { border-left: 2px solid var(--accent); padding-left: 8px; }
-  .highlights b { display: block; font-size: 13pt; line-height: 1.15; color: var(--accent); }
-  .highlights small { color: var(--muted); font-size: 8pt; line-height: 1.25; display: block; }
-
-  /* Experience entries */
-  .job { margin-bottom: 9px; break-inside: avoid; }
-  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-  .job-head h3 { font-size: 10.2pt; font-weight: 700; }
-  .job-head h3 em { font-style: normal; font-weight: 500; color: var(--muted); }
-  .date { color: var(--muted); font-size: 8.8pt; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .context { color: var(--muted); font-size: 8.9pt; margin: 1px 0 3px; }
-  ul { padding-left: 14px; }
-  li { margin: 1.5px 0; }
-  li::marker { color: var(--faint); }
-  .tech { color: var(--muted); font-size: 8.3pt; margin-top: 3px; }
-  .tech b { color: var(--ink); font-weight: 600; }
-
-  /* Earlier experience */
-  .earlier { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; row-gap: 3px; }
-  .earlier .name b { font-weight: 600; }
-  .earlier .name span { color: var(--muted); }
+  .note { color: var(--muted); font-style: italic; margin: -2px 0 6px; }
 
   /* Skills */
-  .skills { display: grid; grid-template-columns: 118px 1fr; row-gap: 3px; column-gap: 10px; }
-  .skills dt { font-weight: 600; }
-  .skills dd { color: var(--ink); }
+  .skills { display: grid; grid-template-columns: 9.5em 1fr; gap: 1px 8px; }
+  .skills dt { font-weight: 700; }
 
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  /* Entries */
+  .entry { margin-bottom: 8px; break-inside: avoid; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .row h3 { font-size: 10.4pt; font-weight: 700; }
+  .row h3 span { font-weight: 400; }
+  .date { white-space: nowrap; font-weight: 700; }
+  .role { font-style: italic; color: var(--muted); }
+  ul { padding-left: 15px; margin-top: 2px; }
+  li { margin: 1px 0; padding-left: 2px; }
+  .tech { margin-top: 2px; color: var(--muted); }
+  .tech b { color: var(--ink); }
 
+  .compact .row { margin-bottom: 1px; }
+  .compact .row div span { color: var(--muted); }
+  .compact .date { font-weight: 400; color: var(--muted); }
 
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 11mm 14mm; }
   @media print {
     html { background: #fff; }
-    .page { margin: 0; box-shadow: none; height: 297mm; overflow: hidden; }
-    .page + .page { break-before: page; }
+    main { max-width: none; margin: 0; padding: 0; box-shadow: none; }
   }
-  @media screen and (max-width: 820px) {
-    .page { width: auto; margin: 0; padding: 20px 16px; box-shadow: none; }
-    .highlights { grid-template-columns: repeat(2, 1fr); }
-    .job-head, .earlier { display: block; }
-    .two-col { grid-template-columns: 1fr; }
+  @media screen and (max-width: 760px) {
+    main { margin: 0; padding: 20px 16px; box-shadow: none; }
+    .row { display: block; }
+    .date { display: block; font-weight: 400; color: var(--muted); }
     .skills { grid-template-columns: 1fr; }
     .skills dd { margin-bottom: 4px; }
+    .contact span { display: inline-block; }
   }
 </style>
 </head>
 <body>
+<main>
 
-<div class="page">
-  <header>
-    <img src="1674799608220.jpeg" alt="Phuong Tran">
-    <div>
-      <h1>Phuong Tran</h1>
-      <div class="title">Senior Full-stack Engineer · .NET · Azure · Angular</div>
-      <div class="contact">
-        <span>Da Nang, Vietnam</span>
-        <span>+84 39 250 2010</span>
-        <a href="mailto:nhatphuongb1@gmail.com">nhatphuongb1@gmail.com</a>
-        <a href="https://github.com/phuongfullstack">github.com/phuongfullstack</a>
-        <a href="https://phuongfullstack.github.io">phuongfullstack.github.io</a>
-      </div>
+<header>
+  <h1>PHUONG TRAN</h1>
+  <div class="headline">Senior Full-stack Engineer — .NET · Azure · Angular</div>
+  <div class="contact">
+    <span>Da Nang, Vietnam · Open to remote</span>
+    <span>+84 39 250 2010</span>
+    <span><a href="mailto:nhatphuongb1@gmail.com">nhatphuongb1@gmail.com</a></span>
+  </div>
+  <div class="contact">
+    <span><a href="https://github.com/phuongfullstack">github.com/phuongfullstack</a></span>
+    <span><a href="https://phuongfullstack.github.io">phuongfullstack.github.io</a></span>
+  </div>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p>
+    Senior full-stack engineer with 8+ years of experience building production web and desktop applications for clients in
+    the US, Australia, Japan and Malaysia, across healthcare, fintech, consumer apps and enterprise SaaS. Specializes in .NET
+    backends built on clean and hexagonal architecture, Angular and Vue front ends, and Azure and AWS infrastructure managed as code.
+    Owns platforms end-to-end, from Terraform and CI/CD to observability and OAuth2/OIDC security. Sets architecture and coding
+    standards for teams of up to 10 and mentors engineers.
+  </p>
+</section>
+
+<section>
+  <h2>Technical Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>C#, TypeScript, JavaScript, SQL, Java, Python (scripting)</dd>
+    <dt>Backend</dt><dd>.NET / .NET Core, ASP.NET Web API, Entity Framework, SignalR, gRPC, WebSocket, REST</dd>
+    <dt>Frontend</dt><dd>Angular, Vue 3, React, Next.js, Svelte, Ember.js, HTML/CSS, Material Design, Kendo UI</dd>
+    <dt>Cloud &amp; DevOps</dt><dd>Azure (App Service, Functions, Service Bus, Application Insights), AWS (S3, SQS, SNS, CloudFront, Elastic Beanstalk), GCP, Docker, Terraform, Bicep, GitHub Actions, Azure DevOps</dd>
+    <dt>Data &amp; Messaging</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB, Cosmos DB, Redis, Firebase, RabbitMQ</dd>
+    <dt>Architecture</dt><dd>Clean / Hexagonal Architecture, DDD, Microservices, Serverless, Event-driven, OAuth2 / OIDC</dd>
+    <dt>Testing &amp; Quality</dt><dd>xUnit, NUnit, Moq, Jest, Jasmine, Playwright, k6, Codacy, Codecov, Serilog, distributed tracing</dd>
+    <dt>Desktop</dt><dd>WPF, WinForms, UWP, Electron</dd>
+    <dt>AI-assisted dev</dt><dd>GitHub Copilot, Cursor, Claude, Windsurf</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <p class="note">Client projects, most recent first. Some engagements ran in parallel.</p>
+
+  <div class="entry">
+    <div class="row">
+      <h3>AI-Driven Enterprise Procurement Platform <span>— Japanese engineering &amp; construction client</span></h3>
+      <span class="date">Jun 2025 – Present</span>
     </div>
-  </header>
+    <div class="role">Architect Engineer (Full-stack &amp; DevOps) · Team of 10</div>
+    <ul>
+      <li>Owned the platform end-to-end: designed the system architecture, bootstrapped the codebase, and set the layered design, dependency-injection conventions and coding standards adopted by the 10-person team.</li>
+      <li>Provisioned Azure infrastructure with Terraform and ran four isolated environments (dev, staging, UAT, production) with configuration parity and controlled release promotion.</li>
+      <li>Built .NET REST APIs and an Angular shared component library; designed AI-driven analytics endpoints behind procurement KPI dashboards and real-time order-bottleneck alerts.</li>
+      <li>Defined integration contracts using bidirectional REST and event-based pub/sub messaging; secured every service boundary with OAuth2/OIDC via Auth0.</li>
+      <li>Built multi-stage CI/CD pipelines in GitHub Actions and Azure DevOps with quality gates; added metrics, distributed tracing and Serilog structured logging to meet SLA, RTO and RPO targets.</li>
+      <li>Established automated testing from scratch: k6 load tests and Playwright end-to-end suites running on every release.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET, C#, Entity Framework, Angular, Next.js, TypeScript, Azure, Terraform, Docker, PostgreSQL, Redis, Auth0, Serilog, k6, Playwright</div>
+  </div>
 
-  <section>
-    <h2>Summary</h2>
-    <p class="summary">
-      Senior full-stack engineer with 8+ years shipping production web and desktop software across healthcare,
-      fintech, education and SaaS. Strongest in .NET backends built on clean/hexagonal architecture, with Angular,
-      Vue and React front ends and cloud-native delivery on Azure and AWS. Regularly owns systems end-to-end —
-      infrastructure-as-code, CI/CD, observability and OAuth2/OIDC security — while setting standards and mentoring engineers.
-    </p>
-    <div class="stack">
-      <span>.NET / C#</span><span>ASP.NET Web API</span><span>Angular</span><span>Vue 3</span><span>TypeScript</span>
-      <span>Azure</span><span>AWS</span><span>Terraform</span><span>Docker</span><span>GitHub Actions</span>
-      <span>PostgreSQL</span><span>SQL Server</span><span>Redis</span>
+  <div class="entry">
+    <div class="row">
+      <h3>Tinybeans <span>— family photo-sharing app with millions of users</span></h3>
+      <span class="date">Jan 2024 – Jun 2025</span>
     </div>
-    <div class="highlights">
-      <div><b>8+ yrs</b><small>.NET full-stack, web &amp; desktop</small></div>
-      <div><b>16</b><small>projects shipped across 6 industries</small></div>
-      <div><b>4 envs</b><small>Dev → Staging → UAT → Prod owned end-to-end</small></div>
-      <div><b>Lead</b><small>architecture, standards &amp; mentoring teams of 4–10</small></div>
+    <div class="role">Full-stack Developer · Team of 9+</div>
+    <ul>
+      <li>Developed Java REST APIs for the core photo-sharing and family-timeline services used across iOS, Android and web.</li>
+      <li>Integrated subscription billing on every platform: Stripe (web), Apple In-App Purchase and Google Play Billing, with TaxJar for sales tax.</li>
+      <li>Built Ember.js web-app features and maintained the WordPress VIP marketing site (themes, plugins, content).</li>
+      <li>Shipped releases continuously through GitHub Actions and AWS Elastic Beanstalk; enforced coverage standards with Codacy and Codecov.</li>
+      <li>Instrumented Grafana, Sentry, Leanplum and Braze to monitor system health and drive user-engagement campaigns.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Java, Ember.js, MySQL, AWS (S3, SNS, SQS, CloudFront, Elastic Beanstalk), WordPress VIP, Stripe, Braze</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Proptexx <span>— AI image-generation SaaS for real estate and interior design</span></h3>
+      <span class="date">Jan 2025 – May 2025</span>
     </div>
-  </section>
+    <div class="role">Full-stack Developer · Team of 4</div>
+    <ul>
+      <li>Led and mentored a team of 4 engineers: set technical direction, ran code reviews and kept delivery milestones on track.</li>
+      <li>Designed .NET services that provision per-client workspaces and broker requests between embedded widgets and the AI image-generation module.</li>
+      <li>Built the embeddable widget and admin dashboard in Vue 3; integrated Outseta for plan tiers, billing and usage quotas.</li>
+      <li>Implemented Redis-queued background workers for batch image generation and cross-service data synchronization.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET Core, C#, Vue 3, PostgreSQL, Redis, GCP, Outseta</div>
+  </div>
 
-  <section>
-    <h2>Experience</h2>
-
-    <div class="job">
-      <div class="job-head">
-        <h3>Architect Engineer (Full-stack &amp; DevOps) <em>· AI-Driven Enterprise Procurement Platform</em></h3>
-        <span class="date">06/2025 – Present</span>
-      </div>
-      <p class="context">Procurement platform for a Japanese engineering &amp; construction client — quotations, contracts, vendor analytics, AI cost forecasting. Team of 10.</p>
-      <ul>
-        <li>Architected the Azure infrastructure with Terraform, bootstrapped the codebase and set the layered architecture and coding standards the team builds on.</li>
-        <li>Built .NET services and REST APIs, an Angular shared component library, and AI analytics endpoints behind KPI dashboards and real-time bottleneck alerts.</li>
-        <li>Designed REST and pub/sub integration contracts; secured every service boundary with OAuth2/OIDC via Auth0.</li>
-        <li>Shipped multi-stage CI/CD (GitHub Actions, Azure DevOps) with quality gates across four isolated environments; added Serilog logging, metrics and distributed tracing to meet SLA, RTO and RPO targets.</li>
-        <li>Introduced the test strategy from scratch: k6 load testing and Playwright end-to-end tests on every release.</li>
-      </ul>
-      <p class="tech"><b>Tech:</b> .NET, C#, Entity Framework, Angular, Next.js, Azure, Terraform, Docker, PostgreSQL, Redis, Auth0, Serilog, k6, Playwright</p>
+  <div class="entry">
+    <div class="row">
+      <h3>Precommitment Session Module <span>— gaming kiosk terminal</span></h3>
+      <span class="date">Nov 2024 – Jan 2025</span>
     </div>
+    <div class="role">Full-stack Developer · Team of 4</div>
+    <ul>
+      <li>Sole .NET engineer on an embedded-hardware team; rebuilt the legacy module on modern .NET with layered architecture, dependency injection and unit tests (NUnit, Jest).</li>
+      <li>Mapped the PCS gaming-system protocols and integrated with live kiosk hardware over WebSocket, keeping every PCS-driven screen flow backward compatible.</li>
+      <li>Built a config-driven VanillaJS touchscreen UI; containerized it with Docker and shipped via GitHub Actions.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET Core, C#, WebSocket, JavaScript, Docker, NUnit, Jest, Wireshark</div>
+  </div>
 
-    <div class="job">
-      <div class="job-head">
-        <h3>Full-stack Developer <em>· Tinybeans — family photo-sharing app</em></h3>
-        <span class="date">01/2024 – 06/2025</span>
-      </div>
-      <p class="context">Private photo &amp; video journal used by millions of families on iOS, Android and web. Team of 9+.</p>
-      <ul>
-        <li>Built Java REST APIs for the core photo-sharing and family timeline services, and UI features in the Ember.js web app.</li>
-        <li>Integrated subscription payments across platforms: Stripe, Apple In-App Purchase, Google Play Billing and TaxJar.</li>
-        <li>Released continuously via GitHub Actions and AWS Elastic Beanstalk; enforced coverage with Codacy and Codecov.</li>
-        <li>Instrumented Grafana, Sentry, Leanplum and Braze for system health and engagement campaigns; maintained the WordPress VIP marketing site.</li>
-      </ul>
-      <p class="tech"><b>Tech:</b> Java, Ember.js, MySQL, AWS (S3, SNS, SQS, CloudFront, Beanstalk), WordPress VIP, Braze</p>
+  <div class="entry">
+    <div class="row">
+      <h3>Fund Management Portal <span>— Australian fintech platform</span></h3>
+      <span class="date">Feb 2024 – Nov 2024</span>
     </div>
+    <div class="role">Full-stack Developer · Team of 6</div>
+    <ul>
+      <li>Delivered portfolio and transaction-management modules in C#/.NET end-to-end, from API design and code review to Azure production releases, with xUnit and Moq unit tests.</li>
+      <li>Managed Azure environments with Terraform and integrated internal microservices through Kong API Gateway.</li>
+      <li>Built reusable Angular data-table, form and chart components that standardized UI patterns across the portal.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET, C#, Entity Framework, Angular, TypeScript, SQL Server, Kong, Terraform, Azure</div>
+  </div>
 
-    <div class="job">
-      <div class="job-head">
-        <h3>Tech Lead / Full-stack Developer <em>· Proptexx — AI image generation SaaS</em></h3>
-        <span class="date">01/2025 – 05/2025</span>
-      </div>
-      <p class="context">Embeddable widgets and browser extensions that restyle property and product images for real-estate sites. Team of 4.</p>
-      <ul>
-        <li>Led and mentored 4 engineers: technical direction, code reviews and milestone delivery.</li>
-        <li>Built .NET services that provision per-client workspaces and broker widget requests to the AI image module.</li>
-        <li>Built the embeddable widget and admin dashboard in Vue 3; integrated Outseta for plans, billing and usage quotas.</li>
-        <li>Processed batch image jobs asynchronously with Redis-backed background workers.</li>
-      </ul>
-      <p class="tech"><b>Tech:</b> .NET Core, Vue 3, PostgreSQL, Redis, GCP, Outseta</p>
+  <div class="entry">
+    <div class="row">
+      <h3>AI-Powered Remote Care Platform <span>— healthcare</span></h3>
+      <span class="date">Jan 2023 – Jan 2024</span>
     </div>
+    <div class="role">Full-stack Developer · Team of 6</div>
+    <ul>
+      <li>Analyzed the legacy system and defined a phased migration to .NET and Azure serverless (Functions, Service Bus).</li>
+      <li>Built clean-architecture REST APIs with OAuth2 security, structured logging and Application Insights monitoring.</li>
+      <li>Created an Angular component library for care-plan, dashboard and patient-management screens.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET, C#, Entity Framework, Angular, TypeScript, Azure Functions, Service Bus</div>
+  </div>
 
-  </section>
-</div>
-
-<div class="page">
-  <section style="margin-top:0">
-    <div class="job">
-      <div class="job-head">
-        <h3>Full-stack Developer <em>· Gaming kiosk — Precommitment Session Module (PIM)</em></h3>
-        <span class="date">11/2024 – 01/2025</span>
-      </div>
-      <ul>
-        <li>Sole .NET engineer on a 4-person embedded-hardware team; re-architected the legacy module to modern .NET with DI and unit tests (NUnit, Jest).</li>
-        <li>Mapped the PCS gaming protocols, integrated with live terminal hardware over WebSocket, and built a config-driven VanillaJS UI; containerised with Docker and released via GitHub Actions.</li>
-      </ul>
-      <p class="tech"><b>Tech:</b> .NET Core, C#, WebSocket, VanillaJS, Docker, NUnit, Jest, Wireshark</p>
+  <div class="entry">
+    <div class="row">
+      <h3>Integrated Property Tax System <span>— US county government</span></h3>
+      <span class="date">Mar 2022 – Mar 2023</span>
     </div>
-    <div class="job">
-      <div class="job-head">
-        <h3>Full-stack Developer <em>· Fund Management Portal — Australian fintech</em></h3>
-        <span class="date">02/2024 – 11/2024</span>
-      </div>
-      <ul>
-        <li>Delivered portfolio and transaction modules end-to-end in C#/.NET with xUnit/Moq coverage, through to Azure production releases.</li>
-        <li>Managed Azure environments with Terraform; integrated internal microservices via Kong API Gateway.</li>
-        <li>Built reusable Angular data-table, form and chart components that standardised UI across the portal.</li>
-      </ul>
-      <p class="tech"><b>Tech:</b> .NET, C#, Entity Framework, Angular, SQL Server, Kong, Terraform, Azure</p>
-    </div>
+    <div class="role">Full-stack Developer · Team of 5</div>
+    <ul>
+      <li>Built tax-roll correction features and ASP.NET Web APIs on Azure with Serilog and Azure Monitor.</li>
+      <li>Reviewed code, enforced coding standards and mentored junior developers on .NET best practices.</li>
+    </ul>
+  </div>
 
-    <div class="job">
-      <div class="job-head">
-        <h3>Full-stack Developer <em>· AI-Powered Remote Healthcare Platform</em></h3>
-        <span class="date">01/2023 – 01/2024</span>
-      </div>
-      <ul>
-        <li>Defined the phased migration of a legacy system to .NET and Azure serverless (Functions, Service Bus, App Service).</li>
-        <li>Built clean-architecture REST APIs with OAuth2 security and Application Insights observability.</li>
-        <li>Created the Angular component library for care-plan, dashboard and patient-management screens.</li>
-      </ul>
-      <p class="tech"><b>Tech:</b> .NET, C#, Angular, Azure Functions, Service Bus, Entity Framework</p>
+  <div class="entry">
+    <div class="row">
+      <h3>Legacy Modernization Tooling <span>— 3 projects</span></h3>
+      <span class="date">Jan 2022 – Mar 2023</span>
     </div>
+    <div class="role">Full-stack Developer · Solo and small-team projects</div>
+    <ul>
+      <li><b>Legacy system visualizer:</b> sole developer; ETL of code entities into an OrientDB graph with an interactive ExtJS UI.</li>
+      <li><b>Git ETL desktop app:</b> sole developer; WPF tool that extracts and exports data from multiple Git sources.</li>
+      <li><b>Data conversion MVP:</b> ETL pipeline migrating legacy title-order data to a new platform (.NET, Svelte, MongoDB).</li>
+    </ul>
+  </div>
+</section>
 
-    <div class="job">
-      <div class="job-head">
-        <h3>Full-stack Developer <em>· Integrated Property Tax System — US county</em></h3>
-        <span class="date">03/2022 – 03/2023</span>
-      </div>
-      <ul>
-        <li>Built tax-roll correction features and Azure-hosted ASP.NET APIs (SQL Server, Serilog, Azure Monitor); reviewed code and mentored junior developers.</li>
-      </ul>
-    </div>
+<section class="compact">
+  <h2>Earlier Experience</h2>
+  <div class="row"><div><b>Education Management System</b> <span>— set up the stack and CI/CD for a 12-person team; 1,200+ students (.NET, Angular)</span></div><span class="date">2021</span></div>
+  <div class="row"><div><b>Point of Sale Desktop App</b> <span>— sales transactions, product lookup and receipts (WPF)</span></div><span class="date">2021</span></div>
+  <div class="row"><div><b>Truck &amp; Equipment Sales System</b> <span>— order tracking and queue prioritization (Angular)</span></div><span class="date">2020</span></div>
+  <div class="row"><div><b>Water Laboratory Management</b> <span>— sample tracking and inter-lab data sharing (AngularJS, .NET)</span></div><span class="date">2019</span></div>
+  <div class="row"><div><b>Telecom Back-Office Portal</b> <span>— Malaysian operator (ASP.NET WebForms)</span></div><span class="date">2019</span></div>
+  <div class="row"><div><b>Decentralized Asset Exchange</b> <span>— Scrum Master and React front end (Solidity, Ethereum)</span></div><span class="date">2018 – 2019</span></div>
+</section>
 
-    <div class="job">
-      <div class="job-head">
-        <h3>Full-stack Developer <em>· Legacy modernisation tooling (3 projects)</em></h3>
-        <span class="date">01/2022 – 03/2023</span>
-      </div>
-      <ul>
-        <li><b>Legacy system visualiser</b> — sole developer; ETL of code entities into an OrientDB graph with an interactive ExtJS UI.</li>
-        <li><b>Git ETL desktop app</b> — sole developer; WPF tool extracting and exporting data from multiple Git sources.</li>
-        <li><b>Data Conversion MVP</b> — ETL pipeline migrating legacy title-order data (.NET, Svelte, MongoDB).</li>
-      </ul>
-    </div>
-  </section>
+<section>
+  <h2>Education &amp; Languages</h2>
+  <div class="row"><div><b>Bachelor of Software Engineering</b> — Duy Tan University, Da Nang, Vietnam</div></div>
+  <div><b>Languages:</b> English (Upper-intermediate, B2), Vietnamese (Native)</div>
+</section>
 
-  <section>
-    <h2>Earlier Experience · 2018 – 2021</h2>
-    <div class="earlier">
-      <div class="name"><b>Education Management System</b> <span>— bootstrapped backend, frontend and CI/CD for a 12-person team; 1,200+ students · .NET, Angular</span></div><span class="date">2021</span>
-      <div class="name"><b>Point of Sale Desktop App</b> <span>— transactions, product lookup, receipts · WPF</span></div><span class="date">2021</span>
-      <div class="name"><b>Truck &amp; Equipment Sales Queue</b> <span>— order tracking and queue prioritisation · Angular</span></div><span class="date">2020</span>
-      <div class="name"><b>Water Laboratory Management</b> <span>— sample tracking and inter-lab data sharing · AngularJS, .NET</span></div><span class="date">2019</span>
-      <div class="name"><b>Telecom Back-Office Portal</b> <span>— Malaysian operator · ASP.NET WebForms</span></div><span class="date">2019</span>
-      <div class="name"><b>Decentralized Asset Exchange</b> <span>— Scrum Master &amp; React front end · Solidity, Ethereum</span></div><span class="date">2018 – 2019</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <dl class="skills">
-      <dt>Backend</dt><dd>C#, .NET / .NET Core, ASP.NET Web API, Entity Framework, SignalR, gRPC, WebSocket, Java</dd>
-      <dt>Frontend</dt><dd>TypeScript, Angular, Vue 3, React, Next.js, Svelte, HTML/CSS, Material, Kendo UI</dd>
-      <dt>Desktop &amp; Mobile</dt><dd>WPF, WinForms, UWP, Electron, Flutter</dd>
-      <dt>Data</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB, Cosmos DB, Redis, Firebase</dd>
-      <dt>Cloud &amp; Messaging</dt><dd>Azure (App Service, Functions, Service Bus, App Insights), AWS (S3, SQS, SNS, CloudFront, Beanstalk), GCP; RabbitMQ</dd>
-      <dt>DevOps</dt><dd>Docker, Terraform, Bicep, GitHub Actions, Azure DevOps, Serilog, distributed tracing</dd>
-      <dt>Architecture</dt><dd>Clean / Hexagonal, DDD, Microservices, Serverless, OAuth2 / OIDC</dd>
-      <dt>Testing</dt><dd>xUnit, NUnit, Moq, Jest, Jasmine, Playwright, k6, Codecov</dd>
-      <dt>AI-assisted dev</dt><dd>GitHub Copilot, Cursor, Claude, Windsurf</dd>
-    </dl>
-  </section>
-
-  <section class="two-col">
-    <div>
-      <h2>Education</h2>
-      <p><b>Bachelor of Software Engineering</b><br><span style="color:var(--muted)">Duy Tan University, Da Nang</span></p>
-    </div>
-    <div>
-      <h2>Languages</h2>
-      <p><b>Vietnamese</b> — Native<br><b>English</b> — Upper-intermediate (B2)</p>
-    </div>
-  </section>
-</div>
-
+</main>
 </body>
 </html>
