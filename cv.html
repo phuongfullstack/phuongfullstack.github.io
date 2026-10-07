@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phuong Tran — Resume</title>
-<meta name="description" content="Resume of Phuong Tran, Senior Full-stack Engineer (.NET, Azure, Angular), Da Nang, Vietnam — open to remote roles.">
+<meta name="description" content="Resume of Phuong Tran, Senior Full-stack Engineer (.NET, Azure, React/Next.js, Angular), Da Nang, Vietnam — open to remote roles.">
 <style>
   :root {
     --ink: #1a1a1a;
@@ -17,7 +17,7 @@
   body {
     font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
     font-size: 10.2pt;
-    line-height: 1.28;
+    line-height: 1.26;
     color: var(--ink);
   }
   a { color: inherit; text-decoration: none; }
@@ -39,7 +39,7 @@
   .contact span + span::before { content: "|"; margin: 0 5px; color: var(--rule); }
 
   /* Sections */
-  section { margin-top: 11px; }
+  section { margin-top: 9px; }
   h2 {
     font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
     color: var(--accent); border-bottom: 1px solid var(--accent);
@@ -53,7 +53,7 @@
   .skills dt { font-weight: 700; }
 
   /* Entries */
-  .entry { margin-bottom: 8px; break-inside: avoid; }
+  .entry { margin-bottom: 7px; break-inside: avoid; }
   .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .row h3 { font-size: 10.4pt; font-weight: 700; }
   .row h3 span { font-weight: 400; }
@@ -68,7 +68,7 @@
   .compact .row div span { color: var(--muted); }
   .compact .date { font-weight: 400; color: var(--muted); }
 
-  @page { size: A4; margin: 11mm 14mm; }
+  @page { size: A4; margin: 10mm 14mm 9mm; }
   @media print {
     html { background: #fff; }
     main { max-width: none; margin: 0; padding: 0; box-shadow: none; }
@@ -88,7 +88,7 @@
 
 <header>
   <h1>PHUONG TRAN</h1>
-  <div class="headline">Senior Full-stack Engineer — .NET · Azure / AWS · Angular · React / Next.js · Vue · Svelte</div>
+  <div class="headline">Senior Full-stack Engineer — .NET · Azure / AWS · React / Next.js · Angular · Vue · Svelte</div>
   <div class="contact">
     <span>Da Nang, Vietnam · Open to remote</span>
     <span>+84 39 250 2010</span>
@@ -105,7 +105,7 @@
   <p>
     Senior full-stack engineer with 8+ years of experience building production web and desktop applications for clients in
     the US, Canada, Europe, Australia, Japan and Malaysia, across healthcare, fintech, consumer apps and enterprise SaaS.
-    Specializes in .NET backends built on clean and hexagonal architecture, front ends in Angular, React/Next.js, Vue and Svelte,
+    Specializes in .NET backends built on clean and hexagonal architecture, front ends in React/Next.js, Angular, Vue and Svelte,
     and Azure and AWS infrastructure managed as code.
     Owns platforms end-to-end, from Terraform and CI/CD to observability and OAuth2/OIDC security. Sets architecture and coding
     standards for teams of up to 10 and mentors engineers.
@@ -115,15 +115,15 @@
 <section>
   <h2>Technical Skills</h2>
   <dl class="skills">
-    <dt>Languages</dt><dd>C#, TypeScript, JavaScript, SQL, Java, Python (scripting)</dd>
-    <dt>Backend</dt><dd>.NET / .NET Core, ASP.NET Web API, Entity Framework, SignalR, gRPC, WebSocket, REST</dd>
-    <dt>Frontend</dt><dd>Angular, React, Next.js, Vue 3, Svelte, Ember.js, TypeScript, HTML/CSS, Material Design, Kendo UI</dd>
+    <dt>Languages</dt><dd>C#, TypeScript, JavaScript, SQL, Java, Python</dd>
+    <dt>Backend</dt><dd>.NET (Framework to .NET 10), ASP.NET Web API, Entity Framework, SignalR, gRPC, WebSocket, REST</dd>
+    <dt>Frontend</dt><dd>React, Next.js, Angular, Vue 3, Svelte, Ember.js, Vite, Tailwind CSS, Kendo UI</dd>
     <dt>Cloud &amp; DevOps</dt><dd>Azure (App Service, Functions, Service Bus, Application Insights), AWS (S3, SQS, SNS, CloudFront, Elastic Beanstalk), GCP, Docker, Terraform, Bicep, GitHub Actions, Azure DevOps</dd>
-    <dt>Data &amp; Messaging</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB, Cosmos DB, Redis, Firebase, RabbitMQ</dd>
-    <dt>Architecture</dt><dd>Clean / Hexagonal Architecture, DDD, Microservices, Serverless, Event-driven, OAuth2 / OIDC</dd>
+    <dt>Data &amp; Messaging</dt><dd>SQL Server, PostgreSQL, MySQL, MongoDB, Cosmos DB, Redis, Supabase, Firebase, RabbitMQ</dd>
+    <dt>Architecture</dt><dd>Clean/Hexagonal Architecture, DDD, Microservices, Micro-frontends, Serverless, Event-driven, OAuth2/OIDC</dd>
     <dt>Testing &amp; Quality</dt><dd>xUnit, NUnit, Moq, Jest, Jasmine, Playwright, k6, Codacy, Codecov, Serilog, distributed tracing</dd>
-    <dt>Desktop</dt><dd>WPF, WinForms, UWP, Electron</dd>
-    <dt>AI-assisted dev</dt><dd>GitHub Copilot, Cursor, Claude, Windsurf</dd>
+    <dt>Desktop</dt><dd>Electron (electron-updater, signed auto-updates), WPF, WinForms, UWP</dd>
+    <dt>AI</dt><dd>LLM integration (Gemini API); GitHub Copilot, Cursor, Claude, Windsurf</dd>
   </dl>
 </section>
 
@@ -138,14 +138,14 @@
     </div>
     <div class="role">Architect Engineer (Full-stack &amp; DevOps) · Team of 10</div>
     <ul>
-      <li>Owned the platform end-to-end: designed the system architecture, bootstrapped the codebase, and set the layered design, dependency-injection conventions and coding standards adopted by the 10-person team.</li>
-      <li>Provisioned Azure infrastructure with Terraform and ran four isolated environments (dev, staging, UAT, production) with configuration parity and controlled release promotion.</li>
-      <li>Built .NET REST APIs and an Angular shared component library; designed AI-driven analytics endpoints behind procurement KPI dashboards and real-time order-bottleneck alerts.</li>
+      <li>Designed the microservices and micro-frontend architecture, bootstrapped the codebase, and set the layered design, dependency-injection conventions and coding standards adopted by the 10-person team.</li>
+      <li>Owned infrastructure for the entire project: provisioned Azure with Terraform and ran four isolated environments (dev, staging, UAT, production) with configuration parity and controlled release promotion.</li>
+      <li>Built .NET microservices and Next.js micro-frontends on a shared component library; designed AI-driven analytics endpoints behind procurement KPI dashboards and real-time order-bottleneck alerts.</li>
       <li>Defined integration contracts using bidirectional REST and event-based pub/sub messaging; secured every service boundary with OAuth2/OIDC via Auth0.</li>
       <li>Built multi-stage CI/CD pipelines in GitHub Actions and Azure DevOps with quality gates; added metrics, distributed tracing and Serilog structured logging to meet SLA, RTO and RPO targets.</li>
       <li>Established automated testing from scratch: k6 load tests and Playwright end-to-end suites running on every release.</li>
     </ul>
-    <div class="tech"><b>Tech:</b> .NET, C#, Entity Framework, Angular, Next.js, TypeScript, Azure, Terraform, Docker, PostgreSQL, Redis, Auth0, Serilog, k6, Playwright</div>
+    <div class="tech"><b>Tech:</b> .NET, C#, EF Core, Next.js, TypeScript, Azure, Terraform, Docker, PostgreSQL, Redis, Auth0, Serilog, k6, Playwright</div>
   </div>
 
   <div class="entry">
@@ -218,7 +218,6 @@
       <li>Built clean-architecture REST APIs with OAuth2 security, structured logging and Application Insights monitoring.</li>
       <li>Created an Angular component library for care-plan, dashboard and patient-management screens.</li>
     </ul>
-    <div class="tech"><b>Tech:</b> .NET, C#, Entity Framework, Angular, TypeScript, Azure Functions, Service Bus</div>
   </div>
 
   <div class="entry">
@@ -238,12 +237,37 @@
       <h3>Legacy Modernization Tooling <span>— 3 projects</span></h3>
       <span class="date">Jan 2022 – Mar 2023</span>
     </div>
-    <div class="role">Full-stack Developer · Solo and small-team projects</div>
     <ul>
       <li><b>Legacy system visualizer:</b> sole developer; ETL of code entities into an OrientDB graph with an interactive ExtJS UI.</li>
       <li><b>Git ETL desktop app:</b> sole developer; WPF tool that extracts and exports data from multiple Git sources.</li>
       <li><b>Data conversion MVP:</b> ETL pipeline migrating legacy title-order data to a new platform (.NET, Svelte, MongoDB).</li>
     </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Personal Projects</h2>
+
+  <div class="entry">
+    <div class="row">
+      <h3>Cross-platform Electron Desktop App <span>— personal project</span></h3>
+      <span class="date">In development</span>
+    </div>
+    <ul>
+      <li>Cross-platform Electron app on a shared React core with signed auto-updates, Supabase and Playwright.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Electron, electron-updater, React, React Router, Vite, Tailwind CSS, Radix UI, TipTap, Supabase, Bun, Playwright, nginx</div>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3>AI Analysis Tool &amp; Real-time APIs <span>— personal projects</span></h3>
+      <span class="date">In development</span>
+    </div>
+    <ul>
+      <li>Gemini-powered analysis tool with .NET 10 APIs and SignalR hubs; deployed to Vercel, Render and Firebase.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> .NET 10, SignalR, Gemini API, Next.js, Vercel, Render, Firebase</div>
   </div>
 </section>
 
@@ -259,8 +283,7 @@
 
 <section>
   <h2>Education &amp; Languages</h2>
-  <div class="row"><div><b>Bachelor of Software Engineering</b> — Duy Tan University, Da Nang, Vietnam</div></div>
-  <div><b>Languages:</b> English (Upper-intermediate, B2), Vietnamese (Native)</div>
+  <div class="row"><div><b>Bachelor of Software Engineering</b> — Duy Tan University, Da Nang, Vietnam</div><div>English (B2) · Vietnamese (Native)</div></div>
 </section>
 
 </main>
