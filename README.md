@@ -37,7 +37,7 @@ CI/CD and structured observability.
 .NET microservices and Next.js micro-frontends, infrastructure for the whole project in Terraform
 on Azure, OAuth2/OIDC via Auth0, k6 load tests and Playwright E2E across four environments.
 
-**Recently** built a new clinic CRM solo (Jan – Apr 2026): desktop (Electron) and web (React) apps over a
+**Recently** built and deployed a new clinic CRM solo, end to end (Jan – Apr 2026): desktop (Electron) and web (React) apps over a
 .NET 10 API, real-time RingCentral call mirroring with instant patient lookup, and Tebra integration, on Azure and Cloudflare.
 
 ---
